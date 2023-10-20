@@ -14,5 +14,9 @@ def registerpage():
 def loginpage():
     return render_template('login.html')
 
+@app.route('/habits')
+def habitPage():
+    return render_template('habits.html')
+
 if __name__ == "__main__":
     app.run(debug = True)
