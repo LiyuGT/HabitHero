@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Flask Webpage</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h1>Hello, Habit Hero!</h1>
+    <p>This home page.</p>
+
+    <form method="POST" action="{{ url_for('loginpage') }}">
+        <input type="submit" value="Login">
+    </form>
+
+    <form method="POST" action="{{ url_for('registerpage') }}">
+        <input type="submit" value="Register">
+    </form>
+
+</body>
+</html>
