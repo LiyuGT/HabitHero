@@ -6,3 +6,16 @@ body {
 h1 {
     color: #AE76A6;
 }
+
+.habitItem {
+    display: flex;
+    align-items: center;
+    background-color: #AE76A6;
+    border-radius: 15px;
+}
+
+.habitItem ul, li, p, button {
+    display: flex;
+    margin: 5px;
+    text-decoration: none;
+}
