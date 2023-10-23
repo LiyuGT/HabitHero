@@ -7,19 +7,24 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Hello habits!</h1>
-    <div class="habitItem">
-        <button>Done!</button>
-        <p>Habit title</p>
+    <header>
+        <h1>Habit Hero</h1>
         <ul>
-            <li>💙</li>
-            <li>💙</li>
-            <li>💙</li>
-            <li>💙</li>
-            <li>💙</li>
-            <li>💙</li>
-            <li>💙</li>
+            <li>My Habits</li>
+            <li>Habitats</li>
         </ul>
-    </div>
+        <img id="profilePicture" alt="profile picture" src="static/images/flame_colored.png">
+    </header>
+    <main>
+        <div class="habitItem">
+            <button>Done!</button>
+            <p>Play guitar for 15 minutes</p>
+            <div class="spacer"></div>
+            <div class="streak">
+                <p>10</p>
+                <img src="static/images/flame_grayscale.png">
+            </div>
+        </div>
+    </main>
 </body>
 </html>
