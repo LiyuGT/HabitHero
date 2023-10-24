@@ -41,7 +41,14 @@
         {% for habit in habits %}
 
             <div class="habitItem">
-                <button>Done!</button>
+                <button>
+                    {% if habit.done %}
+                        <img src="static/images/checkmark.png">
+                    {% else %}
+                        <img src="static/images/unchecked.png">
+                    {% endif %}
+                </button>
+                
                 <p>{{ habit.title }}</p>
                 <div class="spacer"></div>
                 <div class="streak">
