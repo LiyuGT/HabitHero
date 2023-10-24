@@ -10,7 +10,7 @@ from flask_socketio import SocketIO, join_room
 from models import User as User
 from models import Note as Note
 from models import Comment as Comment
-from models import Project as Project
+from models import Habit as Habit
 from models import Task as Task
 from forms import RegisterForm, LoginForm, CommentForm
 #*/

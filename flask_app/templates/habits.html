@@ -16,15 +16,26 @@
         <img id="profilePicture" alt="profile picture" src="static/images/flame_colored.png">
     </header>
     <main>
-        <div class="habitItem">
-            <button>Done!</button>
-            <p>Play guitar for 15 minutes</p>
-            <div class="spacer"></div>
-            <div class="streak">
-                <p>10</p>
-                <img src="static/images/flame_grayscale.png">
-            </div>
-        </div>
+        {% for habit in habits %}
+            <div class="habitItem">
+                <button>Done!</button>
+                <p>{{ habit.title }}</p>
+                <div class="spacer"></div>
+                <div class="streak">
+                    <p>{{ habit.streak }}</p>
+                    <img src="static/images/flame_grayscale.png">
+                </div>
+            <!-- </div>
+       
+                    <p class="ptitle">
+                        <a class="plink" href="{{ url_for('project_overview', project_id=project.id) }}">
+                            {{ project.title }}
+                        </a>
+                    </p>
+                </b>
+            </div> -->
+        {% endfor %}
+        
     </main>
 </body>
 </html>
