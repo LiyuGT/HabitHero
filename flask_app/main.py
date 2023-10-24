@@ -53,7 +53,9 @@ def registerpage():
 def loginpage():
     return render_template('login.html')
 
-
+@app.route('/overview')
+def overview():
+    return render_template('habits.html')
 
 # ---------- User - Account ----------
 # - User Registration -
