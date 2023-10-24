@@ -85,6 +85,7 @@ header > ul {
     /* Content arrangement */
     display: flex;
     align-items: center;
+    margin-top: 10px;
 
     /* Background styling */
     padding: 10px;
@@ -107,8 +108,18 @@ header > ul {
     color: #C7C6C6;
 }
 
-.streak img {
+.habitItem img {
     max-width: 30px;
     max-height: 30px;
+}
+
+.habitItem > button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
