@@ -53,12 +53,12 @@ def loginpage():
 
 @app.route('/overview')
 def overview():
-    # Create a Habit object
-    new_habit = Habit(title="Habit Title")
+    # # Create a Habit object
+    # new_habit = Habit(title="Habit Title")
 
-    # Add the habit to the database
-    db.session.add(new_habit)
-    db.session.commit()
+    # # Add the habit to the database
+    # db.session.add(new_habit)
+    # db.session.commit()
 
     return render_template('habits.html')
 
