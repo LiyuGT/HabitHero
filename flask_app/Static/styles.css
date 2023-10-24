@@ -29,7 +29,6 @@ main {
 }
 
 h1 {
-<<<<<<< Updated upstream
     color: var(--purple);
 }
 
@@ -113,9 +112,8 @@ header > ul {
     max-height: 30px;
 }
 
-=======
-    color: #AE76A6;
-}
+
+
 
 
 .navbar {
@@ -140,4 +138,3 @@ header > ul {
     font-variant: small-caps;
     margin-left: 30px;
 }
->>>>>>> Stashed changes

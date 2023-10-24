@@ -123,6 +123,11 @@ def overview():
     else:
         return redirect(url_for('login'))
 
+@app.route('/habits')
+def habits():
+    return render_template('habits.html')
+
+
 # ///// HOST & PORT CONFIG /////
 if __name__ == '__main__':
     # socketio.run(app, debug=True)
