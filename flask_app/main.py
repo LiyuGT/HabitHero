@@ -11,6 +11,7 @@ from models import User as User
 from models import Note as Note
 from models import Comment as Comment
 from models import Habit as Habit
+from models import Project as Project
 from models import Task as Task
 from forms import RegisterForm, LoginForm, CommentForm
 #*/
@@ -33,9 +34,6 @@ db.init_app(app)
 with app.app_context():
     db.create_all()  # Run under the app context
 
-
-
-
 app = Flask(__name__)
 
 # ///// ROUTES /////
@@ -55,6 +53,13 @@ def loginpage():
 
 @app.route('/overview')
 def overview():
+    # Create a Habit object
+    new_habit = Habit(title="Habit Title")
+
+    # Add the habit to the database
+    db.session.add(new_habit)
+    db.session.commit()
+
     return render_template('habits.html')
 
 # ---------- User - Account ----------
@@ -118,8 +123,6 @@ def logout():
         session.clear()
 
     return redirect(url_for('home'))
-
-
 
 
 # ///// HOST & PORT CONFIG /////

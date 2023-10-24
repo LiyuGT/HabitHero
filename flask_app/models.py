@@ -55,22 +55,36 @@ class Comment(db.Model):
         self.note_id = note_id
         self.user_id = user_id
 
+# - User / Project -
+class Project(db.Model):
+    __tablename__ = "projects"
+
+    id = db.Column("id", db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    title = db.Column("title", db.String(200), nullable=False)
+    created = db.Column("created", db.String(50), nullable=False)
+    tasks = db.relationship("Task", backref="projects", cascade="all, delete", lazy=True)
+
+    def __init__(self, title, created, user_id):
+        self.title = title
+        self.created = created
+        self.user_id = user_id
 
 # - User / Habit -
 class Habit(db.Model):
     __tablename__ = "habits"
 
     id = db.Column("id", db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    # user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     title = db.Column("title", db.String(200), nullable=False)
     streak = db.Column("streak", db.Integer, nullable=False)
-    created = db.Column("created", db.String(50), nullable=False)
+    # created = db.Column("created", db.String(50), nullable=False)
     # tasks = db.relationship("Task", backref="projects", cascade="all, delete", lazy=True)
 
-    def __init__(self, title, created, user_id):
+    def __init__(self, title):
         self.title = title
         self.streak = 0
-        self.created = created
+        # self.created = created
         # self.user_id = user_id
 
 
