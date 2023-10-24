@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-{% extends "layout.html" %}
 
-{% block content %}
 <head>
     <title>Habit Hero Home Page</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 
 </head>
 <body>
+    <div class="navbar">
+        <a href="{{url_for('home')}}">Home</a>
+        <a href="{{url_for('login')}}">Login</a>
+        <a href="{{url_for('aboutUs')}}">About Us</a>
+        <a href="{{url_for('register')}}">Register</a>
+    </div>
+    <div class="body-content">
+
+        <hr/>
+    </div>
     <h1>Hello, Habit Hero!</h1>
     <p>This home page.</p>
 
@@ -20,4 +28,4 @@
     </form>
 
 </body>
-{% endblock %}
+
