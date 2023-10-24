@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Habit Hero</h1>
+        <ul>
+            <li>My Habits</li>
+            <li>Habitats</li>
+        </ul>
+        <img id="profilePicture" alt="profile picture" src="static/images/flame_colored.png">
+    </header>
+    <main>
+        <div class="habitItem">
+            <button>Done!</button>
+            <p>Play guitar for 15 minutes</p>
+            <div class="spacer"></div>
+            <div class="streak">
+                <p>10</p>
+                <img src="static/images/flame_grayscale.png">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
