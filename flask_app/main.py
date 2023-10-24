@@ -36,22 +36,12 @@ with app.app_context():
 
 
 
-app = Flask(__name__)
-
 # ///// ROUTES /////
 # - Home -
 @app.route('/')
 @app.route('/home')
 def home():
     return render_template('home.html')
-
-@app.route('/register', methods=['POST'])
-def registerpage():
-    return render_template('register.html')
-
-@app.route('/login', methods=['POST'])
-def loginpage():
-    return render_template('login.html')
 
 
 
@@ -68,8 +58,10 @@ def register():
         # get entered user data
         first_name = request.form['firstname']
         last_name = request.form['lastname']
+        email = request.form['email']
         # create user model
-        new_user = User(first_name, last_name, request.form['email'], h_password)
+        #new_user = User(first_name, last_name, request.form['email'], h_password)
+        new_user = User(first_name, last_name, email, h_password)
         # add user to database and commit
         db.session.add(new_user)
         db.session.commit()
@@ -118,7 +110,18 @@ def logout():
     return redirect(url_for('home'))
 
 
+@app.route('/aboutUs')
+def aboutUs():
+    return render_template('aboutUs.html')
 
+@app.route('/overview')
+def overview():
+    if session.get('user'):
+        my_projects = db.session.query(Project).filter_by(user_id=session['user_id']).all()
+
+        return render_template('overview.html', projects=my_projects, user=session['user'])
+    else:
+        return redirect(url_for('login'))
 
 # ///// HOST & PORT CONFIG /////
 if __name__ == '__main__':

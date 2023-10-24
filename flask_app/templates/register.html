@@ -1,28 +1,12 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Basic Flask Webpage</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+{% extends "layout.html" %}
+{% block title %}
+Habit Hero Register
+{% endblock %}
 
-</head>
+{% block content %}
 
-<body>
-    <div class="full-page">
-        <div class="navbar">
-            
-            <nav>
-                <ul id='MenuItems'>
-                    <li><a href="{{url_for('home')}}">Home</a></li>
-                    <li><a href="{{url_for('login')}}">Login</a></li>
-                    {% if user %} <li><a href="{{url_for('logout')}}">Logout</a></li>
-                    {% else %} <li><a href="{{url_for('register')}}">Register</a></li>
-                    {% endif %}<li><a href="{{url_for('logout')}}">Logout</a></li>
-                </ul>
-            </nav>
-        </div>
-
-
-        <h1 class="welcome4">Welcome {% if user %}{{user}}{% endif %}to the CSBS Notes App!</h1>
+      <h1 class="welcome4">Welcome {% if user %}{{user}}{% endif %}to the Habit Hero App!</h1>
         <h3>{{ message }}</h3>
 
         <div class="formwrapper">
@@ -78,10 +62,7 @@
 
         </div>
     </div>
-</body>
-
-</html>
+{% endblock %}
 
 
 
-</html>

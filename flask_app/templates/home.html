@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
+
+{% block content %}
 <head>
-    <title>Basic Flask Webpage</title>
+    <title>Habit Hero Home Page</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 
 </head>
@@ -9,13 +11,13 @@
     <h1>Hello, Habit Hero!</h1>
     <p>This home page.</p>
 
-    <form method="POST" action="{{ url_for('loginpage') }}">
+    <form method="POST" action="{{ url_for('login') }}">
         <input type="submit" value="Login">
     </form>
 
-    <form method="POST" action="{{ url_for('registerpage') }}">
+    <form method="POST" action="{{ url_for('register') }}">
         <input type="submit" value="Register">
     </form>
 
 </body>
-</html>
+{% endblock %}

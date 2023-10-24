@@ -80,8 +80,10 @@ defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
 diff-match-patch @ file:///Users/ktietz/demo/mc3/conda-bld/diff-match-patch_1630511840874/work
 dill @ file:///Users/ec2-user/ci_py311/dill_1678323290904/work
 distributed @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_95i88jlqtp/croot/distributed_1686866052419/work
+dnspython==2.4.2
 docstring-to-markdown @ file:///Users/ec2-user/ci_py311/docstring-to-markdown_1678326320721/work
 docutils @ file:///Users/ec2-user/ci_py311/docutils_1678316143314/work
+email-validator==2.1.0.post1
 entrypoints @ file:///Users/ec2-user/ci_py311/entrypoints_1678316169365/work
 et-xmlfile==1.1.0
 executing @ file:///opt/conda/conda-bld/executing_1646925071911/work

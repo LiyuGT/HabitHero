@@ -29,6 +29,7 @@ main {
 }
 
 h1 {
+<<<<<<< Updated upstream
     color: var(--purple);
 }
 
@@ -112,3 +113,31 @@ header > ul {
     max-height: 30px;
 }
 
+=======
+    color: #AE76A6;
+}
+
+
+.navbar {
+    background-color: lightslategray;
+    font-size: 1em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    padding: 8px 5px 8px 5px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-brand {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.navbar-item {
+    font-variant: small-caps;
+    margin-left: 30px;
+}
+>>>>>>> Stashed changes
