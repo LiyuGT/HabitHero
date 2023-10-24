@@ -107,7 +107,7 @@ def logout():
     if session.get('user'):
         session.clear()
 
-    return redirect(url_for('home'))
+    return render_template('home.html')
 
 
 @app.route('/aboutUs')

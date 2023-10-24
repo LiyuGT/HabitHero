@@ -1,29 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
+{% block title %}
+Habit Hero Register
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Habit Hero|ABOUT US</title>
-   
-    <link rel="stylesheet" href="{{ url_for('static', filename='homestyle.css') }}">
+{% block content %}
 
-    <!---we had linked our css file----->
-</head>
-
-<body>
-    <div class="full-page">
-        <div class="navbar">
-         
-            <nav>
-                <ul id='MenuItems'>
-                    <li><a href="{{url_for('home')}}">Home</a></li>
-                    <li><a href="{{url_for('aboutUs')}}">About Us</a></li>
-                    <li><a href="{{url_for('register')}}">Register</a></li>
-                    <li><a href="{{url_for('login')}}">Login</a></li>
-
-                </ul>
-            </nav>
-        </div>
         <div class="aboutdiv">
 
             <h1 class="welcome2">ABOUT US</h1>
@@ -41,7 +23,4 @@
         </div>
     
 
-
-</body>
-
-</html>
+{% endblock %}

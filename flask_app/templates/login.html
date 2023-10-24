@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
+{% block title %}
+Habit Hero Login
+{% endblock %}
+
+{% block content %}
 
 
 <head>
@@ -11,28 +16,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='homestyle.css') }}">
 </head>
 
-<body>
-<<<<<<< Updated upstream
-    <h1>You Have Registered</h1>
     <a href="habits">See your habits</a>
-    
-</body>
-=======
-    <div class="full-page1">
-        <div class="navbar">
-            
-            <nav>
-                <ul id='MenuItems'>
-                    <li><a href="{{url_for('home')}}">Home</a></li>
-                    <li><a href="{{url_for('aboutUs')}}">About Us</a></li> 
-                    <li><a href="{{url_for('login')}}">Login</a></li>
-                    {% if user %} <li><a href="{{url_for('logout')}}">Logout</a></li>
-                    
-                    {% else %} <li><a href="{{url_for('register')}}">Register</a></li>
-                    {% endif %}<li><a href="{{url_for('logout')}}">Logout</a></li>
-                </ul>
-            </nav>
-        </div>
+ 
 
 
         <h1 class="welcome4">Welcome {% if user %}{{user}}{% endif %}to the  Habit Hero App!</h1>
@@ -63,7 +48,6 @@
             </form>
           </div>
        </div>
-  </body>
 
->>>>>>> Stashed changes
-</html>
+
+{% endblock %}
