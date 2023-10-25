@@ -1,19 +1,30 @@
 # ///// IMPORTS /////
 from __future__ import print_function
-import os, sys, json, flask, flask_socketio, httplib2, uuid, bcrypt, sqlite3
-from flask import Flask, Response, render_template, request, redirect, url_for, jsonify, session
-from flask_sqlalchemy import SQLAlchemy
-from database import db
-from flask_socketio import SocketIO, join_room
 
-#//// Potential Import Guidelines (Will substitute Note to Habit for example) ////#
-from models import User as User
-from models import Note as Note
-from models import Comment as Comment
+import json
+import os
+import sqlite3
+import sys
+import uuid
+
+import bcrypt
+import flask
+import flask_socketio
+import httplib2
+from database import db
+from flask import (Flask, Response, jsonify, redirect, render_template,
+                   request, session, url_for)
+from flask_socketio import SocketIO, join_room
+from flask_sqlalchemy import SQLAlchemy
+from forms import CommentForm, HabitForm, LoginForm, RegisterForm
 #from models import Project as Project
-from models import Task as Task
+#//// Potential Import Guidelines (Will substitute Note to Habit for example) ////#
+from models import Comment as Comment
 from models import Habit as Habit
-from forms import RegisterForm, LoginForm, CommentForm, HabitForm
+from models import Note as Note
+from models import Task as Task
+from models import User as User
+
 #*/
 
 # ///// APP CREATION /////
@@ -90,7 +101,7 @@ def login():
             session['user'] = the_user.first_name
             session['user_id'] = the_user.id
             # render view
-            return redirect(url_for('overview'))
+            return redirect(url_for('createhabits'))
 
         # password check failed
         # set error message to alert user
