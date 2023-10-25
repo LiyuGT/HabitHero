@@ -85,6 +85,7 @@ header > ul {
     /* Content arrangement */
     display: flex;
     align-items: center;
+    margin-top: 10px;
 
     /* Background styling */
     padding: 10px;
@@ -93,9 +94,10 @@ header > ul {
 }
 
 .habitItem * {
-    /* display: flex; */
+    display: flex;
     margin: 5px;
     text-decoration: none;
+    align-items: center;
 }
 
 .streak {
@@ -110,6 +112,7 @@ header > ul {
 .habitItem img {
     max-width: 30px;
     max-height: 30px;
+    align-items: center;
 }
 
 .habitItem > button {
@@ -123,7 +126,7 @@ header > ul {
 }
 
 
-
+/* Liyu's css code */
 
 .navbar {
     background-color: lightslategray;
