@@ -16,16 +16,18 @@
 
         <hr/>
     </div>
-    <h1>Hello, Habit Hero!</h1>
-    <p>This home page.</p>
+    <div class="landingmain">
+        <h1>Become The Hero You Need</h1>
+        <p>Get ready to enhance your postive habits with friends!</p>
 
-    <form method="POST" action="{{ url_for('login') }}">
-        <input type="submit" value="Login">
-    </form>
 
-    <form method="POST" action="{{ url_for('register') }}">
-        <input type="submit" value="Register">
-    </form>
-
+        <form method="POST" action="{{ url_for('register') }}">
+            <input type="submit" value="Join Now">
+        </form>
+        <div class="landingabout">
+            <h3>Our Goal</h3>
+            <p>We want to create an environment that promotes the creation of better habits. There's no better motivator than your friends.</p>
+        </div>
+    </div>
 </body>
 

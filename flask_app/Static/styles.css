@@ -151,3 +151,43 @@ header > ul {
     margin-right: 230px; /* Adjust the margin as needed to control spacing */
 }
 
+.landingmain{
+    margin: 10% auto;
+    width: 50%;
+    text-align: center;
+}
+.landingmain h1{
+    color: black;
+    font-size: 40px;
+}
+.landingmain p{
+    font-size: 20px;
+}
+.landingmain form{
+    padding: 20px;
+}
+.landingmain input[type=submit]{
+    background-color: #E9ECF5;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #AE76A6;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+}
+.landingmain input[type=submit]:hover{
+    background-color: #AE76A6;
+    color: white;
+}
+.landingabout h3{
+    color: #AE76A6;
+}
+.landingabout p{
+    color: #AE76A6;
+    font-size: 18px;
+}
+
