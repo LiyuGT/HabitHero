@@ -1,13 +1,13 @@
 <!-- Page Content -->
 <div class="page-title"><h1><strong>OVERVIEW</strong></h1></div>
-<div class="page-title"><h2 class="bi bi-journal"><strong>Projects</strong></h2></div>
+<div class="page-title"><h2 class="bi bi-journal"><strong>Habits</strong></h2></div>
 <div class="page-content">
-    {% for project in projects %}
-        <div class="project">
+    {% for habit in habits %}
+        <div class="habit">
             <b>
                 <p class="ptitle">
-                    <a class="plink" href="{{ url_for('project_overview', project_id=project.id) }}">
-                        {{ project.title }}
+                    <a class="plink" href="{{ url_for('habit_overview', habit_id=habit.id) }}">
+                        {{ habit.title }}
                     </a>
                 </p>
             </b>
@@ -21,20 +21,20 @@ integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOn
 crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='script/modal.js') }}"></script>
 <script src="{{ url_for('static', filename='init.js') }}"></script>
-Project Create Page:
+Habit Create Page:
 <div class="page">
-        {% if project %}
-            <form action="{{ url_for('update_project', project_id=project.id) }}" method="post">
+        {% if habit %}
+            <form action="{{ url_for('update_habit', habit_id=habit.id) }}" method="post">
         {% else %}
-            <form action="create-project" method="post">
+            <form action="createhabit" method="post">
         {% endif %}
                 <p><label class="bi bi-card-text"><strong>Title</strong></label></p>
-                <p class="input-box"><input type="text" name="title" value="{% if project %}{{project.title}} {% endif %}"/></p>
+                <p class="input-box"><input type="text" name="title" value="{% if habit %}{{habit.title}} {% endif %}"/></p>
                 <p class="grey-button">
-                    {% if project %}
-                        <input type="submit" value="Update Project"/>
+                    {% if habit %}
+                        <input type="submit" value="Update Habit"/>
                     {% else %}
-                        <input type="submit" value="Create Project"/>
+                        <input type="submit" value="Create Habit"/>
                     {% endif %}
                 </p>
             </form>

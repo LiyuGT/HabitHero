@@ -15,7 +15,7 @@ class User(db.Model):
     registered_on = db.Column(db.DateTime, nullable=False)
     notes = db.relationship("Note", backref="user", lazy=True)
     comments = db.relationship("Comment", backref="user", lazy=True)
-    projects = db.relationship("Project", backref="user", cascade="all, delete", lazy=True)
+    habits = db.relationship("Habit", backref="user", cascade="all, delete", lazy=True)
 
     def __init__(self, first_name, last_name, email, password):
         self.first_name = first_name
@@ -57,13 +57,15 @@ class Comment(db.Model):
 
 
 # - User / Projects -
-class Project(db.Model):
-    __tablename__ = "projects"
+class Habit(db.Model):
+    __tablename__ = "habits"
 
     id = db.Column("id", db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     title = db.Column("title", db.String(200), nullable=False)
     created = db.Column("created", db.String(50), nullable=False)
+    streak = db.Column("streak", db.Integer, nullable=False)
+    done = db.Column("done", db.Boolean, nullable=False)    
     tasks = db.relationship("Task", backref="projects", cascade="all, delete", lazy=True)
 
     def __init__(self, title, created, user_id):
@@ -77,13 +79,13 @@ class Task(db.Model):
     __tablename__ = "tasks"
 
     id = db.Column("id", db.Integer, primary_key=True)
-    project_id = db.Column(db.Integer, db.ForeignKey("projects.id"), nullable=False)
+    habit_id = db.Column(db.Integer, db.ForeignKey("habits.id"), nullable=False)
     title = db.Column("title", db.String(200), nullable=False)
     description = db.Column("description", db.String(200), nullable=False)
     created = db.Column("created", db.String(50), nullable=False)
 
-    def __init__(self, title, desc, created, proj_id):
+    def __init__(self, title, desc, created, habit_id):
         self.title = title
         self.description = desc
         self.created = created
-        self.project_id = proj_id
+        self.habit_id = habit_id

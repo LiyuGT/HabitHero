@@ -57,3 +57,11 @@ class CommentForm(FlaskForm):
     comment = TextAreaField('Comment',validators=[Length(min=1)])
 
     submit = SubmitField('Add Comment')
+
+class HabitForm(FlaskForm):
+    class Meta:
+        csrf = False
+
+    title = StringField('Habit Name')
+
+    submit = SubmitField('Create Habit')

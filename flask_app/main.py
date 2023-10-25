@@ -10,9 +10,10 @@ from flask_socketio import SocketIO, join_room
 from models import User as User
 from models import Note as Note
 from models import Comment as Comment
-from models import Project as Project
+#from models import Project as Project
 from models import Task as Task
-from forms import RegisterForm, LoginForm, CommentForm
+from models import Habit as Habit
+from forms import RegisterForm, LoginForm, CommentForm, HabitForm
 #*/
 
 # ///// APP CREATION /////
@@ -117,16 +118,28 @@ def aboutUs():
 @app.route('/overview')
 def overview():
     if session.get('user'):
-        my_projects = db.session.query(Project).filter_by(user_id=session['user_id']).all()
+        my_habits = db.session.query(Habit).filter_by(user_id=session['user_id']).all()
 
-        return render_template('overview.html', projects=my_projects, user=session['user'])
+        return render_template('overview.html', habit=my_habits, user=session['user'])
     else:
         return redirect(url_for('login'))
 
-@app.route('/habits')
-def habits():
-    return render_template('habits.html')
+@app.route('/habits', methods =['POST', 'GET'])
+def createhabits():
 
+    form = HabitForm()
+
+    if request.method=='POST' and form.validate_on_submit():
+
+        title = request.form['title']
+        habit = Habit()
+        habit = Habit(title=title)
+        habit.streak = 0
+        habit.done = False
+        db.session.add(habit)
+        db.session.commit()
+        return redirect('/habits')
+    return render_template('habits.html', form=form)
 
 # ///// HOST & PORT CONFIG /////
 if __name__ == '__main__':
