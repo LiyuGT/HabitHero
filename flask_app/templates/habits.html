@@ -13,18 +13,58 @@
             <li>My Habits</li>
             <li>Habitats</li>
         </ul>
-        <img id="profilePicture" alt="profile picture" src="icons/images/flame_colored.png">
+        <img id="profilePicture" alt="profile picture" src="static/images/flame_colored.png">
     </header>
     <main>
+
+        <!-- Hardcoded habit for reference -->
         <div class="habitItem">
-            <button>Done!</button>
-            <p>Play guitar for 15 minutes</p>
+            <button><img src="static/images/unchecked.png"></button>
+            <p>Drink water</p>
             <div class="spacer"></div>
             <div class="streak">
                 <p>10</p>
-                <img src="icons/images/flame_grayscale.png">
+                <img src="static/images/flame_grayscale.png">
             </div>
         </div>
+
+        <div class="habitItem checkedOff">
+            <button><img src="static/images/checkmark.png"></button>
+            <p>Drink water</p>
+            <div class="spacer"></div>
+            <div class="streak">
+                <p>10</p>
+                <img src="static/images/flame_colored.png">
+            </div>
+        </div>
+
+        {% for habit in habits %}
+
+            <div class="habitItem">
+                <button>
+                    {% if habit.done %}
+                        <img src="static/images/checkmark.png">
+                    {% else %}
+                        <img src="static/images/unchecked.png">
+                    {% endif %}
+                </button>
+                
+                <p>{{ habit.title }}</p>
+                <div class="spacer"></div>
+                <div class="streak">
+                    <p>{{ habit.streak }}</p>
+
+                    {% if habit.done %}
+                        <img src="static/images/flame_colored.png">
+                    {% else %}
+                        <img src="static/images/flame_grayscale.png">
+                    {% endif %}
+                    
+                </div>
+            </div>
+
+        {% endfor %}
+        
     </main>
 </body>
 </html>
