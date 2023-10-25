@@ -92,7 +92,7 @@ header > ul {
     border-radius: 15px;
 }
 
-.habitItem ul, li, p, button {
+.habitItem * {
     /* display: flex; */
     margin: 5px;
     text-decoration: none;
@@ -107,11 +107,20 @@ header > ul {
     color: #C7C6C6;
 }
 
-.streak img {
+.habitItem img {
     max-width: 30px;
     max-height: 30px;
 }
 
+.habitItem > button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
 
 
 
