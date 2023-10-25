@@ -151,6 +151,7 @@ header > ul {
     margin-right: 230px; /* Adjust the margin as needed to control spacing */
 }
 
+<<<<<<< Updated upstream
 .landingmain{
     margin: 10% auto;
     width: 50%;
@@ -191,3 +192,29 @@ header > ul {
     font-size: 18px;
 }
 
+=======
+.form-group {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.container {
+    background: #E9ECF5;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px; /* Increase the width to 400px */
+    margin: 50px auto 0; /* Center horizontally and push down by 50px */
+    text-align: center;
+}
+
+.errors {
+    color: lightslategray;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+>>>>>>> Stashed changes
