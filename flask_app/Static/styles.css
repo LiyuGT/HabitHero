@@ -125,7 +125,6 @@ header > ul {
 	outline: inherit;
 }
 
-
 /* Login/register css code */
 
 .container {
@@ -238,34 +237,45 @@ header > ul {
 
 
 /* Button used to open the habit form */
-.open-button {
-background-color: #555;
-color: white;
-padding: 16px 20px;
-border: none;
-cursor: pointer;
-opacity: 0.8;
-/*position: fixed;*/
-display: flex;
-align-items: center;
+button {
+    padding: 16px 20px; 
+    margin-top: 10px;
+
+    background-color: var(--purple);
+    border-radius: 10px;
+    color: white;
+    border: none;
+
+    cursor: pointer;
+    opacity: 0.8;
+    /*position: fixed;*/
+    /* display: flex; */
+    /* align-items: center; */
 
 }
 
 /* The popup form - hidden by default */
 .form-popup {
-display: none;
-position: fixed;
-justify-content: center;
-right: 15px;
-border: 3px solid #f1f1f1;
-z-index: 9;
+    display: none;
+    position: fixed;
+    justify-content: center;
+
+    top: 30%;  /* Center vertically at 50% from the top of the viewport */
+    left: 50%; /* Center horizontally at 50% from the left of the viewport */
+    transform: translate(-50%, -30%);
+
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+    z-index: 9;
 }
 
 /* Add styles to the form container */
 .form-container {
-max-width: 300px;
-padding: 10px;
-background-color: white;
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
 }
 
 /* Full-width input fields */
@@ -285,19 +295,13 @@ outline: none;
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-background-color: #04AA6D;
-color: white;
-padding: 16px 20px;
-border: none;
-cursor: pointer;
-width: 100%;
-margin-bottom:10px;
-opacity: 0.8;
+    background-color: var(--purple);
+    width: 100%;
 }
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {
-background-color: red;
+background-color: lightgray;
 }
 
 /* Add some hover effects to buttons */
