@@ -9,14 +9,14 @@
 </head>
 
 <body>
-    <header>
-        <h1>Habit Hero</h1>
-        <ul>
-            <li>My Habits</li>
-            <li>Habitats</li>
-        </ul>
-        <img id="profilePicture" alt="profile picture" src="static/images/flame_colored.png">
-    </header>
+        <div class="navbar">
+            <a href="{{url_for('home')}}">Home</a>
+            <a href="">My Habits</a>
+            <h1>Habit Hero</h1>
+            <a href="">Habitats</a>
+            <a href="{{url_for('logout')}}">Logout</a>
+            <img id="profilePicture" alt="profile picture" src="static/images/flame_colored.png">
+        </div>
     <main>
 
         <!-- <div class="popup" id="popup">
