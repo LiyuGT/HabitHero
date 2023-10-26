@@ -9,11 +9,13 @@
     <body>
         <div class="navbar">
             <a href="{{url_for('home')}}">Home</a>
-            <a href="{{url_for('login')}}">Login</a>
             <a href="{{url_for('aboutUs')}}">About Us</a>
-            {% if user %}<a href="{{url_for('logout')}}">Logout</a>
-            {% else %}<a href="{{url_for('register')}}">Register</a>
-            {% endif %}<a href="{{url_for('logout')}}">Logout</a>
+            {% if user %}
+                <a href="{{url_for('logout')}}">Logout</a>
+            {% else %}
+                <a href="{{url_for('login')}}">Login</a>
+                <a href="{{url_for('register')}}">Register</a>
+            {% endif %}
         </div>
         <div class="body-content">
             {% block content %}

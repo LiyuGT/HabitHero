@@ -126,12 +126,19 @@ header > ul {
 }
 
 /* Login/register css code */
+.welcome4 {
+    margin-bottom: 90px; /* Adjust the value as needed */
+}
+
+.welcome2 {
+    margin-bottom: 90px; /* Adjust the value as needed */
+}
 
 .container {
     background-color: var(--whitepurple);
     width: 40vw;
     margin: auto;
-    padding: 10px;
+    padding: 20px; /* Increase padding for better spacing */
 }
 
 .container * {
@@ -153,31 +160,36 @@ header > ul {
     font-weight: bold;
 }
 
-.form-group > * {
-    width: max-content;
+.form-group label {
+    font-weight: bold;
+    display: block; /* Display the label on a new line for better alignment */
+    margin-bottom: 5px; /* Add some space below the label */
 }
 
 
-/* Liyu's css code */
+/* nav bar css code */
 
 .navbar {
-    background-color: lightslategray;
-    font-size: 1em;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #AE76A6; 
     color: white;
-    padding: 8px 5px 8px 5px;
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Increase padding for better spacing */
 }
 
 .nav-button {
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-left: 30px; /* Adjust margin for proper spacing */
 }
 
+.navbar a:last-child {
+    margin-right: 0; /* Remove right margin for the last link */
+}
 
 .navbar a {
     text-decoration: none;
-    color: inherit;
+    color: white;
+    margin: 0 15px; /* Add some horizontal margin to space out links */
 }
 
 .navbar-brand {
