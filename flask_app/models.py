@@ -74,6 +74,10 @@ class Habit(db.Model):
         self.created = created
         self.user_id = user_id
 
+    def delete_habit(self):
+        db.session.delete(self)
+        db.session.commit()
+
 
 # - User / Project / Tasks -
 # class Task(db.Model):
