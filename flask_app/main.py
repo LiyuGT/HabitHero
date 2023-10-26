@@ -1,5 +1,6 @@
 # ///// IMPORTS /////
 from __future__ import print_function
+import datetime
 
 import json
 import os
@@ -140,18 +141,20 @@ def overview():
 def createhabits():
 
     form = HabitForm()
-    my_habits = db.session.query(Habit).all()
+    my_habits = db.session.query(Habit).filter_by(user_id=session.get('user_id')).all()
 
     if request.method=='POST' and form.validate_on_submit():
-
+        
         title = request.form['title']
-        habit = Habit(title, 2, "hi2")
+        user_id = session.get('user_id')
+        created = datetime.date.today()  # Get the current date
+        habit = Habit(title, user_id, created)
         habit.streak = 0
         habit.done = False
         db.session.add(habit)
         db.session.commit()
         return redirect('/habits')
-    
+        
     return render_template('habits.html', habits=my_habits, form=form)
 
 # ///// HOST & PORT CONFIG /////
