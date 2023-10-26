@@ -156,16 +156,36 @@ header > ul {
     font-size: smaller;
 }
 
-.form-group label {
-    font-weight: bold;
+form * {
+    border-radius: 10px;
+    border-style: none;
 }
 
 .form-group label {
     font-weight: bold;
+    text-align: left;
     display: block; /* Display the label on a new line for better alignment */
-    margin-bottom: 5px; /* Add some space below the label */
+    /* margin-bottom: 5px; */
 }
 
+.form-group input {
+    width: 100%;
+    padding: 10px;
+
+    /* border-radius: 10px; */
+    
+}
+
+ form .submit_button {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0px !important; 
+
+    background-color: var(--lightblue);
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+}
 
 /* nav bar css code */
 
@@ -292,17 +312,17 @@ button {
 
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
-width: 100%;
-padding: 15px;
-margin: 5px 0 22px 0;
-border: none;
-background: #f1f1f1;
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
 }
 
 /* When the inputs get focus, do something */
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
-background-color: #ddd;
-outline: none;
+    background-color: #ddd;
+    outline: none;
 }
 
 /* Set a style for the submit/login button */
@@ -313,10 +333,10 @@ outline: none;
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {
-background-color: lightgray;
+    background-color: lightgray;
 }
 
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
-opacity: 1;
+    opacity: 1;
 }
