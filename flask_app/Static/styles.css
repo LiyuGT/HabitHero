@@ -9,6 +9,7 @@
     --offwhite: #F4F4F6; 
     --lightblue: #A3C3D9;
     --lightpurple: #CCD6EB;
+    --whitepurple: #E9ECF5;
     --purple: #AE76A6;
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -84,6 +85,7 @@ header > ul {
     /* Content arrangement */
     display: flex;
     align-items: center;
+    margin-top: 10px;
 
     /* Background styling */
     padding: 10px;
@@ -91,10 +93,11 @@ header > ul {
     border-radius: 15px;
 }
 
-.habitItem ul, li, p, button {
-    /* display: flex; */
+.habitItem * {
+    display: flex;
     margin: 5px;
     text-decoration: none;
+    align-items: center;
 }
 
 .streak {
@@ -106,11 +109,57 @@ header > ul {
     color: #C7C6C6;
 }
 
-.streak img {
+.habitItem img {
     max-width: 30px;
     max-height: 30px;
+    align-items: center;
 }
 
+.habitItem > button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+
+/* Login/register css code */
+
+.container {
+    background-color: var(--whitepurple);
+    width: 40vw;
+    margin: auto;
+    padding: 10px;
+}
+
+.container * {
+    padding: 5px;
+    
+}
+
+.title {
+    text-align: center;
+}
+
+.errors {
+    list-style: none;
+    color: red;
+    font-size: smaller;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group > * {
+    width: max-content;
+}
+
+
+/* Liyu's css code */
 
 .navbar {
     background-color: lightslategray;
