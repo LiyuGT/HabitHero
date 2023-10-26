@@ -79,8 +79,13 @@ class Habit(db.Model):
         db.session.commit()
 
     def markAsDone(self):
-        self.done = True
-        self.streak = self.streak + 1
+
+        if self.done == False:
+            self.done = True
+            self.streak = self.streak + 1
+        elif self.done == True:
+            self.done = False
+            self.streak = self.streak - 1
         db.session.commit()
 
 
