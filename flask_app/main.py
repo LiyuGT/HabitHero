@@ -157,6 +157,12 @@ def createhabits():
         
     return render_template('habits.html', habits=my_habits, form=form)
 
+@app.route('/habits/<habit_id>/delete', methods=['POST'])
+def delete_habit(habit_id):
+    habit = Habit.query.get_or_404(habit_id)
+    habit.delete_habit()
+    return redirect('/habits')
+
 # ///// HOST & PORT CONFIG /////
 if __name__ == '__main__':
     # socketio.run(app, debug=True)
