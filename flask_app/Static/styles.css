@@ -9,6 +9,7 @@
     --offwhite: #F4F4F6; 
     --lightblue: #A3C3D9;
     --lightpurple: #CCD6EB;
+    --whitepurple: #E9ECF5;
     --purple: #AE76A6;
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -123,6 +124,39 @@ header > ul {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+}
+
+
+/* Login/register css code */
+
+.container {
+    background-color: var(--whitepurple);
+    width: 40vw;
+    margin: auto;
+    padding: 10px;
+}
+
+.container * {
+    padding: 5px;
+    
+}
+
+.title {
+    text-align: center;
+}
+
+.errors {
+    list-style: none;
+    color: red;
+    font-size: smaller;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group > * {
+    width: max-content;
 }
 
 
