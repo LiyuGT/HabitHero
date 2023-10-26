@@ -75,7 +75,7 @@
         {% for habit in habits %}
 
         <div class="habitItem">
-            <button>
+            <button onclick="markAsDone('{{ habit.id }}')">
                 {% if habit.done %}
                 <img src="static/images/checkmark.png">
                 {% else %}
