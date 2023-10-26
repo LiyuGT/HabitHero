@@ -140,6 +140,7 @@ def overview():
 def createhabits():
 
     form = HabitForm()
+    my_habits = db.session.query(Habit).all()
 
     if request.method=='POST' and form.validate_on_submit():
 
@@ -150,7 +151,8 @@ def createhabits():
         db.session.add(habit)
         db.session.commit()
         return redirect('/habits')
-    return render_template('habits.html', form=form)
+    
+    return render_template('habits.html', habits=my_habits, form=form)
 
 # ///// HOST & PORT CONFIG /////
 if __name__ == '__main__':
