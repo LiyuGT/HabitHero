@@ -78,6 +78,11 @@ class Habit(db.Model):
         db.session.delete(self)
         db.session.commit()
 
+    def markAsDone(self):
+        self.done = True
+        self.streak = self.streak + 1
+        db.session.commit()
+
 
 # - User / Project / Tasks -
 # class Task(db.Model):

@@ -121,6 +121,12 @@
             }
         }
 
+        function markAsDone(habitId) {
+            fetch(`/habits/${habitId}/update`, { method: 'POST' })
+                    .then(() => location.reload())
+                    .catch(error => console.error('Error:', error));
+        }
+
     </script>
 </body>
 
