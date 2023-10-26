@@ -17,12 +17,12 @@ from flask import (Flask, Response, jsonify, redirect, render_template,
 from flask_socketio import SocketIO, join_room
 from flask_sqlalchemy import SQLAlchemy
 from forms import CommentForm, HabitForm, LoginForm, RegisterForm
+#from models import Task as Task
 #from models import Project as Project
 #//// Potential Import Guidelines (Will substitute Note to Habit for example) ////#
 from models import Comment as Comment
 from models import Habit as Habit
 from models import Note as Note
-from models import Task as Task
 from models import User as User
 
 #*/
@@ -55,7 +55,8 @@ with app.app_context():
 def home():
     return render_template('home.html')
 
-
+def generate_user_id():
+    return str(uuid.uuid4())
 
 # ---------- User - Account ----------
 # - User Registration -
@@ -134,7 +135,7 @@ def overview():
         return render_template('overview.html', habit=my_habits, user=session['user'])
     else:
         return redirect(url_for('login'))
-
+    
 @app.route('/habits', methods =['POST', 'GET'])
 def createhabits():
 
@@ -143,8 +144,7 @@ def createhabits():
     if request.method=='POST' and form.validate_on_submit():
 
         title = request.form['title']
-        habit = Habit()
-        habit = Habit(title=title)
+        habit = Habit(title, 2, "hi2")
         habit.streak = 0
         habit.done = False
         db.session.add(habit)

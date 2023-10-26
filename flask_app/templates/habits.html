@@ -17,8 +17,40 @@
     </header>
     <main>
 
+<!-- <div class="popup" id="popup">
+<div class="popup-content">
+    <span class="close" id="closePopupButton">&times;</span>
+    <h1>Create Habit</h1>
+
+  <form method="POST" id="/habits">
+    {{form.title.label}} {{form.title}}
+    {{form.submit}}
+
+  </form>
+</div> -->
+
+<button class="open-button" onclick="openForm()">Create Habit</button>
+
+   <!-- <label for="email"><b>Habit Name</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required> -->
+<!-- The form -->
+<div class="form-popup" id="myForm">
+  <form method="POST" action="/habits" class="form-container">
+    <h1>Create Habit</h1>
+
+    {{form.title.label}} {{form.title}}
+ 
+    <button type="submit" class="btn">Create Habit</button>
+
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
         <!-- Hardcoded habit for reference -->
-        <div class="habitItem">
+        <!-- <div class="habitItem">
             <button><img src="static/images/unchecked.png"></button>
             <p>Drink water</p>
             <div class="spacer"></div>
@@ -36,7 +68,7 @@
                 <p>10</p>
                 <img src="static/images/flame_colored.png">
             </div>
-        </div>
+        </div> -->
 
         {% for habit in habits %}
 
@@ -66,5 +98,16 @@
         {% endfor %}
         
     </main>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
 </body>
+
 </html>

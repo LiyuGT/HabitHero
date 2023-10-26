@@ -1,9 +1,9 @@
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, TextAreaField
-from wtforms.validators import Length, DataRequired, EqualTo, Email
-from wtforms import ValidationError
-from models import User
 from database import db
+from flask_wtf import FlaskForm
+from models import User
+from wtforms import (PasswordField, StringField, SubmitField, TextAreaField,
+                     ValidationError)
+from wtforms.validators import DataRequired, Email, EqualTo, Length
 
 
 class RegisterForm(FlaskForm):
@@ -65,3 +65,4 @@ class HabitForm(FlaskForm):
     title = StringField('Habit Name')
 
     submit = SubmitField('Create Habit')
+    fields = ['title', 'submit']

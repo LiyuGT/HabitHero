@@ -1,7 +1,8 @@
 # ///// IMPORTS /////
 import datetime
-from database import db
+import uuid
 
+from database import db
 
 
 # ///// MODELS /////
@@ -61,31 +62,31 @@ class Habit(db.Model):
     __tablename__ = "habits"
 
     id = db.Column("id", db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
-    title = db.Column("title", db.String(200), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), autoincrement=True)
+    title = db.Column("title", db.String(200))
     created = db.Column("created", db.String(50), nullable=False)
-    streak = db.Column("streak", db.Integer, nullable=False)
-    done = db.Column("done", db.Boolean, nullable=False)    
-    tasks = db.relationship("Task", backref="projects", cascade="all, delete", lazy=True)
+    streak = db.Column("streak", db.Integer)
+    done = db.Column("done", db.Boolean)
+    #tasks = db.relationship("Task", backref="projects", cascade="all, delete", lazy=True)
 
-    def __init__(self, title, created, user_id):
+    def __init__(self, title, user_id, created):
         self.title = title
         self.created = created
         self.user_id = user_id
 
 
 # - User / Project / Tasks -
-class Task(db.Model):
-    __tablename__ = "tasks"
+# class Task(db.Model):
+#     __tablename__ = "tasks"
 
-    id = db.Column("id", db.Integer, primary_key=True)
-    habit_id = db.Column(db.Integer, db.ForeignKey("habits.id"), nullable=False)
-    title = db.Column("title", db.String(200), nullable=False)
-    description = db.Column("description", db.String(200), nullable=False)
-    created = db.Column("created", db.String(50), nullable=False)
+#     id = db.Column("id", db.Integer, primary_key=True)
+#     habit_id = db.Column(db.Integer, db.ForeignKey("habits.id"), nullable=False)
+#     title = db.Column("title", db.String(200), nullable=False)
+#     description = db.Column("description", db.String(200), nullable=False)
+#     created = db.Column("created", db.String(50), nullable=False)
 
-    def __init__(self, title, desc, created, habit_id):
-        self.title = title
-        self.description = desc
-        self.created = created
-        self.habit_id = habit_id
+#     def __init__(self, title, desc, created, habit_id):
+#         self.title = title
+#         self.description = desc
+#         self.created = created
+#         self.habit_id = habit_id
