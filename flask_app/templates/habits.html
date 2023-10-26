@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Habits</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
-    <header>
-        <h1>Habit Hero</h1>
-        <ul>
-            <li>My Habits</li>
-            <li>Habitats</li>
-        </ul>
-        <img id="profilePicture" alt="profile picture" src="static/images/flame_colored.png">
-    </header>
+        <div class="navbar">
+            <a href="{{url_for('home')}}">Home</a>
+            <a href="">My Habits</a>
+            <h1>Habit Hero</h1>
+            <a href="">Habitats</a>
+            <a href="{{url_for('logout')}}">Logout</a>
+            <img id="profilePicture" alt="profile picture" src="static/images/profile_default.jpeg">
+        </div>
     <main>
 
         <!-- <div class="popup" id="popup">
@@ -75,7 +75,7 @@
         {% for habit in habits %}
 
         <div class="habitItem">
-            <button>
+            <button onclick="markAsDone('{{ habit.id }}')">
                 {% if habit.done %}
                 <img src="static/images/checkmark.png">
                 {% else %}
@@ -96,7 +96,7 @@
 
             </div>
 
-            <button type="submit" class="btn" onclick="removeHabit('{{ habit.id }}')">Remove</button>
+            <button type="submit" class="btn" onclick="removeHabit('{{ habit.id }}')"><img id="delete_habit" src="static/images/remove.png" ></button>
 
         </div>
 
@@ -119,6 +119,12 @@
                     .then(() => location.reload())
                     .catch(error => console.error('Error:', error));
             }
+        }
+
+        function markAsDone(habitId) {
+            fetch(`/habits/${habitId}/update`, { method: 'POST' })
+                    .then(() => location.reload())
+                    .catch(error => console.error('Error:', error));
         }
 
     </script>

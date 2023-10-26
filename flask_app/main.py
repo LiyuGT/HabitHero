@@ -163,6 +163,22 @@ def delete_habit(habit_id):
     habit.delete_habit()
     return redirect('/habits')
 
+
+@app.route('/habits/<habit_id>/update', methods=['POST'])
+def markAsDone(habit_id):
+    habit = Habit.query.get_or_404(habit_id)
+    habit.markAsDone()
+    return redirect('/habits')
+
+def markAsDone(habit_id):
+    habit = Habit.query.get_or_404(habit_id)
+    
+    # Toggle the 'done' status
+    habit.done = True
+    habit.streak += 1
+
+    db.session.commit()
+
 # ///// HOST & PORT CONFIG /////
 if __name__ == '__main__':
     # socketio.run(app, debug=True)
