@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ChatHomePage">
+    <title>HabitHero Chat</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+
+    <div class="chathome">
+        <h1 class="mychat">My Chat App </h1>
+        <form action="/chatroom">
+            <div>
+                <label class="bi bi-person">Enter your username:</label>
+                <input type="text" name="username">
+            </div>
+            <div>
+                <label class="bi bi-person-bounding-box">Enter your room id:</label>
+                <input type="text" name="room">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="{{url_for('static', filename='init.js')}}"></script>
+</body>

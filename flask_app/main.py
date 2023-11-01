@@ -179,6 +179,41 @@ def markAsDone(habit_id):
 
     db.session.commit()
 
+# ---------- Chat ----------
+@app.route('/chat')
+def chat():
+    return render_template("chat.html")
+
+
+# - Chatroom -
+@app.route('/chatroom')
+def chatroom():
+    username = request.args.get('username')
+    room = request.args.get('room')
+
+    if username and room:
+        return render_template('chatroom.html', username=username, room=room)
+    else:
+        return redirect(url_for('chat'))
+
+
+# - Send Message -
+@socketio.on('send_message')
+def handle_send_message_event(data):
+    app.logger.info("{} has sent message to the room {}:{}".format(data['username'], data['room'], data['message']))
+
+    socketio.emit('receive_message', data, room=data['room'])
+
+
+# - Join Room -
+@socketio.on('join_room')
+def handle_join_room_event(data):
+    app.logger.info("{} has joined the room {}".format(data['username'], data['room']))
+    join_room(data['room'])
+    socketio.emit('join_room_announcement', data)
+
+# -----------------------------------------------
+
 # ///// HOST & PORT CONFIG /////
 if __name__ == '__main__':
     # socketio.run(app, debug=True)
