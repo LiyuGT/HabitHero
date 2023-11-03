@@ -51,6 +51,15 @@
             </form>
         </div>
 
+        <div class="form-popup" id="editForm">
+            <form method="POST" id="editHabitForm" class="form-container">
+                <h1>Edit Habit</h1>
+                {{ form.new_title.label }} {{ form.new_title }}
+                <button type="button" class="btn" onclick="saveEdit()">Save Edit</button>
+                <button type="button" class="btn cancel" onclick="closeEdit()">Cancel</button>
+            </form>
+        </div>
+
         <!-- Hardcoded habit for reference -->
         <!-- <div class="habitItem">
             <button><img src="static/images/unchecked.png"></button>
@@ -97,7 +106,7 @@
             </div>
 
             <button type="submit" class="btn" onclick="removeHabit('{{ habit.id }}')"><img id="delete_habit" src="static/images/remove.png" ></button>
-
+            <button type="submit" class="btn" onclick="editHabit('{{ habit.id }}')"> Edit </button>
         </div>
 
         {% endfor %}
@@ -125,6 +134,38 @@
             fetch(`/habits/${habitId}/update`, { method: 'POST' })
                     .then(() => location.reload())
                     .catch(error => console.error('Error:', error));
+        }
+
+        function closeEdit() {
+            document.getElementById("editForm").style.display = "none";
+        }
+
+        function editHabit(habitId, habitTitle) {
+            document.getElementById("editForm").style.display = "block";
+            document.getElementById("editHabitForm").setAttribute("data-habit-id", habitId);
+            document.querySelector("#editForm input[name='title']").value = habitTitle;
+        }
+
+        function saveEdit() {
+            const habitId = document.getElementById("editHabitForm").getAttribute("data-habit-id");
+            const newTitle = document.querySelector("#editForm input[name='new_title']").value; // Change 'title' to 'new_title'
+            const data = { id: habitId, new_title: newTitle }; // Change 'title' to 'new_title'
+
+            fetch(`/habits/${habitId}/edithabits`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    closeEdit();
+                    location.reload();
+                } else {
+                    // Handle errors, display an error message, etc.
+                }
+            })
+            .catch(error => console.error('Error:', error));
         }
 
     </script>

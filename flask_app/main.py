@@ -17,7 +17,7 @@ from flask import (Flask, Response, jsonify, redirect, render_template,
                    request, session, url_for)
 from flask_socketio import SocketIO, join_room
 from flask_sqlalchemy import SQLAlchemy
-from forms import CommentForm, HabitForm, LoginForm, RegisterForm
+from forms import CommentForm, HabitForm, LoginForm, RegisterForm, EditHabitForm
 #from models import Task as Task
 #from models import Project as Project
 #//// Potential Import Guidelines (Will substitute Note to Habit for example) ////#
@@ -25,7 +25,7 @@ from models import Comment as Comment
 from models import Habit as Habit
 from models import Note as Note
 from models import User as User
-
+from flask import jsonify
 #*/
 
 # ///// APP CREATION /////
@@ -213,6 +213,17 @@ def handle_join_room_event(data):
     socketio.emit('join_room_announcement', data)
 
 # -----------------------------------------------
+
+@app.route('/habits/<int:habit_id>/edithabits', methods=['POST'])
+def edit_habit(habit_id):
+    form = EditHabitForm()
+
+    if form.validate_on_submit():
+        habit = Habit.query.get_or_404(habit_id)
+        habit.title = form.new_title.data
+        db.session.commit()
+        return jsonify(success=True)
+    return jsonify(success=False)
 
 # ///// HOST & PORT CONFIG /////
 if __name__ == '__main__':
