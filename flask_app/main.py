@@ -225,6 +225,11 @@ def edit_habit(habit_id):
         return jsonify(success=True)
     return jsonify(success=False)
 
+# - See Habitats -
+@app.route('/habitats')
+def habitats():
+    return render_template('habitats.html')
+
 # ///// HOST & PORT CONFIG /////
 if __name__ == '__main__':
     # socketio.run(app, debug=True)
