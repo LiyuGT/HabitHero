@@ -403,11 +403,10 @@ button {
 .habitat_item {
     display: flex;
     align-items: center;
-    margin: 5px;
+    margin: 10px 10px 0px 10px;
 }
 
-.sidebar > .habitat_item {
-
+.sidebar > .habitat_item + :not(.selected_habitat) {
     border-bottom: solid 3px;
     border-image: 
       linear-gradient(
@@ -420,9 +419,18 @@ button {
     padding-bottom: 10px;
 }
 
+.sidebar > .selected_habitat {
+
+    padding: 5px 0 5px 0px;
+
+    background-color: var(--lightblue);
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 100, .1);
+}
+
 .habitat_icon {
-    max-width: 40px;
-    max-height: 40px;
+    max-width: 50px;
+    max-height: 50px;
     margin: 10px;
 
     object-fit: cover;
