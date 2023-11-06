@@ -406,6 +406,20 @@ button {
     margin: 5px;
 }
 
+.sidebar > .habitat_item {
+
+    border-bottom: solid 3px;
+    border-image: 
+      linear-gradient(
+        90deg, 
+        rgba(0, 0, 0, 0),
+        var(--lightblue), 
+        rgba(0, 0, 0, 0)
+      ) 1;
+
+    padding-bottom: 10px;
+}
+
 .habitat_icon {
     max-width: 40px;
     max-height: 40px;
