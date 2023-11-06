@@ -388,15 +388,39 @@ button {
 
 .sidebar {
     width: 400px;
-    max-width: 30%;
+    max-width: 25%;
+    display: flex;
+    flex-direction: column;
 }
 
 .habitat_view {
     right: 0;
-    min-width: 70%;
+    min-width: 75%;
     background-color: var(--offwhite);
     
 }
+
+.habitat_item {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.habitat_icon {
+    max-width: 40px;
+    max-height: 40px;
+    margin: 10px;
+
+    object-fit: cover;
+    border-radius: 100%;
+    border: solid 2px black;
+
+    align-items: center;
+}
+
+/* .habitat_details {
+    text-overflow: ellipsis !important;
+} */
 
 .centered {
     display: flex;
