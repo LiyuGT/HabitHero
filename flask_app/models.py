@@ -31,6 +31,7 @@ class Note(db.Model):
     id = db.Column("id", db.Integer, primary_key=True)
     title = db.Column("title", db.String(200))
     text = db.Column("text", db.String(100))
+    descrip = db.Column("descrip", db.String(100))
     date = db.Column("date", db.String(50))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
 
