@@ -31,7 +31,9 @@
   </form>
 </div> -->
 
-        <button class="open-button" onclick="openForm()">Create Habit</button>
+        <button class="open-button" onclick="openForm()">Quick Add Habit</button>
+        <button class="open-button" onclick="openFormSlow()">Slow Add Habit</button>
+        
 
         <!-- <label for="email"><b>Habit Name</b></label>
     <input type="text" placeholder="Enter Email" name="email" required>
@@ -41,13 +43,26 @@
         <!-- The form -->
         <div class="form-popup" id="myForm">
             <form method="POST" action="/habits" class="form-container">
-                <h1>Create Habit</h1>
+                <h1>Quick Add Habit</h1>
 
                 {{form.title.label}} {{form.title}}
 
-                <button type="submit" class="btn">Create Habit</button>
+                <button type="submit" class="btn">Quick Add Habit</button>
 
                 <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+        <div class="form-popup" id="myFormSlow">
+            <form method="POST" action="/SlowAdd" class="form-container">
+                <h1>Slow Add Habit</h1>
+
+                {{form.title.label}} {{form.title}}
+               
+
+                <button type="submit" class="btn">Slow Add Habit</button>
+
+                <button type="button" class="btn cancel" onclick="closeFormSlow()">Close</button>
             </form>
         </div>
 
@@ -120,6 +135,14 @@
 
         function closeForm() {
             document.getElementById("myForm").style.display = "none";
+        }
+
+        function openFormSlow() {
+            document.getElementById("myFormSlow").style.display = "block";
+        }
+
+        function closeFormSlow() {
+            document.getElementById("myFormSlow").style.display = "none";
         }
 
         function removeHabit(habitId) {

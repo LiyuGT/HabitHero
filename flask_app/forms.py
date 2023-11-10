@@ -64,6 +64,7 @@ class HabitForm(FlaskForm):
 
     title = StringField('Habit Name')
     new_title = StringField('Habit Name')
+    # description = StringField('Description')
     submit = SubmitField('Create Habit')
     submit = SubmitField('Edit Habit')
     fields = ['title', 'submit']
