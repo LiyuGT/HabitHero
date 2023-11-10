@@ -17,7 +17,7 @@ from flask import (Flask, Response, jsonify, redirect, render_template,
                    request, session, url_for)
 from flask_socketio import SocketIO, join_room
 from flask_sqlalchemy import SQLAlchemy
-from forms import CommentForm, HabitForm, LoginForm, RegisterForm, EditHabitForm
+from forms import CommentForm, HabitForm, LoginForm, RegisterForm
 #from models import Task as Task
 #from models import Project as Project
 #//// Potential Import Guidelines (Will substitute Note to Habit for example) ////#
@@ -157,6 +157,29 @@ def createhabits():
         
     return render_template('habits.html', habits=my_habits, form=form)
 
+@app.route('/SlowAdd', methods =['POST', 'GET'])
+def createhabitsslow():
+
+    form = HabitForm()
+    my_habits = db.session.query(Habit).filter_by(user_id=session.get('user_id')).all()
+
+    if request.method=='POST' and form.validate_on_submit():
+        
+        title = request.form['title']
+        user_id = session.get('user_id')
+        # description = request.form['description']
+        created = datetime.date.today()  # Get the current date
+        # habit = Habit(title, user_id, description, created)
+        habit = Habit(title, user_id, created)
+        habit.streak = 0
+        habit.done = False
+        db.session.add(habit)
+        db.session.commit()
+        return redirect('/habits')
+        
+    return render_template('habits.html', habits=my_habits, form=form)
+
+
 @app.route('/habits/<habit_id>/delete', methods=['POST'])
 def delete_habit(habit_id):
     habit = Habit.query.get_or_404(habit_id)
@@ -216,7 +239,7 @@ def handle_join_room_event(data):
 
 @app.route('/habits/<int:habit_id>/edithabits', methods=['POST'])
 def edit_habit(habit_id):
-    form = EditHabitForm()
+    form = HabitForm()
 
     if form.validate_on_submit():
         habit = Habit.query.get_or_404(habit_id)
