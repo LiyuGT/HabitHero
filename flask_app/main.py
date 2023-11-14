@@ -153,8 +153,9 @@ def createhabits():
         
         title = request.form['title']
         user_id = session.get('user_id')
+        description = ""
         created = datetime.date.today()  # Get the current date
-        habit = Habit(title, user_id, created)
+        habit = Habit(title, user_id, description, created)
         habit.streak = 0
         habit.done = False
         db.session.add(habit)
