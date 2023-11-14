@@ -31,6 +31,7 @@ class Note(db.Model):
     id = db.Column("id", db.Integer, primary_key=True)
     title = db.Column("title", db.String(200))
     text = db.Column("text", db.String(100))
+    descrip = db.Column("descrip", db.String(100))
     date = db.Column("date", db.String(50))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
 
@@ -64,6 +65,7 @@ class Habit(db.Model):
     id = db.Column("id", db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), autoincrement=True)
     title = db.Column("title", db.String(200))
+    description = db.Column("description", db.String(500))
     created = db.Column("created", db.String(50), nullable=False)
     streak = db.Column("streak", db.Integer)
     done = db.Column("done", db.Boolean)
@@ -71,8 +73,11 @@ class Habit(db.Model):
     
     #tasks = db.relationship("Task", backref="projects", cascade="all, delete", lazy=True)
 
-    def __init__(self, title, user_id, created):
+
+    def __init__(self, title, description, user_id, created): 
+    # def __init__(self, title, user_id, created): 
         self.title = title
+        self.description = description
         self.created = created
         self.user_id = user_id
 
