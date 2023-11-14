@@ -155,7 +155,7 @@ def createhabits():
         user_id = session.get('user_id')
         description = ""
         created = datetime.date.today()  # Get the current date
-        habit = Habit(title, user_id, description, created)
+        habit = Habit(user_id, title, description, created)
         habit.streak = 0
         habit.done = False
         db.session.add(habit)
@@ -176,7 +176,7 @@ def createhabitsslow():
         user_id = session.get('user_id')
         description = request.form['description']
         created = datetime.date.today()  # Get the current date
-        habit = Habit(title, user_id, description, created)
+        habit = Habit(user_id, title, description, created)
         # habit = Habit(title, user_id, created)
         habit.streak = 0
         habit.done = False

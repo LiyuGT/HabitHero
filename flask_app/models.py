@@ -74,12 +74,13 @@ class Habit(db.Model):
     #tasks = db.relationship("Task", backref="projects", cascade="all, delete", lazy=True)
 
 
-    def __init__(self, title, description, user_id, created): 
+    def __init__(self, user_id, title, description, created): 
     # def __init__(self, title, user_id, created): 
+        self.user_id = user_id
         self.title = title
         self.description = description
         self.created = created
-        self.user_id = user_id
+        
 
     def delete_habit(self):
         db.session.delete(self)
