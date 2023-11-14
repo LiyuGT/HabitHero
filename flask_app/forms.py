@@ -1,8 +1,9 @@
 from database import db
 from flask_wtf import FlaskForm
+from flask_wtf.file import FileAllowed, FileField
 from models import User
-from wtforms import (PasswordField, StringField, SubmitField, TextAreaField,
-                     ValidationError)
+from wtforms import (FileField, PasswordField, StringField, SubmitField,
+                     TextAreaField, ValidationError)
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 
 
@@ -76,3 +77,14 @@ class EditHabitForm(FlaskForm):
     new_title = StringField('Habit Name')
     submit = SubmitField('Edit Habit')
     fields = ['new_title', 'submit']
+
+class CreateHabitat(FlaskForm):
+    class Meta:
+        csrf = False
+
+    title = StringField('Habitat Name')
+    description = TextAreaField('Description')
+    icon_image = FileField("Habitat Image")
+    submit = SubmitField('Create Habitat')
+    fields = ['title', 'description', 'icon_image', 'submit']
+

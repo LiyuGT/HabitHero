@@ -67,6 +67,8 @@ class Habit(db.Model):
     created = db.Column("created", db.String(50), nullable=False)
     streak = db.Column("streak", db.Integer)
     done = db.Column("done", db.Boolean)
+
+    
     #tasks = db.relationship("Task", backref="projects", cascade="all, delete", lazy=True)
 
     def __init__(self, title, user_id, created):
@@ -87,6 +89,22 @@ class Habit(db.Model):
             self.done = False
             self.streak = self.streak - 1
         db.session.commit()
+
+class Habitat(db.Model):
+    __tablename__ = "habitats"
+
+    id = db.Column("id", db.Integer, primary_key=True, autoincrement=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), autoincrement=True)
+    description = db.Text()
+    icon_image = db.Column(db.String(255))
+    title = db.Column("title", db.String(200))
+
+    def __init__(self, title, user_id, description, icon_image):
+        self.title = title
+        self.description = description
+        self.icon_image = icon_image
+        self.user_id = user_id
+
 
 
 # - User / Project / Tasks -

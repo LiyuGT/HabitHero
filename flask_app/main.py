@@ -1,31 +1,35 @@
 # ///// IMPORTS /////
 from __future__ import print_function
-import datetime
 
+import datetime
 import json
 import os
 import sqlite3
 import sys
-import uuid
+import uuid as uuid
+from os.path import dirname, join, realpath
 
 import bcrypt
 import flask
 import flask_socketio
 import httplib2
 from database import db
-from flask import (Flask, Response, jsonify, redirect, render_template,
+from flask import (Flask, Response, flash, jsonify, redirect, render_template,
                    request, session, url_for)
 from flask_socketio import SocketIO, join_room
 from flask_sqlalchemy import SQLAlchemy
-from forms import CommentForm, HabitForm, LoginForm, RegisterForm, EditHabitForm
+from forms import (CommentForm, CreateHabitat, EditHabitForm, HabitForm,
+                   LoginForm, RegisterForm)
 #from models import Task as Task
 #from models import Project as Project
 #//// Potential Import Guidelines (Will substitute Note to Habit for example) ////#
 from models import Comment as Comment
 from models import Habit as Habit
+from models import Habitat as Habitat
 from models import Note as Note
 from models import User as User
-from flask import jsonify
+from werkzeug.utils import secure_filename
+
 #*/
 
 # ///// APP CREATION /////
@@ -39,6 +43,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///flask_habit_app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'SE4150'
 
+UPLOAD_FOLDER = join(dirname(realpath(__file__)), 'static/images/..')
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 #  Binds SQLAlchemy db object to this Flask app
 db.init_app(app)
 
@@ -178,6 +184,45 @@ def markAsDone(habit_id):
     habit.streak += 1
 
     db.session.commit()
+
+#----- Habitat Routes ----#
+
+@app.route('/habitats', methods=['GET', 'POST'])
+def create_habitat():
+
+    form = CreateHabitat()
+
+    if request.method == "POST" and form.validate_on_submit():
+        title = request.form['title']
+        description = request.form['description']
+        user_id = session.get('user_id')
+        icon_image = request.files['icon_image']
+
+        pic_filename = secure_filename(icon_image.filename)
+        pic_name = str(uuid.uuid1())+"_"+pic_filename
+
+        saver = request.files['icon_image']
+
+        icon_image = pic_name
+
+        saver.save(os.path.join(app.config['UPLOAD_FOLDER'], pic_name))
+
+        habitat = Habitat(title, user_id, description, icon_image)
+
+        db.session.add(habitat)
+        db.session.commit()
+
+        return redirect('/habitats')
+
+    return render_template('habitats.html', form=form)
+
+# @habitats_bp.route('/<int:habitat_id>')
+# def view_habitat(habitat_id):
+#     habitat = get_or_404(Habitat, habitat_id)
+#     habits = habitat.habits  # Retrieve habits associated with the habitat
+#     return render_template('habitats/view_habitat.html', habitat=habitat, habits=habits)
+
+#------------------------------#
 
 # ---------- Chat ----------
 @app.route('/chat')
