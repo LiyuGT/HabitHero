@@ -230,7 +230,8 @@ def create_habitat():
 
         icon_image = pic_name
 
-        saver.save(os.path.join(app.config['UPLOAD_FOLDER'], pic_name))
+        subfolder = 'images/user_uploads'
+        saver.save(os.path.join(app.config['UPLOAD_FOLDER'], subfolder, pic_name))
 
         habitat = Habitat(title, user_id, description, icon_image)
 
