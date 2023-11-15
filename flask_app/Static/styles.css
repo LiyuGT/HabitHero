@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 :root {
@@ -403,11 +404,13 @@ button {
 .habitat_item {
     display: flex;
     align-items: center;
-    margin: 10px 10px 0px 10px;
+    margin: 0;
+    padding: 10px;
+    color: black;
 }
 
 .sidebar > .habitat_item + :not(.selected_habitat) {
-    border-bottom: solid 3px;
+    border-top: solid 3px;
     border-image: 
       linear-gradient(
         90deg, 

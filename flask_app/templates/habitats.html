@@ -36,14 +36,14 @@
             <button class="open-button" onclick="openForm()">Create Habitat</button>
 
             {% for habitat in habitats %}
-
-            <div class="habitat_item">
+            <a class="habitat_item" href="{{url_for('createhabits')}}">
                 <img class="habitat_icon" src="{{ url_for('static', filename=habitat.icon_image) }}">
                 <div class="habitat_details">
                     <h3>{{ habitat.title }}</h3>
                     <p>Corresponding Habit</p>
                 </div>
-            </div>
+            </a>
+            
     
             {% endfor %}
 
