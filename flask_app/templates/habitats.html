@@ -34,7 +34,20 @@
     <main class="container_with_sidebar">
         <div class="sidebar">
             <button class="open-button" onclick="openForm()">Create Habitat</button>
-            <div class="habitat_item selected_habitat">
+
+            {% for habitat in habitats %}
+
+            <div class="habitat_item">
+                <img class="habitat_icon" src="{{ url_for('static', filename=habitat.icon_image) }}">
+                <div class="habitat_details">
+                    <h3>{{ habitat.title }}</h3>
+                    <p>Corresponding Habit</p>
+                </div>
+            </div>
+    
+            {% endfor %}
+
+            <!-- <div class="habitat_item selected_habitat">
                 <img class="habitat_icon" src="static/images/checkmark.png">
                 <div class="habitat_details">
                     <h3>Classical Guitar</h3>
@@ -47,7 +60,7 @@
                     <h3>Book Club</h3>
                     <p>Read one chapter</p>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="habitat_view centered">

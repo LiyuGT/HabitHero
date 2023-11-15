@@ -213,7 +213,8 @@ def markAsDone(habit_id):
 
 @app.route('/habitats', methods=['GET', 'POST'])
 def create_habitat():
-
+    
+    my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
     form = CreateHabitat()
 
     if request.method == "POST" and form.validate_on_submit():
@@ -238,7 +239,7 @@ def create_habitat():
 
         return redirect('/habitats')
 
-    return render_template('habitats.html', form=form)
+    return render_template('habitats.html', form=form, habitats=my_habitats)
 
 # @habitats_bp.route('/<int:habitat_id>')
 # def view_habitat(habitat_id):

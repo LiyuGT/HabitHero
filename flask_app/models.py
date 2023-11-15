@@ -111,8 +111,6 @@ class Habitat(db.Model):
         self.icon_image = icon_image
         self.user_id = user_id
 
-
-
 # - User / Project / Tasks -
 # class Task(db.Model):
 #     __tablename__ = "tasks"
