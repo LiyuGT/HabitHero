@@ -392,6 +392,7 @@ button {
     max-width: 25%;
     display: flex;
     flex-direction: column;
+
 }
 
 .habitat_view {
@@ -403,13 +404,14 @@ button {
 
 .habitat_item {
     display: flex;
-    align-items: center;
+    align-items: center !important;
     margin: 0;
-    padding: 10px;
+    padding: 5px;
+    margin: 0px 10px 0px 10px;
     color: black;
 }
 
-.sidebar > .habitat_item + :not(.selected_habitat) {
+.sidebar > .habitat_item {
     border-top: solid 3px;
     border-image: 
       linear-gradient(
@@ -418,17 +420,19 @@ button {
         var(--lightblue), 
         rgba(0, 0, 0, 0)
       ) 1;
-
-    padding-bottom: 10px;
+}
+.selected_habitat, 
+.selected_habitat + .habitat_item,  
+.habitat_item:first-of-type
+{
+    margin-top: 3px;
+    border: none;
 }
 
-.sidebar > .selected_habitat {
-
-    padding: 5px 0 5px 0px;
-
+.selected_habitat {
     background-color: var(--lightblue);
+    opacity: 100% !important;
     border-radius: 15px;
-    box-shadow: inset 0px 0px 10px rgba(0, 0, 100, .1);
 }
 
 .habitat_icon {
