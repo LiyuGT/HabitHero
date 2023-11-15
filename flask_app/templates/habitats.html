@@ -8,9 +8,7 @@
 </head>
 <body>
 
-    <button class="open-button" onclick="openForm()">Create Habit</button>
-
-    div class="form-popup" id="myForm">
+    <div class="form-popup" id="myForm">
             <form method="POST" action="/habitats" class="form-container" enctype="multipart/form-data">
                 <h1>Create Habitat</h1>
 
@@ -35,6 +33,7 @@
     </div>
     <main class="container_with_sidebar">
         <div class="sidebar">
+            <button class="open-button" onclick="openForm()">Create Habitat</button>
             <div class="habitat_item selected_habitat">
                 <img class="habitat_icon" src="static/images/checkmark.png">
                 <div class="habitat_details">
