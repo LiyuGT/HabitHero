@@ -457,3 +457,62 @@ button {
     align-items: center;
     justify-content: center;
 }
+
+/* chatroom css */
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    margin: 20px;
+}
+
+.message {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 100px;
+    background-color: var(--lightblue);
+}
+
+.announcement {
+    color: gray;
+    text-align: center;
+}
+
+.received {
+    background-color: #7e3a3a; /* Light grey for received messages */
+}
+
+#message_input_form {
+    width: 100%;
+    border-radius: 100px;
+    border: solid 2px var(--lightblue);
+    display: flex;
+}
+
+#message_input {
+    width: 100%;
+    margin-left: 10px;
+    background-color: var(--whitepurple);
+    outline: none !important;
+}
+
+#send_button {
+    margin: 0;
+    background-color: var(--whitepurple);
+}
+
+#send_message_icon {
+    width: 30px;
+}
+
+/* .sent {
+    background-color: #007bff; 
+    color: white;
+    align-self: flex-end; 
+} */
+
+/* .username {
+    font-weight: bold;
+    margin-right: 5px;
+} */
