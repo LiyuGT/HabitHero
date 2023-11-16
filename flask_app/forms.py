@@ -66,18 +66,12 @@ class HabitForm(FlaskForm):
     title = StringField('Habit Name')
     new_title = StringField('Habit Name')
     description = StringField('Description')
+    new_description = StringField('Description')
     submit = SubmitField('Create Habit')
     submit = SubmitField('Edit Habit')
-    fields = ['title', 'submit']
+    fields = ['title', 'description', 'submit']
 
 
-class EditHabitForm(FlaskForm):
-    class Meta:
-        csrf = False
-
-    new_title = StringField('Habit Name')
-    submit = SubmitField('Edit Habit')
-    fields = ['new_title', 'submit']
 
 class CreateHabitat(FlaskForm):
     class Meta:

@@ -18,7 +18,7 @@ from flask import (Flask, Response, flash, jsonify, redirect, render_template,
                    request, session, url_for)
 from flask_socketio import SocketIO, join_room
 from flask_sqlalchemy import SQLAlchemy
-from forms import (CommentForm, CreateHabitat, EditHabitForm, HabitForm,
+from forms import (CommentForm, CreateHabitat, HabitForm,
                    LoginForm, RegisterForm)
 #from models import Task as Task
 #from models import Project as Project
@@ -291,7 +291,15 @@ def edit_habit(habit_id):
 
     if form.validate_on_submit():
         habit = Habit.query.get_or_404(habit_id)
-        habit.title = form.new_title.data
+        #habit.title = form.new_title.data
+        #habit.description = form.new_description.data
+
+        if form.new_title.data is not None:
+            habit.title = form.new_title.data
+
+        if form.new_description.data is not None:
+            habit.description = form.new_description.data
+
         db.session.commit()
         return jsonify(success=True)
     return jsonify(success=False)

@@ -58,8 +58,12 @@
                 <h1>Slow Add Habit</h1>
 
                 {{form.title.label}} {{form.title}}
-                {{form.description.label}} {{form.description}}
-
+                {{ form.description.label }} {{ form.description }}
+                <!--
+                {% if form.description.data is not none %}
+                    {{ form.description.label }} <label style="color: rgb(216, 33, 33);">{{ form.description.data }}</label>
+                {% endif %}
+                -->
                 <button type="submit" class="btn">Slow Add Habit</button>
 
                 <button type="button" class="btn cancel" onclick="closeFormSlow()">Close</button>
@@ -70,6 +74,15 @@
             <form method="POST" id="editHabitForm" class="form-container">
                 <h1>Edit Habit</h1>
                 {{ form.new_title.label }} {{ form.new_title }}
+                {% if form.new_title.data is not none %}
+                    {{ form.new_title.label }} {{ form.new_title.data }}
+                {% endif %}
+                
+                {{ form.new_description.label }} {{ form.new_description }}
+                {% if form.new_description.data is not none %}
+                    {{ form.new_description.label }} {{ form.new_description.data }}
+                {% endif %}
+                
                 <button type="button" class="btn" onclick="saveEdit()">Save Edit</button>
                 <button type="button" class="btn cancel" onclick="closeEdit()">Cancel</button>
             </form>
@@ -108,6 +121,9 @@
             </button>
 
             <p>{{ habit.title }}</p>
+            <p>
+                <br> {{ habit.description }}
+            </p>
             <div class="spacer"></div>
             <div class="streak">
                 <p>{{ habit.streak }}</p>
@@ -122,6 +138,9 @@
 
             <button type="submit" class="btn" onclick="removeHabit('{{ habit.id }}')"><img id="delete_habit" src="static/images/remove.png" ></button>
             <button type="submit" class="btn" onclick="editHabit('{{ habit.id }}')"> Edit </button>
+            
+            
+              
         </div>
 
         {% endfor %}
@@ -163,16 +182,26 @@
             document.getElementById("editForm").style.display = "none";
         }
 
-        function editHabit(habitId, habitTitle) {
+        
+        function editHabit(habitId, habitTitle, habitDescription) {
+            const titleInput = document.querySelector("#editForm input[name='new_title']");
+            const descriptionInput = document.querySelector("#editForm input[name='new_description']");
+
             document.getElementById("editForm").style.display = "block";
             document.getElementById("editHabitForm").setAttribute("data-habit-id", habitId);
-            document.querySelector("#editForm input[name='title']").value = habitTitle;
+
+            // Check if habitTitle is undefined or an empty string
+            titleInput.value = habitTitle !== undefined && habitTitle !== "" ? habitTitle : titleInput.value;
+            descriptionInput.value = habitDescription !== undefined ? habitDescription : "";
         }
+
+
 
         function saveEdit() {
             const habitId = document.getElementById("editHabitForm").getAttribute("data-habit-id");
             const newTitle = document.querySelector("#editForm input[name='new_title']").value; // Change 'title' to 'new_title'
-            const data = { id: habitId, new_title: newTitle }; // Change 'title' to 'new_title'
+            const newDescription = document.querySelector("#editForm input[name='new_description']").value; 
+            const data = { id: habitId, new_title: newTitle, new_description: newDescription }; // Change 'title' to 'new_title'
 
             fetch(`/habits/${habitId}/edithabits`, {
                 method: 'POST',
