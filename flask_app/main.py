@@ -7,6 +7,7 @@ import os
 import sqlite3
 import sys
 import uuid as uuid
+from datetime import datetime, date
 from os.path import dirname, join, realpath
 
 import bcrypt
@@ -15,7 +16,7 @@ import flask_socketio
 import httplib2
 from database import db
 from flask import (Flask, Response, flash, jsonify, redirect, render_template,
-                   request, session, url_for)
+                   request, session, url_for, abort)
 from flask_socketio import SocketIO, join_room
 from flask_sqlalchemy import SQLAlchemy
 from forms import (CommentForm, CreateHabitat, EditHabitForm, HabitForm,
@@ -23,18 +24,23 @@ from forms import (CommentForm, CreateHabitat, EditHabitForm, HabitForm,
 #from models import Task as Task
 #from models import Project as Project
 #//// Potential Import Guidelines (Will substitute Note to Habit for example) ////#
+from models import habit_habitat_association 
 from models import Comment as Comment
 from models import Habit as Habit
 from models import Habitat as Habitat
 from models import Note as Note
 from models import User as User
+from models import User
 from werkzeug.utils import secure_filename
+
 
 #*/
 
 # ///// APP CREATION /////
 app = Flask(__name__)  # create an app
 socketio = SocketIO(app)
+
+
 
 # ///// DATABASE CONFIG /////
 # Configure database connection
@@ -64,6 +70,15 @@ def home():
 
 def generate_user_id():
     return str(uuid.uuid4())
+
+def get_current_user():
+    user_id = session.get('user_id')
+    return User.query.get(user_id)
+
+@app.route('/profile')
+def profile():
+    user = get_current_user()
+    return render_template('profile.html', user=user)
 
 # ---------- User - Account ----------
 # - User Registration -
@@ -148,6 +163,8 @@ def createhabits():
 
     form = HabitForm()
     my_habits = db.session.query(Habit).filter_by(user_id=session.get('user_id')).all()
+    my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
+    user_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
 
     if request.method=='POST' and form.validate_on_submit():
         
@@ -162,7 +179,7 @@ def createhabits():
         db.session.commit()
         return redirect('/habits')
         
-    return render_template('habits.html', habits=my_habits, form=form)
+    return render_template('habits.html', habits=my_habits, user_habitats=user_habitats, form=form)
 
 @app.route('/SlowAdd', methods =['POST', 'GET'])
 def createhabitsslow():
@@ -188,11 +205,19 @@ def createhabitsslow():
 
 
 @app.route('/habits/<habit_id>/delete', methods=['POST'])
-def delete_habit(habit_id):
+def delete_habit(habit_id, habitat_id):
     habit = Habit.query.get_or_404(habit_id)
+    habitat = Habitat.query.get_or_404(habitat_id)
     habit.delete_habit()
+    habitat.delete_habit()
     return redirect('/habits')
 
+@app.route('/habitats/<int:habitat_id>/delete', methods=['POST'])
+def delete_habitat(habitat_id):
+    habitat = Habitat.query.get_or_404(habitat_id)
+    db.session.delete(habitat)
+    db.session.commit()
+    return redirect(url_for('habitats'))
 
 @app.route('/habits/<habit_id>/update', methods=['POST'])
 def markAsDone(habit_id):
@@ -211,6 +236,24 @@ def markAsDone(habit_id):
 
 #----- Habitat Routes ----#
 
+@app.route('/habitats/<int:habitat_id>/update', methods=['POST'])
+def markHabitatAsDone(habitat_id):
+    habitat = db.session.query(Habitat).get_or_404(habitat_id)
+
+    habitat.done = not habitat.done
+
+    if habitat.streak is None:
+        habitat.streak = 0
+
+    if habitat.done:
+        habitat.streak += 1
+    else:
+        habitat.streak -= 1
+
+    db.session.commit()
+
+    return jsonify(success=True)
+    
 @app.route('/habitats', methods=['GET', 'POST'])
 def create_habitat():
     
@@ -298,8 +341,38 @@ def edit_habit(habit_id):
 # - See Habitats -
 @app.route('/habitats')
 def habitats():
+    user = get_current_user() 
+    habitats = Habitat.query.filter_by(user_id=user.id).all()
     return render_template('habitats.html')
 
+
+@app.route('/get_habitat_details/<int:habitat_id>')
+def get_habitat_details(habitat_id):
+    habitat = Habitat.query.get(habitat_id)
+
+    if habitat:
+    
+        member = habitat.user
+
+        member_name = f"{member.first_name} {member.last_name}"
+
+        habits = db.session.query(Habit).join(habit_habitat_association).filter(habit_habitat_association.c.habitat_id == habitat.id).all()
+
+        habits_info = [
+            {'title': habit.title, 'streak': habit.streak}
+            for habit in habits
+        ]
+
+        habitat_details = {
+            'title': habitat.title,
+            'icon_image': habitat.icon_image,
+            'members': [{'name': member_name, 'habits': habits_info}],
+        }
+
+        return jsonify(habitat_details)
+    else:
+        return abort(404)
+    
 # ///// HOST & PORT CONFIG /////
 if __name__ == '__main__':
     # socketio.run(app, debug=True)

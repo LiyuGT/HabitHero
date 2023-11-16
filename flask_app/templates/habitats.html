@@ -37,11 +37,11 @@
 
             {% for habitat in habitats %}
 
-            <div class="habitat_item">
+            <div class="habitat_item" onclick="showHabitatDetails('{{ habitat.id }}')">
                 <img class="habitat_icon" src="{{ url_for('static', filename=habitat.icon_image) }}">
                 <div class="habitat_details">
                     <h3>{{ habitat.title }}</h3>
-                    <p>Corresponding Habit</p>
+                    <p>{{ habitat.user.habitats|length }} Inhabitants</p>
                 </div>
             </div>
     
@@ -74,6 +74,33 @@
 
         function closeForm() {
             document.getElementById("myForm").style.display = "none";
+        }
+        function showHabitatDetails(habitatId) {
+        fetch(`/get_habitat_details/${habitatId}`)
+            .then(response => response.json())
+            .then(data => {
+                updateHabitatView(data);
+            })
+            .catch(error => console.error('Error fetching habitat details:', error));
+    }
+
+        function updateHabitatView(habitatDetails) {
+            var habitatView = document.querySelector('.habitat_view');
+            var membersHtml = '';
+
+            habitatDetails.members.forEach(member => {
+                membersHtml += `
+                    <p>${member.name} - Streak: ${member.streak}</p>
+                `;
+            });
+
+            habitatView.innerHTML = `
+                <h2>${habitatDetails.title}</h2>
+                <img src="${habitatDetails.icon_image}" alt="${habitatDetails.title}">
+                <div class="members-list">
+                    ${membersHtml}
+                </div>
+            `;
         }
     </script>
 </body>

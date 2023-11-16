@@ -4,7 +4,11 @@ import uuid
 
 from database import db
 
-
+habit_habitat_association = db.Table(
+    'habit_habitat_association',
+    db.Column('habit_id', db.Integer, db.ForeignKey('habits.id')),
+    db.Column('habitat_id', db.Integer, db.ForeignKey('habitats.id'))
+)
 # ///// MODELS /////
 # - Users -
 class User(db.Model):
@@ -17,7 +21,8 @@ class User(db.Model):
     notes = db.relationship("Note", backref="user", lazy=True)
     comments = db.relationship("Comment", backref="user", lazy=True)
     habits = db.relationship("Habit", backref="user", cascade="all, delete", lazy=True)
-
+    habitats = db.relationship("Habitat", backref="user", lazy=True)
+    
     def __init__(self, first_name, last_name, email, password):
         self.first_name = first_name
         self.last_name = last_name
@@ -57,7 +62,6 @@ class Comment(db.Model):
         self.note_id = note_id
         self.user_id = user_id
 
-
 # - User / Projects -
 class Habit(db.Model):
     __tablename__ = "habits"
@@ -69,7 +73,7 @@ class Habit(db.Model):
     created = db.Column("created", db.String(50), nullable=False)
     streak = db.Column("streak", db.Integer)
     done = db.Column("done", db.Boolean)
-
+    habitats = db.relationship("Habitat", secondary=habit_habitat_association, back_populates="habits")
     
     #tasks = db.relationship("Task", backref="projects", cascade="all, delete", lazy=True)
 
@@ -104,12 +108,27 @@ class Habitat(db.Model):
     description = db.Text()
     icon_image = db.Column(db.String(255))
     title = db.Column("title", db.String(200))
-
+    members = db.relationship("User", backref="habitat", lazy=True)
+    habits = db.relationship("Habit", secondary=habit_habitat_association, back_populates="habitats")
+    streak = db.Column("streak", db.Integer)
+    done = db.Column("done", db.Boolean)
+    
     def __init__(self, title, user_id, description, icon_image):
         self.title = title
         self.description = description
         self.icon_image = icon_image
         self.user_id = user_id
+
+    def markHabitatAsDone(self):
+
+        self.done = not self.done
+
+        if self.done:
+            self.streak += 1
+        else:
+            self.streak -= 1 if self.streak > 0 else 0
+
+        db.session.commit()
 
 # - User / Project / Tasks -
 # class Task(db.Model):

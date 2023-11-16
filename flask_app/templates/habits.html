@@ -123,8 +123,34 @@
             <button type="submit" class="btn" onclick="removeHabit('{{ habit.id }}')"><img id="delete_habit" src="static/images/remove.png" ></button>
             <button type="submit" class="btn" onclick="editHabit('{{ habit.id }}')"> Edit </button>
         </div>
-
         {% endfor %}
+        {% for habitat in user_habitats %}
+            <div class="habitItem">
+                <button onclick="markHabitatAsDone('{{ habitat.id }}')">
+                    {% if habitat.done %}
+                        <img src="static/images/checkmark.png">
+                    {% else %}
+                        <img src="static/images/unchecked.png">
+                    {% endif %}
+                </button>
+                <!--Shows description for habitat-->
+                <p>{{ habitat.description }}</p>
+
+                <div class="spacer"></div>
+                <div class="streak">
+                    <p>{{ habitat.streak }}</p>
+                    {% if habitat.done %}
+                        <img src="static/images/flame_colored.png">
+                    {% else %}
+                        <img src="static/images/flame_grayscale.png">
+                    {% endif %}
+                </div>
+                <button type="submit" class="btn" onclick="removeHabitat('{{ habitat.id }}')"><img id="delete_habit" src="static/images/remove.png" ></button>
+            </div>
+        {% endfor %} 
+                
+
+        
 
     </main>
 
@@ -153,11 +179,24 @@
             }
         }
 
+        function removeHabitat(habitatId){
+            if (confirm("Are you sure you want to delete this habit?")) {
+                fetch(`/habitats/${habitatId}/delete`, { method: 'POST' })
+                    .then(() => location.reload())
+                    .catch(error => console.error('Error:', error));
+            }
+        }
+
         function markAsDone(habitId) {
             fetch(`/habits/${habitId}/update`, { method: 'POST' })
                     .then(() => location.reload())
                     .catch(error => console.error('Error:', error));
         }
+        function markHabitatAsDone(habitatId) {
+            fetch(`/habitats/${habitatId}/update`, { method: 'POST' })
+                    .then(() => location.reload())
+                    .catch(error => console.error('Error:', error));
+}
 
         function closeEdit() {
             document.getElementById("editForm").style.display = "none";
