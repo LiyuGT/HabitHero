@@ -52,9 +52,6 @@ db.init_app(app)
 with app.app_context():
     db.create_all()  # Run under the app context
 
-
-
-
 # ///// ROUTES /////
 # - Home -
 @app.route('/')
@@ -245,8 +242,11 @@ def create_habitat():
         # Add code to link habitat with selected habit here?
 
         habitat = Habitat(title, user_id, description, icon_image)
-
         db.session.add(habitat)
+        db.session.commit()
+
+        # Set the habitat_id for the selected habit
+        selected_habit.habitat_id = habitat.id
         db.session.commit()
 
         return redirect('/habitats')

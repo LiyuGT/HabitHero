@@ -73,7 +73,7 @@ class Habit(db.Model):
     created = db.Column("created", db.String(50), nullable=False)
     streak = db.Column("streak", db.Integer)
     done = db.Column("done", db.Boolean)
-    habitats = db.relationship("Habitat", secondary=habit_habitat_association, back_populates="habits")
+    habitat_id = db.Column(db.Integer, db.ForeignKey('habitats.id'))
     
     #tasks = db.relationship("Task", backref="projects", cascade="all, delete", lazy=True)
 
@@ -85,7 +85,6 @@ class Habit(db.Model):
         self.description = description
         self.created = created
         
-
     def delete_habit(self):
         db.session.delete(self)
         db.session.commit()
@@ -108,10 +107,10 @@ class Habitat(db.Model):
     description = db.Text()
     icon_image = db.Column(db.String(255))
     title = db.Column("title", db.String(200))
-    members = db.relationship("User", backref="habitat", lazy=True)
-    habits = db.relationship("Habit", secondary=habit_habitat_association, back_populates="habitats")
-    streak = db.Column("streak", db.Integer)
-    done = db.Column("done", db.Boolean)
+    # members = db.relationship("User", backref="habitat", lazy=True)
+    habits = db.relationship("Habit", backref="habitat")
+    # streak = db.Column("streak", db.Integer)
+    # done = db.Column("done", db.Boolean)
     
     def __init__(self, title, user_id, description, icon_image):
         self.title = title
