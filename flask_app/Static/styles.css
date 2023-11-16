@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 :root {
@@ -391,6 +392,7 @@ button {
     max-width: 25%;
     display: flex;
     flex-direction: column;
+
 }
 
 .habitat_view {
@@ -402,12 +404,15 @@ button {
 
 .habitat_item {
     display: flex;
-    align-items: center;
-    margin: 10px 10px 0px 10px;
+    align-items: center !important;
+    margin: 0;
+    padding: 5px;
+    margin: 0px 10px 0px 10px;
+    color: black;
 }
 
-.sidebar > .habitat_item + :not(.selected_habitat) {
-    border-bottom: solid 3px;
+.sidebar > .habitat_item {
+    border-top: solid 3px;
     border-image: 
       linear-gradient(
         90deg, 
@@ -415,17 +420,19 @@ button {
         var(--lightblue), 
         rgba(0, 0, 0, 0)
       ) 1;
-
-    padding-bottom: 10px;
+}
+.selected_habitat, 
+.selected_habitat + .habitat_item,  
+.habitat_item:first-of-type
+{
+    margin-top: 3px;
+    border: none;
 }
 
-.sidebar > .selected_habitat {
-
-    padding: 5px 0 5px 0px;
-
+.selected_habitat {
     background-color: var(--lightblue);
+    opacity: 100% !important;
     border-radius: 15px;
-    box-shadow: inset 0px 0px 10px rgba(0, 0, 100, .1);
 }
 
 .habitat_icon {
@@ -450,3 +457,62 @@ button {
     align-items: center;
     justify-content: center;
 }
+
+/* chatroom css */
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    margin: 20px;
+}
+
+.message {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 100px;
+    background-color: var(--lightblue);
+}
+
+.announcement {
+    color: gray;
+    text-align: center;
+}
+
+.received {
+    background-color: #7e3a3a; /* Light grey for received messages */
+}
+
+#message_input_form {
+    width: 100%;
+    border-radius: 100px;
+    border: solid 2px var(--lightblue);
+    display: flex;
+}
+
+#message_input {
+    width: 100%;
+    margin-left: 10px;
+    background-color: var(--whitepurple);
+    outline: none !important;
+}
+
+#send_button {
+    margin: 0;
+    background-color: var(--whitepurple);
+}
+
+#send_message_icon {
+    width: 30px;
+}
+
+/* .sent {
+    background-color: #007bff; 
+    color: white;
+    align-self: flex-end; 
+} */
+
+/* .username {
+    font-weight: bold;
+    margin-right: 5px;
+} */

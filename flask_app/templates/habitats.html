@@ -39,11 +39,14 @@
 
             <div class="habitat_item" onclick="showHabitatDetails('{{ habitat.id }}')">
                 <img class="habitat_icon" src="{{ url_for('static', filename=habitat.icon_image) }}">
+            <a class="habitat_item" href="" onclick="selectHabitat(this)">
+                <img class="habitat_icon" src="{{ url_for('static', filename='images/user_uploads/' + habitat.icon_image) }}">
                 <div class="habitat_details">
                     <h3>{{ habitat.title }}</h3>
                     <p>{{ habitat.user.habitats|length }} Inhabitants</p>
                 </div>
-            </div>
+            </a>
+            
     
             {% endfor %}
 
@@ -68,6 +71,21 @@
         </div>
     </main>
     <script>
+        function selectHabitat(element) {
+            
+            // Prevent the default behavior of the anchor tag
+            event.preventDefault();     
+
+            // Remove the 'selected_habitat' class from all elements with the same class
+            var habitatItems = document.querySelectorAll('.habitat_item');
+            habitatItems.forEach(function(item) {
+                item.classList.remove('selected_habitat');
+            });
+
+            // Add the 'selected_habitat' class to the clicked element
+            element.classList.add('selected_habitat');
+        }
+
         function openForm() {
             document.getElementById("myForm").style.display = "block";
         }
@@ -105,3 +123,4 @@
     </script>
 </body>
 </html>
+

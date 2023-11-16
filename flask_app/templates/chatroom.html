@@ -6,58 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="ChatHomePage">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+<body>
 
-<div class="chatroom">
-    <h1 class="mychat">Welcome to Chat room {{room}}</h1>
-    <div id="messages"></div>
-    <form id="message_input_form">
-        <input type="text" id="message_input" placeholder="Enter your message here">
-        <button type="submit">Send</button>
-    </form>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.0/socket.io.js"></script>
-    <script scr="http://127.0.0.1:5000/socket.io/socket.io.js"></script>
-    <script>
-        const socket = io("http://127.0.0.1:5000");
-        socket.on('connect', function (){
-            socket.emit('join_room', {
-                username: "{{username}}" ,
-                room: "{{room}}"
-            });
+    <div class="chatroom container">
+        <h1 class="mychat">Welcome to Chat room {{room}}</h1>
+        <div id="messages">
 
-            let message_input = document.getElementById('message_input');
-            document.getElementById('message_input_form').onsubmit = function (e){
-                e.preventDefault();
-                let message = message_input.value.trim();
-                if(message.length){
-                   socket.emit('send_message',{
-                       username: "{{username}}" ,
-                       room: "{{room}}",
-                       message:message
-                   })
+        </div>
+        <form id="message_input_form">
+            <input type="text" id="message_input" placeholder="Enter your message here">
+            <button type="submit" id="send_button"><img id="send_message_icon" alt="send" src="static/images/send_message_icon.png"></button>
+        </form>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.0/socket.io.js"></script>
+        <script scr="http://127.0.0.1:5000/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io("http://127.0.0.1:5000");
+            socket.on('connect', function (){
+                socket.emit('join_room', {
+                    username: "{{username}}" ,
+                    room: "{{room}}"
+                });
+    
+                let message_input = document.getElementById('message_input');
+                document.getElementById('message_input_form').onsubmit = function (e){
+                    e.preventDefault();
+                    let message = message_input.value.trim();
+                    if(message.length){
+                       socket.emit('send_message',{
+                           username: "{{username}}" ,
+                           room: "{{room}}",
+                           message:message
+                       })
+                    }
+                    message_input.value = '';
+                    message_input.focus();
                 }
-                message_input.value = '';
-                message_input.focus();
-            }
-        
+            
+            });
+    
+        socket.on ('receive_message', function (data){
+            console.log(data);
+            const newNode = document.createElement('div');
+            duser=data.username;
+            newNode.classList.add('message');
+            newNode.innerHTML = ( duser.bold() +" "+ data.message);
+            document.getElementById('messages').appendChild(newNode);
         });
+        socket.on('join_room_announcement', function (data) {
+            console.log(data);
+            const newNode = document.createElement('div');
+            duser=data.username;
+            newNode.classList.add('announcement');
+            newNode.innerHTML = ( duser +" has joined the room");
 
-    socket.on ('receive_message', function (data){
-        console.log(data);
-        const newNode = document.createElement('div');
-        duser=data.username;
-        newNode.innerHTML = ( duser.bold() +" "+ data.message);
-        document.getElementById('messages').appendChild(newNode);
-    });
-    socket.on('join_room_announcement', function (data) {
-        console.log(data);
-        const newNode = document.createElement('div');
-        duser=data.username;
-        newNode.innerHTML = ( duser.bold() +" has joined the room");
-        document.getElementById('messages').appendChild(newNode);
-    })
-
-    </script>
-    <script src="{{url_for('static', filename='init.js')}}"></script>
-</div>
+            document.getElementById('messages').appendChild(newNode);
+        })
+    
+        </script>
+        <script src="{{url_for('static', filename='init.js')}}"></script>
+    </div>
+</body>
