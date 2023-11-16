@@ -3,7 +3,7 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileField
 from models import User
 from wtforms import (FileField, PasswordField, StringField, SubmitField,
-                     TextAreaField, ValidationError)
+                     TextAreaField, ValidationError, SelectField)
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 
 
@@ -76,10 +76,10 @@ class HabitForm(FlaskForm):
 class CreateHabitat(FlaskForm):
     class Meta:
         csrf = False
-
     title = StringField('Habitat Name')
     description = TextAreaField('Description')
     icon_image = FileField("Habitat Image")
+    habit = SelectField('Select Habit', coerce=int)
     submit = SubmitField('Create Habitat')
-    fields = ['title', 'description', 'icon_image', 'submit']
+    fields = ['title', 'description', 'icon_image', 'habit', 'submit']
 

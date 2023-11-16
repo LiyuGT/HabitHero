@@ -9,19 +9,19 @@
 <body>
 
     <div class="form-popup" id="myForm">
-            <form method="POST" action="/habitats" class="form-container" enctype="multipart/form-data">
-                <h1>Create Habitat</h1>
+        <form method="POST" action="/habitats" class="form-container" enctype="multipart/form-data">
+            <h1>Create Habitat</h1>
 
-                {{form.title.label}} {{form.title}}
-                {{form.description.label}} {{form.description}}
-                {{form.icon_image.label}}
-                {{form.icon_image}}
+            {{form.title.label}} {{form.title}}
+            {{form.description.label}} {{form.description}}
+            {{form.icon_image.label}} {{form.icon_image}}
+            {{ form.habit.label }} {{ form.habit }}
 
-                <button type="submit" class="btn">Create Habitat</button>
+            <button type="submit" class="btn">Create Habitat</button>
 
-                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-            </form>
-        </div>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
     
     <div class="navbar">
         <a href="{{url_for('home')}}">Home</a>
@@ -37,9 +37,6 @@
 
             {% for habitat in habitats %}
 
-
-            <!-- <div class="habitat_item" onclick="showHabitatDetails('{{ habitat.id }}')">
-                <img class="habitat_icon" src="{{ url_for('static', filename=habitat.icon_image) }}"> -->
             <a class="habitat_item" href="" onclick="selectHabitat(this, '{{habitat.id}}')">
                 <img class="habitat_icon" src="{{ url_for('static', filename='images/user_uploads/' + habitat.icon_image) }}">
                 <div class="habitat_details">
@@ -96,13 +93,13 @@
             document.getElementById("myForm").style.display = "none";
         }
         function showHabitatDetails(habitatId) {
-        fetch(`/get_habitat_details/${habitatId}`)
-            .then(response => response.json())
-            .then(data => {
-                updateHabitatView(data);
-            })
-            .catch(error => console.error('Error fetching habitat details:', error));
-    }
+            fetch(`/get_habitat_details/${habitatId}`)
+                .then(response => response.json())
+                .then(data => {
+                    updateHabitatView(data);
+                })
+                .catch(error => console.error('Error fetching habitat details:', error));
+        }
 
         function updateHabitatView(habitatDetails) {
             var habitatView = document.querySelector('.habitat_view');

@@ -215,7 +215,12 @@ def markAsDone(habit_id):
 def create_habitat():
     
     my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
+    my_habits = db.session.query(Habit).filter_by(user_id=session['user_id']).all()
+
     form = CreateHabitat()
+
+    # Populate the dropdown choices with the user's habits
+    form.habit.choices = [(habit.id, habit.title) for habit in my_habits]
 
     if request.method == "POST" and form.validate_on_submit():
         title = request.form['title']
@@ -232,6 +237,12 @@ def create_habitat():
 
         subfolder = 'images/user_uploads'
         saver.save(os.path.join(app.config['UPLOAD_FOLDER'], subfolder, pic_name))
+
+        # Retrieve the selected habit from the form
+        selected_habit_id = form.habit.data
+        selected_habit = db.session.query(Habit).get(selected_habit_id)
+
+        # Add code to link habitat with selected habit here?
 
         habitat = Habitat(title, user_id, description, icon_image)
 
