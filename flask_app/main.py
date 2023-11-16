@@ -59,6 +59,10 @@ with app.app_context():
 def home():
     return render_template('home.html')
 
+@app.route('/home1')
+def home1():
+    return render_template('home1.html')
+
 def generate_user_id():
     return str(uuid.uuid4())
 
