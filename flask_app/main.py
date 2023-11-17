@@ -201,15 +201,6 @@ def markAsDone(habit_id):
     habit.markAsDone()
     return redirect('/habits')
 
-def markAsDone(habit_id):
-    habit = Habit.query.get_or_404(habit_id)
-    
-    # Toggle the 'done' status
-    habit.done = True
-    habit.streak += 1
-
-    db.session.commit()
-
 #----- Habitat Routes ----#
 
 @app.route('/habitats', methods=['GET', 'POST'])

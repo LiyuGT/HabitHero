@@ -3,6 +3,7 @@ import datetime
 import uuid
 
 from database import db
+from datetime import date, timedelta, datetime
 
 habit_habitat_association = db.Table(
     'habit_habitat_association',
@@ -74,6 +75,8 @@ class Habit(db.Model):
     streak = db.Column("streak", db.Integer)
     done = db.Column("done", db.Boolean)
     habitat_id = db.Column(db.Integer, db.ForeignKey('habitats.id'))
+    latestDone = db.Column(db.DateTime)
+    saveLastDone = db.Column(db.DateTime)
     
     #tasks = db.relationship("Task", backref="projects", cascade="all, delete", lazy=True)
 
@@ -90,13 +93,23 @@ class Habit(db.Model):
         db.session.commit()
 
     def markAsDone(self):
+        today = date.today()
 
-        if self.done == False:
+        if not self.done:
+
             self.done = True
-            self.streak = self.streak + 1
-        elif self.done == True:
+            self.streak += 1
+            self.saveLastDone = self.latestDone
+            self.latestDone = datetime.now()
+        else:
+
             self.done = False
-            self.streak = self.streak - 1
+
+            latest_done_date = self.latestDone.date() if self.latestDone else None
+            if latest_done_date != today:
+                self.latestDone = self.saveLastDone
+                self.streak = max(0, self.streak - 1)
+
         db.session.commit()
 
 class Habitat(db.Model):
