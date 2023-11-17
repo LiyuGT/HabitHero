@@ -41,7 +41,8 @@
                 <img class="habitat_icon" src="{{ url_for('static', filename='images/user_uploads/' + habitat.icon_image) }}">
                 <div class="habitat_details">
                     <h3>{{ habitat.title }}</h3>
-                    <p>{{ habitat.user.habitats|length }} Inhabitants</p>
+                    <p>{{ habitat.users_habit }}</p>
+                    <!-- <p>{{ habitat.user.habitats|length }} Inhabitants</p> -->
                 </div>
             </a>
             

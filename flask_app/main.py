@@ -218,6 +218,13 @@ def create_habitat():
     my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
     my_habits = db.session.query(Habit).filter_by(user_id=session['user_id']).all()
 
+    for h in my_habitats:
+        habit_query_result = db.session.query(Habit).filter_by(user_id=session['user_id'], habitat_id=h.id).first()
+
+        if habit_query_result:
+            h.users_habit = habit_query_result.title
+        
+
     form = CreateHabitat()
 
     # Populate the dropdown choices with the user's habits
