@@ -59,6 +59,10 @@ with app.app_context():
 def home():
     return render_template('home.html')
 
+@app.route('/home1')
+def home1():
+    return render_template('home1.html')
+
 def generate_user_id():
     return str(uuid.uuid4())
 
@@ -213,6 +217,13 @@ def create_habitat():
     
     my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
     my_habits = db.session.query(Habit).filter_by(user_id=session['user_id']).all()
+
+    for h in my_habitats:
+        habit_query_result = db.session.query(Habit).filter_by(user_id=session['user_id'], habitat_id=h.id).first()
+
+        if habit_query_result:
+            h.users_habit = habit_query_result.title
+        
 
     form = CreateHabitat()
 
