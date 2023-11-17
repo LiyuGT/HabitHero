@@ -18,8 +18,8 @@ from flask import (Flask, Response, flash, jsonify, redirect, render_template,
                    request, session, url_for)
 from flask_socketio import SocketIO, join_room
 from flask_sqlalchemy import SQLAlchemy
-from forms import (CommentForm, CreateHabitat, HabitForm,
-                   LoginForm, RegisterForm)
+from forms import (CommentForm, CreateHabitat, HabitForm, LoginForm,
+                   RegisterForm)
 #from models import Task as Task
 #from models import Project as Project
 #//// Potential Import Guidelines (Will substitute Note to Habit for example) ////#
@@ -321,6 +321,23 @@ def edit_habit(habit_id):
 @app.route('/habitats')
 def habitats():
     return render_template('habitats.html')
+
+@app.route('/get_habitat_details/<int:habitat_id>')
+def get_habitat_details(habitat_id):
+    habitat = db.session.query(Habitat).get(habitat_id)
+
+    if habitat:
+        habitat_details = {
+            'title': habitat.title,
+            'icon_image': url_for('static', filename=f'images/user_uploads/{habitat.icon_image}'),
+            'members': [
+                {'first_name': habit.user.first_name, 'last_name': habit.user.last_name, 'streak': habit.streak}
+                for habit in habitat.habits
+            ]
+        }
+        return jsonify(habitat_details)
+    else:
+        return jsonify({'error': 'Habitat not found'}), 404
 
 # ///// HOST & PORT CONFIG /////
 if __name__ == '__main__':

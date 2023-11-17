@@ -1,9 +1,9 @@
 # ///// IMPORTS /////
 import datetime
 import uuid
+from datetime import date, datetime, timedelta
 
 from database import db
-from datetime import date, timedelta, datetime
 
 habit_habitat_association = db.Table(
     'habit_habitat_association',
@@ -29,7 +29,7 @@ class User(db.Model):
         self.last_name = last_name
         self.email = email
         self.password = password
-        self.registered_on = datetime.date.today()
+        self.registered_on = date.today()
 
 
 # - User / Notes -

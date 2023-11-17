@@ -108,18 +108,22 @@
 
             habitatDetails.members.forEach(member => {
                 membersHtml += `
-                    <p>${member.name} - Streak: ${member.streak}</p>
+                    <p>${member.first_name} ${member.last_name} - ${member.streak} <img src="static/images/flame_colored.png" alt="Flame" class="flame-icon"></p>
                 `;
             });
 
             habitatView.innerHTML = `
-                <h2>${habitatDetails.title}</h2>
-                <img src="${habitatDetails.icon_image}" alt="${habitatDetails.title}">
-                <div class="members-list">
-                    ${membersHtml}
+                <div class="habitat-details">
+                    <h2>${habitatDetails.title}</h2>
+                    <img class="habitat-image" src="${habitatDetails.icon_image}" alt="${habitatDetails.title}">
+                    <h3>Members</h3>
+                    <div class="members-list">
+                        ${membersHtml}
+                    </div>
                 </div>
             `;
         }
+
     </script>
 </body>
 </html>
