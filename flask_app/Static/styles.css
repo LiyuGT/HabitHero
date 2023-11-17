@@ -100,6 +100,23 @@ header > ul {
     align-items: center;
 }
 
+.habitDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.habitDetails p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.subHeader {
+    text-align: left !important;
+    color: gray;
+    font-size: smaller;
+}
+
 .streak {
     display: flex;
 

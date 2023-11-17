@@ -120,10 +120,13 @@
                 {% endif %}
             </button>
 
-            <p>{{ habit.title }}</p>
-            <p>
-                <br> {{ habit.description }}
-            </p>
+            <div class="habitDetails">
+                <p>{{ habit.title }}</p>
+                {% if habit.description %}
+                    <p class="subHeader">{{ habit.description }}</p>
+                {% endif %}
+            </div>
+            
             <div class="spacer"></div>
             <div class="streak">
                 <p>{{ habit.streak }}</p>
