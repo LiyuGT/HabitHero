@@ -19,17 +19,21 @@ class User(db.Model):
     email = db.Column("email", db.String(100))
     password = db.Column(db.String(255), nullable=False)
     registered_on = db.Column(db.DateTime, nullable=False)
+    profile_picture = db.Column(db.String(200), default='profile_default.jpeg')
+    bio = db.Column("bio", db.String(200))
     notes = db.relationship("Note", backref="user", lazy=True)
     comments = db.relationship("Comment", backref="user", lazy=True)
     habits = db.relationship("Habit", backref="user", cascade="all, delete", lazy=True)
     habitats = db.relationship("Habitat", backref="user", lazy=True)
     
-    def __init__(self, first_name, last_name, email, password):
+    def __init__(self, first_name, last_name, email, password, profile_picture, bio):
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
         self.password = password
         self.registered_on = date.today()
+        self.profile_picture = profile_picture
+        self.bio = bio
 
 
 # - User / Notes -

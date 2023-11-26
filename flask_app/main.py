@@ -19,7 +19,7 @@ from flask import (Flask, Response, flash, jsonify, redirect, render_template,
 from flask_socketio import SocketIO, join_room
 from flask_sqlalchemy import SQLAlchemy
 from forms import (CommentForm, CreateHabitat, HabitForm, LoginForm,
-                   RegisterForm)
+                   RegisterForm, ProfileForm)
 #from models import Task as Task
 #from models import Project as Project
 #//// Potential Import Guidelines (Will substitute Note to Habit for example) ////#
@@ -62,6 +62,36 @@ def home():
 @app.route('/home1')
 def home1():
     return render_template('home1.html')
+
+@app.route('/profile', methods=['GET', 'POST'])
+def profile():
+    form = ProfileForm()
+
+    if request.method == 'POST' and form.validate_on_submit():
+        # Process the form data and update the user profile
+        profile_picture = form.profile_picture.data
+        bio = form.bio.data
+
+        user = db.session.query(User).get(session.get('user_id'))
+
+        # Update the bio
+        user.bio = bio
+
+        # Update the profile picture if a new one is provided
+        if profile_picture:
+            pic_filename = secure_filename(profile_picture.filename)
+            pic_name = str(uuid.uuid1()) + "_" + pic_filename
+            subfolder = 'images/profile_uploads'
+            profile_picture.save(os.path.join(app.config['UPLOAD_FOLDER'], subfolder, pic_name))
+            user.profile_picture = pic_name
+
+        db.session.commit()
+
+        # Redirect to the profile page after updating
+        return redirect(url_for('profile'))
+
+    # If the request is a GET or the form did not validate, render the profile.html template
+    return render_template('profile.html', form=form)
 
 def generate_user_id():
     return str(uuid.uuid4())

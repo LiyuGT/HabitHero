@@ -557,6 +557,11 @@ button {
     vertical-align: middle;
 }
 
+#profilePicture2 {
+    width: 200px; /* Set the desired width */
+    height: 200px; /* Set the desired height */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
 /* .sent {
     background-color: #007bff; 
     color: white;

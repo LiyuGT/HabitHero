@@ -8,14 +8,48 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
+
 <body>
         <div class="navbar">
-            <a href="{{url_for('home')}}">Home</a>
+            <a href="{{url_for('home1')}}">Home</a>
             <a href="{{url_for('createhabits')}}">My Habits</a>
             <h1>Habit Hero</h1>
             <a href="{{url_for('habitats')}}">Habitats</a>
             <a href="{{url_for('logout')}}">Logout</a>
-            <img id="profilePicture" alt="profile picture" src="static/images/profile_default.jpeg">
+            <a href="{{url_for('profile')}}">
+                <img id="profilePicture" alt="profile picture" src="static/images/profile_default.jpeg">
+            </a>
         </div>
-    <main>
-    </main>
+        <main>
+            <div>
+                <!-- Display profile picture -->
+                <img id="profilePicture2" alt="profile picture" src="{{ url_for('static', filename='images/profile_default.jpeg') }}">
+                                
+                <!-- Form for updating profile picture and bio -->
+                <form method="POST" action="/profile"  enctype="multipart/form-data">
+                                    
+                    <!-- Upload new profile picture -->
+                    {{ form.profile_picture.label }} {{ form.profile_picture }}
+                                
+                    <!-- Enter bio -->
+                    <div>
+                        {{ form.bio.label }} {{ form.bio }}
+                    </div>
+                    <button type="submit" class="btn">Update Profile</button>
+                </form>
+
+                <h3>Habitats Created</h3>
+                <ul>
+                    {% for habitat in habitats %}
+                        <li>{{ habitat.title }}</li>
+                    {% endfor %}
+                </ul>
+
+                <div class = "joinnow">
+                    <a href="{{ url_for('home') }}">Log Out</a>
+                </div>
+            </div>
+        </main>
+    </body>
+    
+    </html>

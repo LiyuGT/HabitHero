@@ -16,6 +16,9 @@
             {{form.description.label}} {{form.description}}
             {{form.icon_image.label}} {{form.icon_image}}
             {{ form.habit.label }} {{ form.habit }}
+            <div>
+                {{ form.is_private.label }} {{ form.is_private }}
+            </div>
 
             <button type="submit" class="btn">Create Habitat</button>
 
@@ -29,7 +32,9 @@
         <h1>Habit Hero</h1>
         <a href="{{url_for('habitats')}}">Habitats</a>
         <a href="{{url_for('logout')}}">Logout</a>
-        <img id="profilePicture" alt="profile picture" src="static/images/profile_default.jpeg">
+        <a href="{{url_for('profile')}}">
+            <img id="profilePicture" alt="profile picture" src="static/images/profile_default.jpeg">
+        </a>
     </div>
     <main class="container_with_sidebar">
         <div class="sidebar">
