@@ -197,6 +197,8 @@ def createhabits():
     for habit in my_habits:
         if habit.latestDone != str(datetime.date.today()):
             habit.done = False
+            if habit.latestDone != str(datetime.date.today() - datetime.timedelta(days=1)):
+                habit.streak = 0
         else:
             habit.done = True
         
