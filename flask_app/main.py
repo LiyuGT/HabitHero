@@ -192,6 +192,17 @@ def createhabits():
         db.session.add(habit)
         db.session.commit()
         return redirect('/habits')
+    
+    # Update 'done' value for each habit
+    for habit in my_habits:
+        if habit.latestDone != str(datetime.date.today()):
+            habit.done = False
+        else:
+            habit.done = True
+        
+
+    # Commit changes to the database
+    db.session.commit()
         
     return render_template('habits.html', habits=my_habits, form=form)
 

@@ -1,7 +1,7 @@
 # ///// IMPORTS /////
 import datetime
 import uuid
-from datetime import date, datetime, timedelta
+# from datetime import datetime
 
 from database import db
 
@@ -31,7 +31,7 @@ class User(db.Model):
         self.last_name = last_name
         self.email = email
         self.password = password
-        self.registered_on = date.today()
+        self.registered_on = datetime.date.today()
         self.profile_picture = profile_picture
         self.bio = bio
 
@@ -79,8 +79,8 @@ class Habit(db.Model):
     streak = db.Column("streak", db.Integer)
     done = db.Column("done", db.Boolean)
     habitat_id = db.Column(db.Integer, db.ForeignKey('habitats.id'))
-    latestDone = db.Column(db.DateTime)
-    saveLastDone = db.Column(db.DateTime)
+    latestDone = db.Column(db.String(50))
+    saveLastDone = db.Column(db.String(50))
     
     #tasks = db.relationship("Task", backref="projects", cascade="all, delete", lazy=True)
 
@@ -97,24 +97,40 @@ class Habit(db.Model):
         db.session.commit()
 
     def markAsDone(self):
-        today = date.today()
 
-        if not self.done:
-
+        # Check if the habit is not already marked as done today
+        if not self.done and self.latestDone != datetime.date.today():
+            # Update the habit's state
             self.done = True
             self.streak += 1
             self.saveLastDone = self.latestDone
-            self.latestDone = datetime.now()
-        else:
-
+            self.latestDone = datetime.date.today()
+        elif self.done:
+            # Unmark the habit and adjust the streak
             self.done = False
-
-            latest_done_date = self.latestDone.date() if self.latestDone else None
-            if latest_done_date != today:
-                self.latestDone = self.saveLastDone
-                self.streak = max(0, self.streak - 1)
-
+            self.latestDone = self.saveLastDone
+            self.streak = max(0, self.streak - 1)
         db.session.commit()
+
+    # def markAsDone(self):
+    #     today = date.today()
+
+    #     if not self.done:
+
+    #         self.done = True
+    #         self.streak += 1
+    #         self.saveLastDone = self.latestDone
+    #         self.latestDone = datetime.now()
+    #     else:
+
+    #         self.done = False
+
+    #         latest_done_date = self.latestDone.date() if self.latestDone else None
+    #         if latest_done_date != today:
+    #             self.latestDone = self.saveLastDone
+    #             self.streak = max(0, self.streak - 1)
+
+    #     db.session.commit()
 
 class Habitat(db.Model):
     __tablename__ = "habitats"

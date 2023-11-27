@@ -178,20 +178,26 @@
         }
 
         function markAsDone(habitId) {
-            const lastDoneKey = `lastDone_${habitId}`;
-            const lastDone = localStorage.getItem(lastDoneKey);
-            const today = new Date().toISOString().split('T')[0]; 
-            if (lastDone !== today) {
-                fetch(`/habits/${habitId}/update`, { method: 'POST' })
-                    .then(() => {
-                        localStorage.setItem(lastDoneKey, today);
-                        location.reload();
-                    })
+            fetch(`/habits/${habitId}/update`, { method: 'POST' })
+                    .then(() => location.reload())
                     .catch(error => console.error('Error:', error));
-            } else {
-                alert("You've already completed this habit for today!");
-            }
         }
+
+        // function markAsDone(habitId) {
+        //     const lastDoneKey = `lastDone_${habitId}`;
+        //     const lastDone = localStorage.getItem(lastDoneKey);
+        //     const today = new Date().toISOString().split('T')[0]; 
+        //     if (lastDone !== today) {
+        //         fetch(`/habits/${habitId}/update`, { method: 'POST' })
+        //             .then(() => {
+        //                 localStorage.setItem(lastDoneKey, today);
+        //                 location.reload();
+        //             })
+        //             .catch(error => console.error('Error:', error));
+        //     } else {
+        //         alert("You've already completed this habit for today!");
+        //     }
+        // }
 
         function closeEdit() {
             document.getElementById("editForm").style.display = "none";
