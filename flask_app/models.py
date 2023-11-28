@@ -19,7 +19,7 @@ class User(db.Model):
     email = db.Column("email", db.String(100))
     password = db.Column(db.String(255), nullable=False)
     registered_on = db.Column(db.DateTime, nullable=False)
-    profile_picture = db.Column(db.String(200), default='profile_default.jpeg')
+    profile_picture = db.Column(db.String(200))
     bio = db.Column("bio", db.String(200))
     notes = db.relationship("Note", backref="user", lazy=True)
     comments = db.relationship("Comment", backref="user", lazy=True)

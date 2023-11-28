@@ -88,6 +88,11 @@ class CreateHabitat(FlaskForm):
 class ProfileForm(FlaskForm):
     class Meta:
         csrf = False
-    profile_picture = FileField("Profile Picture", validators=[FileAllowed(['jpg', 'png'], 'Images only!')])
+    profile_picture = FileField("Profile Picture")
     bio = TextAreaField('Bio')
+    
+    email = SubmitField('Email')
+    first_name =SubmitField(' First Name')
+    last_name = SubmitField(' Last Name ')
     submit = SubmitField('Update Profile')
+    fields = ['profile_picture', 'bio', 'email', 'first_name', 'last_name', 'submit']

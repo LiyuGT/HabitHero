@@ -71,7 +71,9 @@ def profile():
         # Process the form data and update the user profile
         profile_picture = form.profile_picture.data
         bio = form.bio.data
-
+        email = form.email.data
+        first_name = form.first_name.data
+        last_name = form.last_name.data
         user = db.session.query(User).get(session.get('user_id'))
 
         # Update the bio
@@ -82,16 +84,30 @@ def profile():
             pic_filename = secure_filename(profile_picture.filename)
             pic_name = str(uuid.uuid1()) + "_" + pic_filename
             subfolder = 'images/profile_uploads'
-            profile_picture.save(os.path.join(app.config['UPLOAD_FOLDER'], subfolder, pic_name))
-            user.profile_picture = pic_name
 
-        db.session.commit()
+            try:
+                os.makedirs(os.path.join(app.config['UPLOAD_FOLDER'], subfolder), exist_ok=True)
+                profile_picture.save(os.path.join(app.config['UPLOAD_FOLDER'], subfolder, pic_name))
+                user.profile_picture = pic_name
+            except Exception as e:
+                # Handle the exception, log the error, or provide feedback to the user
+                print(f"Error saving profile picture: {e}")
+                # Redirect or render the page with an error message if needed
 
-        # Redirect to the profile page after updating
-        return redirect(url_for('profile'))
+        # Commit changes to the database
+        try:
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            print(f"Error committing changes to the database: {e}")
+            # Handle the error, provide feedback to the user, etc.
+        finally:
+            db.session.close()
 
-    # If the request is a GET or the form did not validate, render the profile.html template
-    return render_template('profile.html', form=form)
+    # Retrieve the user again to get the updated information
+    user = db.session.query(User).get(session.get('user_id'))
+
+    return render_template('profile.html', User=user, form=form)
 
 def generate_user_id():
     return str(uuid.uuid4())

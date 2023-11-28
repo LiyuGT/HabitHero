@@ -562,6 +562,12 @@ button {
     height: 200px; /* Set the desired height */
     object-fit: cover; /* Maintain aspect ratio and cover the entire container */
 }
+
+.bio-box {
+    background-color: #f0f0f0; /* Set your desired background color */
+    padding: 10px; /* Adjust the padding as needed */
+    border-radius: 5px; /* Add rounded corners if desired */
+}
 /* .sent {
     background-color: #007bff; 
     color: white;

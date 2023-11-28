@@ -22,20 +22,25 @@
         </div>
         <main>
             <div>
-                <!-- Display profile picture -->
-                <img id="profilePicture2" alt="profile picture" src="{{ url_for('static', filename='images/profile_default.jpeg') }}">
-                                
-                <!-- Form for updating profile picture and bio -->
+                <p>Hero: {{ User.first_name }} {{ User.last_name }}</p>
+                <p>Email: {{ User.email }}</p>
+                <img id="profilePicture2" alt="profile picture" src="{{ url_for('static', filename='images/profile_uploads/' + (User.profile_picture or 'profile_default.jpeg')) }}">
+
+                 <div class="bio-box">
+                    <p>Bio: {{ User.bio }}</p>
+                </div> 
+                
+
+
                 <form method="POST" action="/profile"  enctype="multipart/form-data">
-                                    
-                    <!-- Upload new profile picture -->
+                    {{ form.hidden_tag() }}              
                     {{ form.profile_picture.label }} {{ form.profile_picture }}
                                 
-                    <!-- Enter bio -->
                     <div>
                         {{ form.bio.label }} {{ form.bio }}
                     </div>
-                    <button type="submit" class="btn">Update Profile</button>
+
+                    {{ form.submit }}
                 </form>
 
                 <h3>Habitats Created</h3>
