@@ -126,9 +126,11 @@ def register():
         first_name = request.form['firstname']
         last_name = request.form['lastname']
         email = request.form['email']
+        profile_picture = " "
+        bio = " "
         # create user model
         #new_user = User(first_name, last_name, request.form['email'], h_password)
-        new_user = User(first_name, last_name, email, h_password)
+        new_user = User(first_name, last_name, email, h_password, profile_picture, bio)
         # add user to database and commit
         db.session.add(new_user)
         db.session.commit()
