@@ -71,7 +71,19 @@
         </div>
 
         <div class="habitat_view centered">
+
+            <p>Not working yet..?</p>
+
+
+            {% if habits %}
             <p><a href="{{url_for('chat')}}"><button>Navigate to Habitat Chat</button></a></p>
+            {% for habit in habits %}
+            <p>habit.user.first_name</p>
+            {% endfor %}
+            {% else %}
+
+            {% endif %}
+            
         </div>
     </main>
     <script>
@@ -99,7 +111,8 @@
             document.getElementById("myForm").style.display = "none";
         }
         function showHabitatDetails(habitatId) {
-            fetch(`/get_habitat_details/${habitatId}`)
+            // fetch(`/get_habitat_details/${habitatId}`)
+            fetch(`/habitats/${habitatId}`)
                 .then(response => response.json())
                 .then(data => {
                     updateHabitatView(data);

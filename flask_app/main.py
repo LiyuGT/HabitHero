@@ -246,6 +246,67 @@ def markAsDone(habit_id):
 
 #----- Habitat Routes ----#
 
+@app.route('/habitats/<habitat_id>', methods=['GET', 'POST'])
+def open_habitat(habitat_id):
+    my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
+    my_habits = db.session.query(Habit).filter_by(user_id=session['user_id']).all()
+
+    habitat = db.session.query(Habitat).filter_by(id=habitat_id).first()
+
+    # Find all habits associated with selected habitat
+    habits_in_habitat = db.session.query(Habit).filter_by(habitat_id=habitat_id).all()
+
+    for h in habits_in_habitat:
+        user = db.session.query(User).filter_by(id=h.user_id).first()
+        if user:
+            h.user = user
+
+    for h in my_habitats:
+        habit_query_result = db.session.query(Habit).filter_by(user_id=session['user_id'], habitat_id=h.id).first()
+
+        if habit_query_result:
+            h.users_habit = habit_query_result.title
+
+    form = CreateHabitat()
+
+    # Populate the dropdown choices with the user's habits
+    form.habit.choices = [(habit.id, habit.title) for habit in my_habits]
+
+    if request.method == "POST" and form.validate_on_submit():
+        title = request.form['title']
+        description = request.form['description']
+        user_id = session.get('user_id')
+        icon_image = request.files['icon_image']
+
+        pic_filename = secure_filename(icon_image.filename)
+        pic_name = str(uuid.uuid1())+"_"+pic_filename
+
+        saver = request.files['icon_image']
+
+        icon_image = pic_name
+
+        subfolder = 'images/user_uploads'
+        saver.save(os.path.join(app.config['UPLOAD_FOLDER'], subfolder, pic_name))
+
+        # Retrieve the selected habit from the form
+        selected_habit_id = form.habit.data
+        selected_habit = db.session.query(Habit).get(selected_habit_id)
+
+        # Add code to link habitat with selected habit here?
+
+        habitat = Habitat(title, user_id, description, icon_image)
+        db.session.add(habitat)
+        db.session.commit()
+
+        # Set the habitat_id for the selected habit
+        selected_habit.habitat_id = habitat.id
+        db.session.commit()
+
+        return redirect('/habitats')
+
+    return render_template('habitats.html', form=form, habitats=my_habitats, habitat=habitat, habits=habits_in_habitat)
+
+
 @app.route('/habitats', methods=['GET', 'POST'])
 def create_habitat():
     
@@ -257,7 +318,6 @@ def create_habitat():
 
         if habit_query_result:
             h.users_habit = habit_query_result.title
-        
 
     form = CreateHabitat()
 
