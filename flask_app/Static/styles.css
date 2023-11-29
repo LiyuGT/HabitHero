@@ -473,6 +473,8 @@ button {
     text-align: center;
     align-items: center;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* chatroom css */
@@ -550,6 +552,7 @@ button {
     object-fit: cover; 
     margin-bottom: 10px; 
 }
+
 .habitat_view .flame-icon {
     width: 20px; 
     height: 20px; 
@@ -558,6 +561,8 @@ button {
 }
 
 #profilePicture2 {
+
+    border-radius: 50%; 
     width: 200px; /* Set the desired width */
     height: 200px; /* Set the desired height */
     object-fit: cover; /* Maintain aspect ratio and cover the entire container */

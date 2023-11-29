@@ -21,10 +21,11 @@
             </a>
         </div>
         <main>
-            <div>
-                <p>Hero: {{ User.first_name }} {{ User.last_name }}</p>
+            <div class="container">
+                
+                <img id="profilePicture2" class="centered" alt="profile picture" src="{{ url_for('static', filename='images/profile_uploads/' + (User.profile_picture or 'profile_default.jpeg')) }}">
+                <h1>{{ User.first_name }} {{ User.last_name }}</h1>
                 <p>Email: {{ User.email }}</p>
-                <img id="profilePicture2" alt="profile picture" src="{{ url_for('static', filename='images/profile_uploads/' + (User.profile_picture or 'profile_default.jpeg')) }}">
 
                  <div class="bio-box">
                     <p>Bio: {{ User.bio }}</p>
