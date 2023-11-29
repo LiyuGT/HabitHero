@@ -33,7 +33,7 @@ class User(db.Model):
         self.email = email
         self.password = password
         self.registered_on = datetime.date.today()
-        self.profile_picture = profile_picture
+        self.profile_picture = 'profile_default.jpeg'
         self.bio = bio
 
 
