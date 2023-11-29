@@ -21,6 +21,7 @@ class User(db.Model):
     registered_on = db.Column(db.DateTime, nullable=False)
     profile_picture = db.Column(db.String(200))
     bio = db.Column("bio", db.String(200))
+    score =db.Column("score", db.Integer, default=0)
     notes = db.relationship("Note", backref="user", lazy=True)
     comments = db.relationship("Comment", backref="user", lazy=True)
     habits = db.relationship("Habit", backref="user", cascade="all, delete", lazy=True)
