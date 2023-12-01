@@ -106,8 +106,10 @@ def profile():
 
     # Retrieve the user again to get the updated information
     user = db.session.query(User).get(session.get('user_id'))
+    form.bio.data = user.bio
 
-    return render_template('profile.html', User=user, form=form)
+
+    return render_template('profile.html', user=user, form=form)
 
 def generate_user_id():
     return str(uuid.uuid4())
