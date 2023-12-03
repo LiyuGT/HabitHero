@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Sortable JS script for ordering habits-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
     <title>Habits</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
@@ -80,6 +82,7 @@
             </form>
         </div>
 
+
         <!-- Hardcoded habit for reference -->
         <!-- <div class="habitItem">
             <button><img src="static/images/unchecked.png"></button>
@@ -90,7 +93,6 @@
                 <img src="static/images/flame_grayscale.png">
             </div>
         </div>
-
         <div class="habitItem checkedOff">
             <button><img src="static/images/checkmark.png"></button>
             <p>Drink water</p>
@@ -100,46 +102,45 @@
                 <img src="static/images/flame_colored.png">
             </div>
         </div> -->
-
+        
+    <ul id="habits-list" class="sortable-list">
         {% for habit in habits %}
+        <li data-habit-id="{{ habit.id }}" class="sortable-item">
+            <div class="habitItem">
+                <button onclick="markAsDone('{{ habit.id }}')">
+                    {% if habit.done %}
+                    <img src="static/images/checkmark.png">
+                    {% else %}
+                    <img src="static/images/unchecked.png">
+                    {% endif %}
+                </button>
 
-        <div class="habitItem">
-            <button onclick="markAsDone('{{ habit.id }}')">
-                {% if habit.done %}
-                <img src="static/images/checkmark.png">
-                {% else %}
-                <img src="static/images/unchecked.png">
-                {% endif %}
-            </button>
+                <div class="habitDetails">
+                    <p>{{ habit.title }}</p>
+                    {% if habit.description %}
+                        <p class="subHeader">{{ habit.description }}</p>
+                    {% endif %}
+                </div>
+                
+                <div class="spacer"></div>
+                <div class="streak">
+                    <p>{{ habit.streak }}</p>
 
-            <div class="habitDetails">
-                <p>{{ habit.title }}</p>
-                {% if habit.description %}
-                    <p class="subHeader">{{ habit.description }}</p>
-                {% endif %}
-            </div>
-            
-            <div class="spacer"></div>
-            <div class="streak">
-                <p>{{ habit.streak }}</p>
+                    {% if habit.done %}
+                    <img src="static/images/flame_colored.png">
+                    {% else %}
+                    <img src="static/images/flame_grayscale.png">
+                    {% endif %}
 
-                {% if habit.done %}
-                <img src="static/images/flame_colored.png">
-                {% else %}
-                <img src="static/images/flame_grayscale.png">
-                {% endif %}
+                </div>
 
-            </div>
-
-            <button type="submit" class="btn" onclick="removeHabit('{{ habit.id }}')"><img id="delete_habit" src="static/images/remove.png" ></button>
-            <button type="submit" class="btn" onclick="editHabit('{{ habit.id }}')"> Edit </button>
-            
-            
+                <button type="submit" class="btn" onclick="removeHabit('{{ habit.id }}')"><img id="delete_habit" src="static/images/remove.png" ></button>
+                <button type="submit" class="btn" onclick="editHabit('{{ habit.id }}')"> Edit </button>
               
-        </div>
-
+            </div>
+        </li>
         {% endfor %}
-
+    </ul>
     </main>
 
     <script>
@@ -173,27 +174,42 @@
                     .catch(error => console.error('Error:', error));
         }
 
-        // function markAsDone(habitId) {
-        //     const lastDoneKey = `lastDone_${habitId}`;
-        //     const lastDone = localStorage.getItem(lastDoneKey);
-        //     const today = new Date().toISOString().split('T')[0]; 
-        //     if (lastDone !== today) {
-        //         fetch(`/habits/${habitId}/update`, { method: 'POST' })
-        //             .then(() => {
-        //                 localStorage.setItem(lastDoneKey, today);
-        //                 location.reload();
-        //             })
-        //             .catch(error => console.error('Error:', error));
-        //     } else {
-        //         alert("You've already completed this habit for today!");
-        //     }
-        // }
+        
 
         function closeEdit() {
             document.getElementById("editForm").style.display = "none";
         }
 
-        
+        document.addEventListener('DOMContentLoaded', function () {
+        var habitsList = document.getElementById('habits-list');
+        var sortable = new Sortable(habitsList, {
+            handle: '.habitItem', 
+            onUpdate: function (event) {
+                
+                var habitIds = Array.from(habitsList.children).map(habit => habit.dataset.habitId);
+                
+                fetch('/update_habit_order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ habit_order: habitIds }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        console.log('Habits ordered successfully');
+                    } else {
+                        console.error('Failed to update habit order');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error updating habit order:', error);
+                });
+            },
+        });
+    });
+
         function editHabit(habitId, habitTitle, habitDescription) {
             const titleInput = document.querySelector("#editForm input[name='new_title']");
             const descriptionInput = document.querySelector("#editForm input[name='new_description']");
