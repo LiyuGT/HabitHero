@@ -1,35 +1,35 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<head>
-    <title>Habit Hero Home</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Habits</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
 
-</head>
 <body>
     <div class="navbar">
         <a href="{{url_for('home1')}}">Home</a>
         <a href="{{url_for('createhabits')}}">My Habits</a>
         <h1>Habit Hero</h1>
         <a href="{{url_for('habitats')}}">Habitats</a>
-        <a href="{{url_for('logout')}}">Logout</a>
         <a href="{{url_for('profile')}}">
-            <img id="profilePicture" alt="profile picture" src="static/images/profile_default.jpeg">
+            <img id="profilePicture2" class="forPic" alt="profile picture" src="{{ url_for('static', filename='images/profile_uploads/' + (user.profile_picture or 'profile_default.jpeg')) }}" >
         </a>
     </div>
-    <div class="body-content">
 
+    <div class="body-content">
         <hr/>
     </div>
+
     <div class="landingmain">
         <h1>Continue Becoming The Hero You Need</h1>
         <p>Always be ready to enhance your positive habits with friends!</p>
 
-        <div class = "joinnow">
+        <div class="joinnow">
             <a href="{{ url_for('habitats') }}">See Your Friends in Your Habitats!</a>
         </div>
-        
-
-        
 
         <div class="landingabout">
             <h3>Our Goal</h3>
@@ -37,3 +37,6 @@
         </div>
     </div>
 </body>
+
+</html>
+

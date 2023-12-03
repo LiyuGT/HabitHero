@@ -31,15 +31,23 @@
         <a href="{{url_for('createhabits')}}">My Habits</a>
         <h1>Habit Hero</h1>
         <a href="{{url_for('habitats')}}">Habitats</a>
-        <a href="{{url_for('logout')}}">Logout</a>
         <a href="{{url_for('profile')}}">
-            <img id="profilePicture" alt="profile picture" src="static/images/profile_default.jpeg">
+            <img id="profilePicture2" class="forPic" alt="profile picture" src="{{ url_for('static', filename='images/profile_uploads/' + (user.profile_picture or 'profile_default.jpeg')) }}" >
         </a>
     </div>
     <main class="container_with_sidebar">
         <div class="sidebar">
             <button class="open-button" onclick="openForm()">Create Habitat</button>
-
+            <form method="GET" action="/search_habits" class="search-form">
+                <input type="text" name="query" placeholder="Search habitatas..." class="search-input">
+                
+                <select name="habits" class="search-dropdown">
+                    {% for habitat in habitats %}
+                        <option value="{{ habitat.id }}">{{ habitat.title }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="search-button">Search</button>
+                </form>
             {% for habitat in habitats %}
 
             <a class="habitat_item" href="" onclick="selectHabitat(this, '{{habitat.id}}')">

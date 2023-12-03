@@ -9,29 +9,19 @@
 </head>
 
 <body>
-        <div class="navbar">
-            <a href="{{url_for('home1')}}">Home</a>
-            <a href="{{url_for('createhabits')}}">My Habits</a>
-            <h1>Habit Hero</h1>
-            <a href="{{url_for('habitats')}}">Habitats</a>
-            <a href="{{url_for('logout')}}">Logout</a>
-            <a href="{{url_for('profile')}}">
-                <img id="profilePicture" alt="profile picture" src="static/images/profile_default.jpeg">
-            </a>
-        </div>
+
+    <div class="navbar">
+        <a href="{{url_for('home1')}}">Home</a>
+        <a href="{{url_for('createhabits')}}">My Habits</a>
+        <h1>Habit Hero</h1>
+        <a href="{{url_for('habitats')}}">Habitats</a>
+        <a href="{{url_for('profile')}}">
+            <img id="profilePicture" class="forPic" alt="profile picture" src="{{ url_for('static', filename='images/profile_uploads/' + 'profile_default.jpeg') }}">            </a>
+    </div>
+        
     <main>
 
-        <!-- <div class="popup" id="popup">
-<div class="popup-content">
-    <span class="close" id="closePopupButton">&times;</span>
-    <h1>Create Habit</h1>
-
-  <form method="POST" id="/habits">
-    {{form.title.label}} {{form.title}}
-    {{form.submit}}
-
-  </form>
-</div> -->
+       
 
         <button class="open-button" onclick="openForm()">Quick Add Habit</button>
         <button class="open-button" onclick="openFormSlow()">Slow Add Habit</button>

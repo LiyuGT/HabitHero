@@ -61,7 +61,36 @@ def home():
 
 @app.route('/home1')
 def home1():
-    return render_template('home1.html')
+    form = ProfileForm()
+
+    if request.method == 'POST' and form.validate_on_submit():
+        profile_picture = form.profile_picture.data
+        user = db.session.query(User).get(session.get('user_id'))
+        if profile_picture:
+            pic_filename = secure_filename(profile_picture.filename)
+            pic_name = str(uuid.uuid1()) + "_" + pic_filename
+            subfolder = 'images/profile_uploads'
+
+            try:
+                os.makedirs(os.path.join(app.config['UPLOAD_FOLDER'], subfolder), exist_ok=True)
+                profile_picture.save(os.path.join(app.config['UPLOAD_FOLDER'], subfolder, pic_name))
+                user.profile_picture = pic_name
+            except Exception as e:
+                print(f"Error saving profile picture: {e}")
+        try:
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            print(f"Error committing changes to the database: {e}")
+        finally:
+            db.session.close()
+    user = db.session.query(User).get(session.get('user_id'))
+    return render_template('home1.html', user=user, form=form)
+
+@app.route('/search_habits')
+def search_habits():
+    
+    return render_template('habitats.html')
 
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
@@ -225,9 +254,8 @@ def createhabits():
 
     # Commit changes to the database
     db.session.commit()
-        
-    return render_template('habits.html', habits=my_habits, form=form)
 
+    return render_template('habits.html', habits=my_habits, form=form)
 @app.route('/SlowAdd', methods =['POST', 'GET'])
 def createhabitsslow():
 
@@ -249,6 +277,7 @@ def createhabitsslow():
         return redirect('/habits')
         
     return render_template('habits.html', habits=my_habits, form=form)
+
 
 
 @app.route('/habits/<habit_id>/delete', methods=['POST'])
@@ -376,7 +405,32 @@ def create_habitat():
 
         return redirect('/habitats')
 
-    return render_template('habitats.html', form=form, habitats=my_habitats)
+        form = ProfileForm()
+
+    if request.method == 'POST' and form.validate_on_submit():
+        profile_picture = form.profile_picture.data
+        user = db.session.query(User).get(session.get('user_id'))
+        if profile_picture:
+            pic_filename = secure_filename(profile_picture.filename)
+            pic_name = str(uuid.uuid1()) + "_" + pic_filename
+            subfolder = 'images/profile_uploads'
+
+            try:
+                os.makedirs(os.path.join(app.config['UPLOAD_FOLDER'], subfolder), exist_ok=True)
+                profile_picture.save(os.path.join(app.config['UPLOAD_FOLDER'], subfolder, pic_name))
+                user.profile_picture = pic_name
+            except Exception as e:
+                print(f"Error saving profile picture: {e}")
+        try:
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            print(f"Error committing changes to the database: {e}")
+        finally:
+            db.session.close()
+    user = db.session.query(User).get(session.get('user_id'))
+
+    return render_template('habitats.html',  user=user, form=form, habitats=my_habitats)
 
 # @habitats_bp.route('/<int:habitat_id>')
 # def view_habitat(habitat_id):
@@ -443,7 +497,7 @@ def edit_habit(habit_id):
 # - See Habitats -
 @app.route('/habitats')
 def habitats():
-    return render_template('habitats.html')
+    return render_template('habitats.html', user_id=session.get('user_id'))
 
 @app.route('/get_habitat_details/<int:habitat_id>')
 def get_habitat_details(habitat_id):

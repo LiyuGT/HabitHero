@@ -14,22 +14,15 @@
         <a href="{{url_for('createhabits')}}">My Habits</a>
         <h1>Habit Hero</h1>
         <a href="{{url_for('habitats')}}">Habitats</a>
-        <a href="{{url_for('logout')}}">Logout</a>
         <a href="{{url_for('profile')}}">
-            <img id="profilePicture" alt="profile picture" src="static/images/profile_default.jpeg">
+            <img class="forPic" alt="profile picture" src="{{ url_for('static', filename='images/profile_uploads/' + (user.profile_picture or 'profile_default.jpeg')) }}" >
         </a>
     </div>
-
     <main>
         <div class="container">
             
-
             <img id="profilePicture2" class="centered" alt="profile picture" src="{{ url_for('static', filename='images/profile_uploads/' + (user.profile_picture or 'profile_default.jpeg')) }}">
-
-
-
             <h1>{{ user.first_name }} {{ user.last_name }}</h1>
-
             <!-- Edit form and bio display -->
             <div id="editFormContainer" style="display: none;">
                 <form method="POST" action="/profile" enctype="multipart/form-data">
@@ -58,65 +51,50 @@
             <div class="joinnow">
                 <a href="{{ url_for('home') }}">Log Out</a>
             </div>
-        </div>
-    </main>
-
-    <script>
-        function toggleEditMode() {
-            var editForm = document.getElementById("editFormContainer");
-            var bioBox = document.getElementById("bio-box");
-
-            if (editForm.style.display === 'none') {
-                editForm.style.display = 'block';
-                bioBox.style.display = 'none';
-            } else {
-                editForm.style.display = 'none';
-                bioBox.style.display = 'block';
+        </main>
+        <script>
+            function toggleEditMode() {
+                var editForm = document.getElementById("editFormContainer");
+                var bioBox = document.getElementById("bio-box");
+                if (editForm.style.display === 'none') {
+                    editForm.style.display = 'block';
+                    bioBox.style.display = 'none';
+                } else {
+                    editForm.style.display = 'none';
+                    bioBox.style.display = 'block';
+                }
             }
-        }
-
-        document.getElementById("profilePicture2").addEventListener("click", function() {
-            var editForm = document.getElementById("editFormContainer");
-
-            
-            
-            if (editForm.style.display === 'block') {
-                document.getElementById("fileInput").click();
-            }
-        });
-
-        document.getElementById("fileInput").addEventListener("change", function() {
-            var fileInput = document.getElementById("fileInput");
-            var profilePicture2 = document.getElementById("profilePicture2");
-
-            if (fileInput.files) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    profilePicture2.src = e.target.result;
-                };
-
-                reader.readAsDataURL(fileInput.files[0]);
-            }
-        });
-
-        // // Check if there's a file input when the form is submitted
-        document.querySelector("form").addEventListener("submit", function () {
-            var fileInput = document.getElementById("fileInput");
-            var profilePicture2 = document.getElementById("profilePicture2");
-
-            if (fileInput.files && fileInput.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    profilePicture2.src = e.target.result;
-                };
-
-                reader.readAsDataURL(fileInput.files[0]);
-            }
-        });
-
-    </script>
-</body>
-
-</html>
+            document.getElementById("profilePicture2").addEventListener("click", function() {
+                var editForm = document.getElementById("editFormContainer");
+                
+                
+                if (editForm.style.display === 'block') {
+                    document.getElementById("fileInput").click();
+                }
+            });
+            document.getElementById("fileInput").addEventListener("change", function() {
+                var fileInput = document.getElementById("fileInput");
+                var profilePicture2 = document.getElementById("profilePicture2");
+                if (fileInput.files) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        profilePicture2.src = e.target.result;
+                    };
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            });
+            // // Check if there's a file input when the form is submitted
+            document.querySelector("form").addEventListener("submit", function () {
+                var fileInput = document.getElementById("fileInput");
+                var profilePicture2 = document.getElementById("profilePicture2");
+                if (fileInput.files && fileInput.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        profilePicture2.src = e.target.result;
+                    };
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            });
+        </script>
+    </body>
+    </html>
