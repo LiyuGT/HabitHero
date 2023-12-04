@@ -15,7 +15,7 @@
         <h1>Habit Hero</h1>
         <a href="{{url_for('habitats')}}">Habitats</a>
         <a href="{{url_for('profile')}}">
-            <img id="profilePicture2" class="forPic" alt="profile picture" src="{{ url_for('static', filename='images/profile_uploads/' + (user.profile_picture or 'profile_default.jpeg')) }}" >
+            <img class="profilePicture" alt="profile picture" src="{{ url_for('static', filename='images/profile_uploads/' + (user.profile_picture or 'profile_default.jpeg')) }}" >
         </a>
     </div>
 

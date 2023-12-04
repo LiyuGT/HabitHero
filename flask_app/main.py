@@ -254,8 +254,9 @@ def createhabits():
 
     # Commit changes to the database
     db.session.commit()
+    user = db.session.query(User).get(session.get('user_id'))
 
-    return render_template('habits.html', habits=my_habits, form=form)
+    return render_template('habits.html', habits=my_habits, form=form, user=user)
 @app.route('/SlowAdd', methods =['POST', 'GET'])
 def createhabitsslow():
 
@@ -275,8 +276,10 @@ def createhabitsslow():
         db.session.add(habit)
         db.session.commit()
         return redirect('/habits')
+    
+    user = db.session.query(User).get(session.get('user_id'))
         
-    return render_template('habits.html', habits=my_habits, form=form)
+    return render_template('habits.html', habits=my_habits, form=form, user=user)
 
 
 

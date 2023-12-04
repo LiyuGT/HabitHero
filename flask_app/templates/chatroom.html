@@ -14,8 +14,9 @@
         <a href="{{url_for('createhabits')}}">My Habits</a>
         <h1>Habit Hero</h1>
         <a href="{{url_for('habitats')}}">Habitats</a>
-        <a href="{{url_for('logout')}}">Logout</a>
-        <img id="profilePicture" alt="profile picture" src="static/images/profile_default.jpeg">
+        <a href="{{url_for('profile')}}">
+            <img class="profilePicture" alt="profile picture" src="{{ url_for('static', filename='images/profile_uploads/' + (user.profile_picture or 'profile_default.jpeg')) }}" >
+        </a>
     </div>
     <div class="chatroom container">
         <h1 class="mychat">Welcome to Chat Room {{room}}</h1>
