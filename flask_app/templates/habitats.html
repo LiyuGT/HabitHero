@@ -66,13 +66,42 @@
 
         </div>
 
-        <div class="habitat_view centered">
+        <div class="habitat_view">
 
             {% if habitat %}
-                <!-- Display details for the selected habitat -->
-                <h2>{{ habitat.title }}</h2>
-                <img class="habitat-image" src="{{ url_for('static', filename='images/user_uploads/' + habitat.icon_image) }}" alt="{{ habitat.title }}">
+                
                 <a href="{{ url_for('chatroom', habitat_id=habitat.id) }}"> Go to Habitat Chatroom</a>
+                <h1>{{ habitat.title }}</h1>
+
+                {% for habit in membersHabits %}
+                    <div class="memberItem">
+                        <div class="habitDetails">
+                            <p>{{ habit.title }}</p>
+                            {% if habit.description %}
+                                <p class="subHeader">{{ habit.description }}</p>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="spacer"></div>
+                        <div class="streak">
+                            <p>{{ habit.streak }}</p>
+        
+                            {% if habit.done %}
+                            <img src="static/images/flame_colored.png">
+                            {% else %}
+                            <img src="static/images/flame_grayscale.png">
+                            {% endif %}
+        
+                        </div>
+                    
+                    </div>
+                {% endfor %}
+
+
+                <!-- Display details for the selected habitat -->
+                
+                
+                
             {% else %}
                 <p>Not working yet?</p>
                 <!-- Your existing code for displaying habits -->

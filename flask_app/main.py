@@ -364,7 +364,7 @@ def open_habitats():
 
     user = db.session.query(User).get(session.get('user_id'))
 
-    return render_template('habitats.html', user=user, form=form, habitats=my_habitats, habitat=selected_habitat)
+    return render_template('habitats.html', user=user, form=form, habitats=my_habitats, habitat=selected_habitat, membersHabits = members_habits)
 
     
     # my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
