@@ -321,6 +321,7 @@ def open_habitats():
     habitat_id = request.args.get('habitat_id')
 
     selected_habitat = None
+    members_habits = None
 
     if habitat_id:
         # Fetch the selected habitat if habitat_id is present
