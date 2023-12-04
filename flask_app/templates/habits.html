@@ -108,7 +108,7 @@
         {% for habit in habits %}
         <li data-habit-id="{{ habit.id }}" class="sortable-item">
             <div class="habitItem">
-                <button onclick="markAsDone('{{ habit.id }}')">
+                <button class="checkmark" onclick="markAsDone('{{ habit.id }}')">
                     {% if habit.done %}
                     <img src="static/images/checkmark.png">
                     {% else %}

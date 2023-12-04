@@ -73,26 +73,36 @@
                 <h1>{{ habitat.title }}</h1>
                 <a id="chatroomLink" href="{{ url_for('chatroom', habitat_id=habitat.id) }}"> Go to chatroom →</a>
 
-                {% for habit in membersHabits %}
-                    <div class="memberItem">
-                        <div class="habitDetails">
-                            <p>{{ habit.title }}</p>
-                        </div>
+                <div id="memberList">
+
+                    {% for habit in membersHabits %}
+                        <div class="memberItem">
+
+                            <img class="profileIcon" src="{{ url_for('static', filename='images/profile_uploads/' + habit.member.profile_picture) }}">
+
+                            <div class="habitat_details">
+                                <h3>{{ habit.member.first_name + ' ' + habit.member.last_name}}</h3>
+                                <p>{{ habit.title }}</p>
+                            </div>
+                            
+                            <div class="spacer"></div>
+                            <div class="streak">
+                                <p>{{ habit.streak }}</p>
+            
+                                {% if habit.done %}
+                                <img src="static/images/flame_colored.png">
+                                {% else %}
+                                <img src="static/images/flame_grayscale.png">
+                                {% endif %}
+            
+                            </div>
                         
-                        <div class="spacer"></div>
-                        <div class="streak">
-                            <p>{{ habit.streak }}</p>
-        
-                            {% if habit.done %}
-                            <img src="static/images/flame_colored.png">
-                            {% else %}
-                            <img src="static/images/flame_grayscale.png">
-                            {% endif %}
-        
                         </div>
-                    
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+
+
+                </div>
+                
 
 
                 <!-- Display details for the selected habitat -->

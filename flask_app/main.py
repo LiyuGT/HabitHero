@@ -329,6 +329,10 @@ def open_habitats():
         selected_habitat = db.session.query(Habitat).get(habitat_id)
         members_habits = db.session.query(Habit).filter_by(habitat_id=habitat_id).all()
 
+        for habit in members_habits:
+            user = db.session.query(User).filter_by(id=habit.user_id).first()
+            habit.member = user
+
 
     if request.method == "POST" and form.validate_on_submit():
         # Handle form submission for creating a new habitat
