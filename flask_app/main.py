@@ -300,6 +300,7 @@ def markAsDone(habit_id):
 
 @app.route('/habitats/<habitat_id>', methods=['GET', 'POST'])
 def open_habitat(habitat_id):
+    print(habitat_id)
     # Redirect to the '/habitats' route with the habitat_id as a query parameter
     return redirect(url_for('open_habitats', habitat_id=habitat_id))
 
@@ -454,15 +455,15 @@ def chat():
 
 
 # - Chatroom -
-@app.route('/chatroom')
-def chatroom():
-    username = request.args.get('username')
-    room = request.args.get('room')
+@app.route('/chatroom/<habitat_id>')
+def chatroom(habitat_id):
+    # username = request.args.get('username')
+    # room = request.args.get('room')
+    user = db.session.query(User).get(session.get('user_id'))
+    habitat = db.session.query(Habitat).get(habitat_id)
+    
+    return render_template('chatroom.html', user=user, habitat=habitat)
 
-    if username and room:
-        return render_template('chatroom.html', username=username, room=room)
-    else:
-        return redirect(url_for('chat'))
 
 
 # - Send Message -
