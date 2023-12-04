@@ -300,68 +300,11 @@ def markAsDone(habit_id):
 
 @app.route('/habitats/<habitat_id>', methods=['GET', 'POST'])
 def open_habitat(habitat_id):
-    my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
-    my_habits = db.session.query(Habit).filter_by(user_id=session['user_id']).all()
-
-    habitat = db.session.query(Habitat).filter_by(id=habitat_id).first()
-
-    # Find all habits associated with selected habitat
-    habits_in_habitat = db.session.query(Habit).filter_by(habitat_id=habitat_id).all()
-
-    for h in habits_in_habitat:
-        user = db.session.query(User).filter_by(id=h.user_id).first()
-        if user:
-            h.user = user
-
-    for h in my_habitats:
-        habit_query_result = db.session.query(Habit).filter_by(user_id=session['user_id'], habitat_id=h.id).first()
-
-        if habit_query_result:
-            h.users_habit = habit_query_result.title
-
-    form = CreateHabitat()
-
-    # Populate the dropdown choices with the user's habits
-    form.habit.choices = [(habit.id, habit.title) for habit in my_habits]
-
-    if request.method == "POST" and form.validate_on_submit():
-        title = request.form['title']
-        description = request.form['description']
-        user_id = session.get('user_id')
-        icon_image = request.files['icon_image']
-
-        pic_filename = secure_filename(icon_image.filename)
-        pic_name = str(uuid.uuid1())+"_"+pic_filename
-
-        saver = request.files['icon_image']
-
-        icon_image = pic_name
-
-        subfolder = 'images/user_uploads'
-        saver.save(os.path.join(app.config['UPLOAD_FOLDER'], subfolder, pic_name))
-
-        # Retrieve the selected habit from the form
-        selected_habit_id = form.habit.data
-        selected_habit = db.session.query(Habit).get(selected_habit_id)
-
-        # Add code to link habitat with selected habit here?
-
-        habitat = Habitat(title, user_id, description, icon_image)
-        db.session.add(habitat)
-        db.session.commit()
-
-        # Set the habitat_id for the selected habit
-        selected_habit.habitat_id = habitat.id
-        db.session.commit()
-
-        return redirect('/habitats')
-
-    return render_template('habitats.html', form=form, habitats=my_habitats, habitat=habitat, habits=habits_in_habitat)
-
+    # Redirect to the '/habitats' route with the habitat_id as a query parameter
+    return redirect(url_for('open_habitats', habitat_id=habitat_id))
 
 @app.route('/habitats', methods=['GET', 'POST'])
-def create_habitat():
-    
+def open_habitats():
     my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
     my_habits = db.session.query(Habit).filter_by(user_id=session['user_id']).all()
 
@@ -372,18 +315,28 @@ def create_habitat():
             h.users_habit = habit_query_result.title
 
     form = CreateHabitat()
-
-    # Populate the dropdown choices with the user's habits
     form.habit.choices = [(habit.id, habit.title) for habit in my_habits]
 
+    habitat_id = request.args.get('habitat_id')
+
+    selected_habitat = None
+
+    if habitat_id:
+        # Fetch the selected habitat if habitat_id is present
+        print(f"habitat_id: {habitat_id}")
+        selected_habitat = db.session.query(Habitat).get(habitat_id)
+        members_habits = db.session.query(Habit).filter_by(habitat_id=habitat_id).all()
+
+
     if request.method == "POST" and form.validate_on_submit():
+        # Handle form submission for creating a new habitat
         title = request.form['title']
         description = request.form['description']
         user_id = session.get('user_id')
         icon_image = request.files['icon_image']
 
         pic_filename = secure_filename(icon_image.filename)
-        pic_name = str(uuid.uuid1())+"_"+pic_filename
+        pic_name = str(uuid.uuid1()) + "_" + pic_filename
 
         saver = request.files['icon_image']
 
@@ -408,32 +361,83 @@ def create_habitat():
 
         return redirect('/habitats')
 
-        form = ProfileForm()
-
-    if request.method == 'POST' and form.validate_on_submit():
-        profile_picture = form.profile_picture.data
-        user = db.session.query(User).get(session.get('user_id'))
-        if profile_picture:
-            pic_filename = secure_filename(profile_picture.filename)
-            pic_name = str(uuid.uuid1()) + "_" + pic_filename
-            subfolder = 'images/profile_uploads'
-
-            try:
-                os.makedirs(os.path.join(app.config['UPLOAD_FOLDER'], subfolder), exist_ok=True)
-                profile_picture.save(os.path.join(app.config['UPLOAD_FOLDER'], subfolder, pic_name))
-                user.profile_picture = pic_name
-            except Exception as e:
-                print(f"Error saving profile picture: {e}")
-        try:
-            db.session.commit()
-        except Exception as e:
-            db.session.rollback()
-            print(f"Error committing changes to the database: {e}")
-        finally:
-            db.session.close()
     user = db.session.query(User).get(session.get('user_id'))
 
-    return render_template('habitats.html',  user=user, form=form, habitats=my_habitats)
+    return render_template('habitats.html', user=user, form=form, habitats=my_habitats, habitat=selected_habitat)
+
+    
+    # my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
+    # my_habits = db.session.query(Habit).filter_by(user_id=session['user_id']).all()
+
+    # for h in my_habitats:
+    #     habit_query_result = db.session.query(Habit).filter_by(user_id=session['user_id'], habitat_id=h.id).first()
+
+    #     if habit_query_result:
+    #         h.users_habit = habit_query_result.title
+
+    # form = CreateHabitat()
+
+    # # Populate the dropdown choices with the user's habits
+    # form.habit.choices = [(habit.id, habit.title) for habit in my_habits]
+
+    # if request.method == "POST" and form.validate_on_submit():
+    #     title = request.form['title']
+    #     description = request.form['description']
+    #     user_id = session.get('user_id')
+    #     icon_image = request.files['icon_image']
+
+    #     pic_filename = secure_filename(icon_image.filename)
+    #     pic_name = str(uuid.uuid1())+"_"+pic_filename
+
+    #     saver = request.files['icon_image']
+
+    #     icon_image = pic_name
+
+    #     subfolder = 'images/user_uploads'
+    #     saver.save(os.path.join(app.config['UPLOAD_FOLDER'], subfolder, pic_name))
+
+    #     # Retrieve the selected habit from the form
+    #     selected_habit_id = form.habit.data
+    #     selected_habit = db.session.query(Habit).get(selected_habit_id)
+
+    #     # Add code to link habitat with selected habit here?
+
+    #     habitat = Habitat(title, user_id, description, icon_image)
+    #     db.session.add(habitat)
+    #     db.session.commit()
+
+    #     # Set the habitat_id for the selected habit
+    #     selected_habit.habitat_id = habitat.id
+    #     db.session.commit()
+
+    #     return redirect('/habitats')
+
+    # #     form = ProfileForm()
+
+    # # if request.method == 'POST' and form.validate_on_submit():
+    # #     profile_picture = form.profile_picture.data
+    # #     user = db.session.query(User).get(session.get('user_id'))
+    # #     if profile_picture:
+    # #         pic_filename = secure_filename(profile_picture.filename)
+    # #         pic_name = str(uuid.uuid1()) + "_" + pic_filename
+    # #         subfolder = 'images/profile_uploads'
+
+    # #         try:
+    # #             os.makedirs(os.path.join(app.config['UPLOAD_FOLDER'], subfolder), exist_ok=True)
+    # #             profile_picture.save(os.path.join(app.config['UPLOAD_FOLDER'], subfolder, pic_name))
+    # #             user.profile_picture = pic_name
+    # #         except Exception as e:
+    # #             print(f"Error saving profile picture: {e}")
+    # #     try:
+    # #         db.session.commit()
+    # #     except Exception as e:
+    # #         db.session.rollback()
+    # #         print(f"Error committing changes to the database: {e}")
+    # #     finally:
+    # #         db.session.close()
+    # user = db.session.query(User).get(session.get('user_id'))
+
+    # return render_template('habitats.html',  user=user, form=form, habitats=my_habitats)
 
 # @habitats_bp.route('/<int:habitat_id>')
 # def view_habitat(habitat_id):

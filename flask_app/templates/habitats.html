@@ -81,7 +81,17 @@
 
         <div class="habitat_view centered">
 
-            <p>Not working yet..?</p>
+            {% if habitat %}
+                <!-- Display details for the selected habitat -->
+                <h2>{{ habitat.title }}</h2>
+                <img class="habitat-image" src="{{ url_for('static', filename='images/user_uploads/' + habitat.icon_image) }}" alt="{{ habitat.title }}">
+                <!-- Add other details as needed -->
+            {% else %}
+                <p>Not working yet?</p>
+                <!-- Your existing code for displaying habits -->
+            {% endif %}
+
+            <!-- <p>Not working yet..?</p>
 
 
             {% if habits %}
@@ -91,7 +101,7 @@
             {% endfor %}
             {% else %}
 
-            {% endif %}
+            {% endif %} -->
             
         </div>
     </main>
