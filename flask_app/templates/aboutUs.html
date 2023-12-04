@@ -6,15 +6,57 @@ About Us
 
 {% block content %}
 
-        <div class="container">
+<div class="container">
 
-            <h1>ABOUT US</h1>
-            <p>
-                Although most people recognize the benefit of forming good habits, the positive effects of those good habits are often only recognizable weeks, months, or even years after they are already formed.
-                Because it is hard to see the short-term value of good habits, it is very common to give up on a good habit before those positive effects have the chance to develop.
-                All of us here at Habit Hero aim to fix that by providing a place to stay accountable to your habits, all while having fun with a little healthy competition.
-            </p>
-        </div>
-    
+    <h1>ABOUT US</h1>
+    <p>
+        Although most people recognize the benefit of forming good habits, the positive effects of those good habits are
+        often only recognizable weeks, months, or even years after they are already formed.
+        Because it is hard to see the short-term value of good habits, it is very common to give up on a good habit
+        before those positive effects have the chance to develop.
+        All of us here at Habit Hero aim to fix that by providing a place to stay accountable to your habits, all while
+        having fun with a little healthy competition.
+    </p>
+
+    <h2>Contact Us</h2>
+    <!-- <form action="/aboutUs" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <input type="submit" value="Submit">
+    </form> -->
+    <form id="contactForm" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        location.reload();
+    });
+</script>
+
 
 {% endblock %}
