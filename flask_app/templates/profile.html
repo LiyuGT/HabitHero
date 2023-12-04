@@ -20,26 +20,31 @@
     </div>
     <main>
         <div class="container">
+
+            <button class="right" id="edit" onclick="toggleEditMode()">Edit profile</button><br><br>
             
-            <img id="profilePicture2" class="centered" alt="profile picture" src="{{ url_for('static', filename='images/profile_uploads/' + (user.profile_picture or 'profile_default.jpeg')) }}">
+            <div class="centered" id="profilePictureEdit">
+                <img class="cover" id="cameraEdit" style="display: none;" src="static/images/camera.png">
+                <img id="profilePicture2"  alt="profile picture" src="{{ url_for('static', filename='images/profile_uploads/' + (user.profile_picture or 'profile_default.jpeg')) }}">
+            </div>
+            
             <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+            <p class="habitScore">You have {{ user.score }} gems</p>
             <!-- Edit form and bio display -->
             <div id="editFormContainer" style="display: none;">
                 <form method="POST" action="/profile" enctype="multipart/form-data">
                     {{ form.hidden_tag() }}                                       
-                    {{ form.bio.label }} {{ form.bio(value='Testing') }} <br>
-                    {{ form.submit }}
+                    {{ form.bio(id="profileTextInput") }} <br>
+                    
                     <div style="display: none;">
+                        {{ form.submit(id="submit") }}
                         {{ form.profile_picture(id="fileInput") }}    
                     </div>
                 </form>
             </div>
 
-            <div id="bio-box">
-                <p>Bio: {{ user.bio }}</p>
-                <button onclick="toggleEditMode()">Edit</button>
-            </div>
-
+            <p id="bio-box" class="centered">{{ user.bio }}</p>
+            
             <!-- Habitats -->
             <!-- <h3>Habitats Created</h3>
             <ul>
@@ -48,27 +53,39 @@
                 {% endfor %}
             </ul> -->
 
-            <div class="about-button">
-                <a href="{{url_for('aboutUs')}}">About Us</a>
+            
+            <div class="centered">
+                <a class="squaredButton" href="{{url_for('aboutUs')}}">Contact Us</a>
+                <div class="spacer"></div>
+                <a class="squaredButton" href="{{ url_for('home') }}">Log Out</a>
             </div>
 
-            <div class="joinnow">
-                <a href="{{ url_for('home') }}">Log Out</a>
-            </div>
+            
         </main>
         <script>
             function toggleEditMode() {
                 var editForm = document.getElementById("editFormContainer");
                 var bioBox = document.getElementById("bio-box");
+                var editButton = document.getElementById("edit");
+                var camera = document.getElementById("cameraEdit");
+                
                 if (editForm.style.display === 'none') {
                     editForm.style.display = 'block';
+                    camera.style.display = 'block';
                     bioBox.style.display = 'none';
+                    editButton.innerText = "Save edits";
+                    
                 } else {
                     editForm.style.display = 'none';
                     bioBox.style.display = 'block';
+                    camera.style.display = 'none';
+                    editButton.innerText = "Edit profile";
+                    document.getElementById("submit").click();
                 }
+
             }
-            document.getElementById("profilePicture2").addEventListener("click", function() {
+            
+            document.getElementById("profilePictureEdit").addEventListener("click", function() {
                 var editForm = document.getElementById("editFormContainer");
                 
                 
@@ -76,6 +93,7 @@
                     document.getElementById("fileInput").click();
                 }
             });
+
             document.getElementById("fileInput").addEventListener("change", function() {
                 var fileInput = document.getElementById("fileInput");
                 var profilePicture2 = document.getElementById("profilePicture2");
@@ -87,6 +105,7 @@
                     reader.readAsDataURL(fileInput.files[0]);
                 }
             });
+
             // // Check if there's a file input when the form is submitted
             document.querySelector("form").addEventListener("submit", function () {
                 var fileInput = document.getElementById("fileInput");

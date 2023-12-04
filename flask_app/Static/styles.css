@@ -45,6 +45,11 @@ header li, header a {
 
 }
 
+a:visited { 
+    text-decoration: none; 
+    color: black;
+}
+
 a:hover {
     opacity: 50%;
 }
@@ -203,7 +208,6 @@ header > ul {
 
 .container * {
     padding: 5px;
-    
 }
 
 .title {
@@ -649,10 +653,49 @@ button {
     object-fit: cover; /* Maintain aspect ratio and cover the entire container */
 }
 
-.bio-box {
-    background-color: #f0f0f0; /* Set your desired background color */
+.cover {
+    /* object-fit: cover; */
+    z-index: 5;
+    position: absolute;
+    width: 100px; /* Set the desired width */
+    height: 100px; /* Set the desired height */
+    margin: 0;
+    margin-bottom: 5px;
+    opacity: 40%;
+}
+
+.habitScore {
+    text-align: center;
+    margin-top: -10px;
+    font-size: smaller;
+    margin-bottom: 20px;
+
+}
+
+.squareButton {
+    
+}
+
+.right {
+    float: right;
+    margin: 0;
+}
+
+#profileTextInput {
+    width: 100%;
     padding: 10px; /* Adjust the padding as needed */
     border-radius: 5px; /* Add rounded corners if desired */
+}
+
+#profilePictureEdit {
+    margin-top: -10px;
+}
+
+#bio-box {
+    background-color: white; /* Set your desired background color */
+    padding: 10px; /* Adjust the padding as needed */
+    border-radius: 5px; /* Add rounded corners if desired */
+    margin-bottom: 20px;
 }
 /* .sent {
     background-color: #007bff; 
