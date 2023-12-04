@@ -19,7 +19,7 @@
         </a>
     </div>
     <div class="chatroom container">
-        <h1 class="mychat">Welcome to Chat Room {{room}}</h1>
+        <h1 class="mychat">{{ habitat.title }} Chatroom</h1>
         <div id="messages">
 
         </div>
@@ -33,8 +33,8 @@
             const socket = io("http://127.0.0.1:5000");
             socket.on('connect', function (){
                 socket.emit('join_room', {
-                    username: "{{username}}" ,
-                    room: "{{room}}"
+                    username: "{{user.first_name + ' ' + user.last_name}}" ,
+                    room: "{{ habitat.id }}"
                 });
     
                 let message_input = document.getElementById('message_input');
@@ -43,8 +43,9 @@
                     let message = message_input.value.trim();
                     if(message.length){
                        socket.emit('send_message',{
-                           username: "{{username}}" ,
-                           room: "{{room}}",
+                           username: "{{user.first_name + ' ' + user.last_name}}" ,
+                           room: "{{ habitat.id }}",
+                           userID: "{{ user.id }}",
                            message:message
                        })
                     }
@@ -59,6 +60,8 @@
             const newNode = document.createElement('div');
             duser=data.username;
             newNode.classList.add('message');
+            // newNode.classList.add('recieved');
+
             newNode.innerHTML = ( duser.bold() +" "+ data.message);
             document.getElementById('messages').appendChild(newNode);
         });

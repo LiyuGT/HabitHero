@@ -550,7 +550,7 @@ button {
 }
 
 .received {
-    background-color: #7e3a3a; /* Light grey for received messages */
+    background-color: #7e3a3a !important; /* Light grey for received messages */
 }
 
 #message_input_form {
