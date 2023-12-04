@@ -70,16 +70,13 @@
 
             {% if habitat %}
                 
-                <a href="{{ url_for('chatroom', habitat_id=habitat.id) }}"> Go to Habitat Chatroom</a>
                 <h1>{{ habitat.title }}</h1>
+                <a id="chatroomLink" href="{{ url_for('chatroom', habitat_id=habitat.id) }}"> Go to chatroom →</a>
 
                 {% for habit in membersHabits %}
                     <div class="memberItem">
                         <div class="habitDetails">
                             <p>{{ habit.title }}</p>
-                            {% if habit.description %}
-                                <p class="subHeader">{{ habit.description }}</p>
-                            {% endif %}
                         </div>
                         
                         <div class="spacer"></div>

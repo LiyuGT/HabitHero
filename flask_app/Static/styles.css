@@ -436,6 +436,20 @@ button {
     background-color: var(--offwhite);
     padding: 20px;
     
+    display: flex;
+    flex-direction: column;
+}
+
+#chatroomLink {
+    background-color: var(--purple);
+    color: white;
+    padding: 5px;
+    text-align: center;
+    width: 150px;
+    border-radius: 10px;
+
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .habitat_item {
