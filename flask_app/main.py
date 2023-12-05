@@ -257,6 +257,27 @@ def createhabits():
     user = db.session.query(User).get(session.get('user_id'))
 
     return render_template('habits.html', habits=my_habits, form=form, user=user)
+
+#allows the users rank order to stay when the page is refreshed and adds the rank to the db
+@app.route('/update_habit_order', methods=['POST'])
+def update_habit_order():
+    data = request.get_json()
+    new_order = data.get('habit_order', [])
+
+    try:
+        for index, habit_id in enumerate(new_order, start=1):
+            habit = Habit.query.get(habit_id)
+            habit.orderList = index
+
+        db.session.commit()
+
+        return jsonify({'success': True})
+
+    except Exception as e:
+        print(f"Error updating habit order: {e}")
+        db.session.rollback()
+        return jsonify({'success': False, 'error': str(e)})
+    
 @app.route('/SlowAdd', methods =['POST', 'GET'])
 def createhabitsslow():
 

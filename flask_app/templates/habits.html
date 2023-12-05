@@ -182,41 +182,59 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            var storedHabits = localStorage.getItem('habits');
             var habitsList = document.getElementById('habits-list');
 
-            if (storedHabits) {
-                habitsList.innerHTML = storedHabits;
-            }
             var sortable = new Sortable(habitsList, {
-            handle: '.habitItem', 
-            onUpdate: function (event) {
-                
-                localStorage.setItem('habits', habitsList.innerHTML);
-                
-                var habitIds = Array.from(habitsList.children).map(habit => habit.dataset.habitId);
-                
-                fetch('/update_habit_order', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ habit_order: habitIds }),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        console.log('Habits ordered successfully');
-                    } else {
-                        console.error('Failed to update habit order');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error updating habit order:', error);
-                });
-            },
+                handle: '.habitItem',
+                onUpdate: function (event) {
+                    saveOrder();
+                    updateServerOrder();
+                },
         });
-    });
+
+        loadOrder();
+
+        function saveOrder() {
+            var habitIds = Array.from(habitsList.children).map(habit => habit.dataset.habitId);
+            localStorage.setItem('habitOrder', JSON.stringify(habitIds));
+        }
+
+        function loadOrder() {
+            var storedOrder = localStorage.getItem('habitOrder');
+            if (storedOrder) {
+                storedOrder = JSON.parse(storedOrder);
+                for (var i = 0; i < storedOrder.length; i++) {
+                    var habitElement = document.querySelector('[data-habit-id="' + storedOrder[i] + '"]');
+                    if (habitElement) {
+                        habitsList.appendChild(habitElement);
+                    }
+                }
+            }
+        }
+
+        function updateServerOrder() {
+            var habitIds = Array.from(habitsList.children).map(habit => habit.dataset.habitId);
+
+            fetch('/update_habit_order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ habit_order: habitIds }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Habits ordered successfully');
+                } else {
+                    console.error('Failed to update habit order');
+                }
+            })
+            .catch(error => {
+                console.error('Error updating habit order:', error);
+            });
+        }
+        });
 
         function editHabit(habitId, habitTitle, habitDescription) {
             const titleInput = document.querySelector("#editForm input[name='new_title']");

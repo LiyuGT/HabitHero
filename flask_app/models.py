@@ -82,7 +82,7 @@ class Habit(db.Model):
     habitat_id = db.Column(db.Integer, db.ForeignKey('habitats.id'))
     latestDone = db.Column(db.String(50))
     saveLastDone = db.Column(db.String(50))
-    
+    orderList = db.Column("orderList", db.Integer, nullable=False, default=0)
     #tasks = db.relationship("Task", backref="projects", cascade="all, delete", lazy=True)
 
 
