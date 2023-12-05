@@ -166,12 +166,11 @@ header > ul {
 .container {
     background-color: var(--whitepurple);
     width: 40vw;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px; /* Increase padding for better spacing */
+    margin: 10vh auto 10vh auto;
+    
+    position: sticky;
+
+    padding: 20px;
 }
 
 .joinnow {
@@ -232,12 +231,20 @@ form * {
     /* margin-bottom: 5px; */
 }
 
-.form-group input {
+.form-group input, .form-group textarea {
     width: 100%;
     padding: 10px;
 
     /* border-radius: 10px; */
     
+}
+
+#contactForm {
+    background-color: #a3c3d936;
+    padding: 20px;
+    border: solid 3px #a3c3d936;
+    border-radius: 20px;
+    margin: 20px;
 }
 
  form .submit_button {
@@ -878,3 +885,4 @@ button {
     color: #7e7e7e;
     font-weight: bold;
 }
+
