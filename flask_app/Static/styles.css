@@ -448,6 +448,10 @@ button {
     margin: 5px;
 }
 
+.vertically {
+    margin: auto;
+}
+
 #chatroomLink {
     background-color: var(--purple);
     color: white;
