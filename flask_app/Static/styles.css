@@ -224,6 +224,11 @@ form * {
     border-style: none;
 }
 
+
+form input[type='file'] {
+    border-radius: 0px;
+}
+
 .form-group label {
     font-weight: bold;
     text-align: left;
@@ -231,7 +236,7 @@ form * {
     /* margin-bottom: 5px; */
 }
 
-.form-group input, .form-group textarea {
+.form-group input[type='text'], .form-group textarea {
     width: 100%;
     padding: 10px;
 
@@ -388,18 +393,18 @@ button {
 
 /* Add styles to the form container */
 .form-container {
-    max-width: 300px;
+    width: 400px;
     padding: 10px;
     background-color: white;
 }
 
 /* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
+.form-container input[type=text], .form-container input[type=password], .form-container textarea, .form-container select {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
-    border: none;
     background: #f1f1f1;
+
 }
 
 /* When the inputs get focus, do something */
@@ -885,4 +890,14 @@ button {
     color: #7e7e7e;
     font-weight: bold;
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-group label {
+    width: 100%;
+}
+
 

@@ -9,14 +9,16 @@
 <body>
 
     <div class="form-popup" id="myForm">
-        <form method="POST" action="/habitats" class="form-container" enctype="multipart/form-data">
-            <h1>Create Habitat</h1>
+        <form method="POST" action="/habitats" class="form-group form-container" enctype="multipart/form-data">
+            <h1>Create Habitat</h1><br>
 
             {{form.title.label}} {{form.title}}
             {{form.description.label}} {{form.description}}
-            {{form.icon_image.label}} {{form.icon_image}}
             {{ form.habit.label }} {{ form.habit }}
-            <div>
+            <div class="row">
+                {{form.icon_image.label}} {{form.icon_image}}
+            </div>
+            <div class="row">
                 {{ form.is_private.label }} {{ form.is_private }}
             </div>
 
@@ -108,7 +110,7 @@
 
                 <!-- Display details for the selected habitat -->
                 <div id="invitationForm" class="invitation-form-popup">
-                    <form method="POST" action="{{ url_for('send_invitations', habitat_id=habitat.id) }}" class="form-container">
+                    <form method="POST" action="{{ url_for('send_invitations', habitat_id=habitat.id) }}" class="form-container form-group">
                         <p>Send an Invite to a Friend!</p> <br>
                         <label for="email">Email:</label>
                         <input type="email" name="email" required>
