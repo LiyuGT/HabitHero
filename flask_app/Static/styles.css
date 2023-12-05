@@ -802,3 +802,27 @@ button {
     background-color: #ccc;
     border-radius: 35px;
 }
+
+.open-invitation-form {
+    position: fixed;
+    bottom: 10px; /* Adjust the bottom value as needed */
+    z-index: 2; /* Ensure the button is above other elements */
+}
+
+.invitation-form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: white;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the close button in the pop-up form */
+.invitation-form-popup .cancel {
+    background-color: #ccc;
+}

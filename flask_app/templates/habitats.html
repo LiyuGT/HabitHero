@@ -73,6 +73,9 @@
                 <h1>{{ habitat.title }}</h1>
                 <a id="chatroomLink" href="{{ url_for('chatroom', habitat_id=habitat.id) }}"> Go to chatroom →</a>
 
+                <!-- Add a button to open the invitation form -->
+                <button class="open-invitation-form" onclick="openInvitationForm()">Invite Members</button>
+
                 <div id="memberList">
 
                     {% for habit in membersHabits %}
@@ -106,6 +109,15 @@
 
 
                 <!-- Display details for the selected habitat -->
+                <div id="invitationForm" class="invitation-form-popup">
+                    <form method="POST" action="{{ url_for('send_invitations', habitat_id=habitat.id) }}" class="form-container">
+                        <p>Send an Invite to a Friend!</p> <br>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" required>
+                        <button type="submit" class="btn">Send Invitation</button>
+                        <button type="button" class="btn cancel" onclick="closeInvitationForm()">Cancel</button>
+                    </form>
+                </div>
                 
                 
                 
@@ -136,6 +148,18 @@
 
         function closeForm() {
             document.getElementById("myForm").style.display = "none";
+        }
+
+        function openInvitationForm() {
+            document.getElementById("invitationForm").style.display = "block";
+        }
+
+        function openInvitationForm() {
+            document.getElementById("invitationForm").style.display = "block";
+         }
+
+        function closeInvitationForm() {
+            document.getElementById("invitationForm").style.display = "none";
         }
 
     </script>

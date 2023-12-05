@@ -529,6 +529,46 @@ def get_habitat_details(habitat_id):
     else:
         return jsonify({'error': 'Habitat not found'}), 404
 
+
+@app.route('/habitats/<int:habitat_id>/send_invitations', methods=['POST'])
+def send_invitations(habitat_id):
+    if request.method == 'POST':
+        email = request.form.get('email')
+
+        flash(f'Invitation sent to {email} successfully!', 'success')
+        return redirect(url_for('open_habitat', habitat_id=habitat_id))
+
+'''
+from flask_mail import Message
+
+@app.route('/habitats/<int:habitat_id>/send_invitations', methods=['POST'])
+def send_invitations(habitat_id):
+    if request.method == 'POST':
+        email = request.form.get('email')
+
+        # Send the email
+        send_invitation_email(email, habitat_id)
+
+        flash(f'Invitation sent to {email} successfully!', 'success')
+        return redirect(url_for('open_habitat', habitat_id=habitat_id))
+
+
+
+def send_invitation_email(email, habitat_id):
+    # Create the email message
+    subject = 'Invitation to Habit Hero'
+    body = f'You have been invited to join Habit Hero! Click the following link to join: {url_for("habit_hero_website", _external=True)}'
+    sender = 'your-email@example.com'  # Replace with your email
+
+    msg = Message(subject, sender=sender, recipients=[email])
+    msg.body = body
+
+    # Send the email
+    mail.send(msg)
+'''
+
+
+
 # ///// HOST & PORT CONFIG /////
 if __name__ == '__main__':
     # socketio.run(app, debug=True)
