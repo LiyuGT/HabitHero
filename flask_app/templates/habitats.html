@@ -81,7 +81,7 @@
                     {% for habit in membersHabits %}
                         <div class="memberItem">
 
-                            <img class="profileIcon" src="{{ url_for('static', filename='images/profile_uploads/' + habit.member.profile_picture) }}" onmouseenter="openProfilePopup(this, '{{ habit.member.score }}')" onmouseout="closeProfilePopup()">
+                            <img class="profileIcon" src="{{ url_for('static', filename='images/profile_uploads/' + habit.member.profile_picture) }}" onmouseenter="openProfilePopup(this, '{{ habit.member.score }}', '{{ habit.member.registered_on }}', `{{ habit.member.bio }}`)" onmouseout="closeProfilePopup()">
 
                             <div class="habitat_details">
                                 <h3>{{ habit.member.first_name + ' ' + habit.member.last_name}}</h3>
@@ -163,22 +163,39 @@
             document.getElementById("invitationForm").style.display = "none";
         }
 
-        function openProfilePopup(element, score) {
+        function openProfilePopup(element, score, registered_on, bio) {
             var popup = document.getElementById("profilePopup");
+            
+            // Convert the registered_on to a Date object
+            var registrationDate = new Date(registered_on);
+
+            // Format the date as "MMM DD, YYYY"
+            var formattedDate = registrationDate.toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+            });
+
+            console.log(formattedDate);
 
             // Get the position of the element
             var rect = element.getBoundingClientRect();
 
-            // Parse the user object
-
             // Set the position of the popup
             popup.style.display = "block";
-            popup.style.top = (rect.top - 15) + "px";
-            popup.style.left = (rect.left - 150) + "px";
+            popup.style.top = (rect.top - 25) + "px";
+            popup.style.right = (rect.right + 201) + "px";
 
             // Populate the popup with user information
             popup.innerHTML = `
-                <p>${score} Gems</p>
+                <div class='gemStat'>
+                    <img src="static/images/gem.png">
+                    <p> ${score} gems</p>
+                </div>
+                
+                <p class="joinedDate" >Joined ${formattedDate}</p>
+
+                <p>${bio}</p>
             `;
         }
 

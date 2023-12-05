@@ -688,7 +688,7 @@ button {
     text-align: center;
     margin-top: -10px;
     font-size: smaller;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
 }
 
@@ -833,10 +833,48 @@ button {
     background: white;
     border-radius: 15px;
     z-index: 1;
+    width: 200px;
+
+    text-align: center;
+}
+#profilePopup * {
+    margin: 5px;
+}
+
+.gemStat {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Add this line */
+    align-items: center; /* Optional: vertically center the content */
+}
+
+.gemStat * {
+    font-weight: bolder;
+    color: rgb(255, 178, 35);
+    font-size: larger;
+    margin: 2px;
+}
+
+.gemStat img {
+    height: 25px;
+    width: 25px;
+}
+
+.profileIcon:hover {
+    border: 5px solid var(--purple);
 }
 
 
 /* Style for the close button in the pop-up form */
 .invitation-form-popup .cancel {
     background-color: #ccc;
+}
+
+.joinedDate {
+    font-size: x-small;
+    background-color: #d2d2d7;
+    padding: 3px;
+    border-radius: 50px;
+    color: #7e7e7e;
+    font-weight: bold;
 }
