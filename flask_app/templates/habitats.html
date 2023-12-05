@@ -81,7 +81,7 @@
                     {% for habit in membersHabits %}
                         <div class="memberItem">
 
-                            <img class="profileIcon" src="{{ url_for('static', filename='images/profile_uploads/' + habit.member.profile_picture) }}">
+                            <img class="profileIcon" src="{{ url_for('static', filename='images/profile_uploads/' + habit.member.profile_picture) }}" onmouseenter="openProfilePopup(this, '{{ habit.member.score }}')" onmouseout="closeProfilePopup()">
 
                             <div class="habitat_details">
                                 <h3>{{ habit.member.first_name + ' ' + habit.member.last_name}}</h3>
@@ -105,8 +105,6 @@
 
 
                 </div>
-                
-
 
                 <!-- Display details for the selected habitat -->
                 <div id="invitationForm" class="invitation-form-popup">
@@ -117,6 +115,10 @@
                         <button type="submit" class="btn">Send Invitation</button>
                         <button type="button" class="btn cancel" onclick="closeInvitationForm()">Cancel</button>
                     </form>
+                </div>
+
+                <div id="profilePopup">
+                    <p>TESTING</p>
                 </div>
                 
                 
@@ -157,12 +159,31 @@
             document.getElementById("invitationForm").style.display = "block";
         }
 
-        function openInvitationForm() {
-            document.getElementById("invitationForm").style.display = "block";
-         }
-
         function closeInvitationForm() {
             document.getElementById("invitationForm").style.display = "none";
+        }
+
+        function openProfilePopup(element, score) {
+            var popup = document.getElementById("profilePopup");
+
+            // Get the position of the element
+            var rect = element.getBoundingClientRect();
+
+            // Parse the user object
+
+            // Set the position of the popup
+            popup.style.display = "block";
+            popup.style.top = (rect.top - 15) + "px";
+            popup.style.left = (rect.left - 150) + "px";
+
+            // Populate the popup with user information
+            popup.innerHTML = `
+                <p>${score} Gems</p>
+            `;
+        }
+
+        function closeProfilePopup() {
+            document.getElementById("profilePopup").style.display = "none";
         }
 
     </script>
