@@ -182,10 +182,17 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-        var habitsList = document.getElementById('habits-list');
-        var sortable = new Sortable(habitsList, {
+            var storedHabits = localStorage.getItem('habits');
+            var habitsList = document.getElementById('habits-list');
+
+            if (storedHabits) {
+                habitsList.innerHTML = storedHabits;
+            }
+            var sortable = new Sortable(habitsList, {
             handle: '.habitItem', 
             onUpdate: function (event) {
+                
+                localStorage.setItem('habits', habitsList.innerHTML);
                 
                 var habitIds = Array.from(habitsList.children).map(habit => habit.dataset.habitId);
                 
