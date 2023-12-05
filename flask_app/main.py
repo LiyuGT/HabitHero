@@ -309,6 +309,11 @@ def open_habitats():
     my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
     my_habits = db.session.query(Habit).filter_by(user_id=session['user_id']).all()
 
+    all_habitats = db.session.query(Habitat).all()
+    
+    print("All Habitats:")
+    print(all_habitats)
+
     for h in my_habitats:
         habit_query_result = db.session.query(Habit).filter_by(user_id=session['user_id'], habitat_id=h.id).first()
 
