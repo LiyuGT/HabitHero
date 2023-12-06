@@ -141,6 +141,7 @@ class Habitat(db.Model):
     description = db.Text()
     icon_image = db.Column(db.String(255))
     title = db.Column("title", db.String(200))
+    #is_private =  db.Column("private_habitat", db.boolean)
     # members = db.relationship("User", backref="habitat", lazy=True)
     habits = db.relationship("Habit", backref="habitat")
     # streak = db.Column("streak", db.Integer)
