@@ -20,6 +20,8 @@ from flask_socketio import SocketIO, join_room
 from flask_sqlalchemy import SQLAlchemy
 from forms import (CommentForm, CreateHabitat, HabitForm, LoginForm,
                    RegisterForm, ProfileForm)
+from flask_mail import Message
+from flask_login import LoginManager, current_user
 #from models import Task as Task
 #from models import Project as Project
 #//// Potential Import Guidelines (Will substitute Note to Habit for example) ////#
