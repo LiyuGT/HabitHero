@@ -840,13 +840,14 @@ button {
 
 #profilePopup {
     display: none;
-    position: fixed;
+    position: absolute;
     padding: 20px;
     background: white;
     border-radius: 15px;
     z-index: 1;
     width: 200px;
 
+    float: left;
     text-align: center;
 }
 #profilePopup * {
