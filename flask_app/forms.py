@@ -106,3 +106,11 @@ class SearchForm(FlaskForm):
     icon_image = FileField("Habitat image")
     submit = SubmitField('Search')
     is_public = BooleanField('Make public', default=False)
+
+
+class ContactForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired(), Length(min=1, max=255)])
+    email = StringField('Email', validators=[DataRequired(), Email(), Length(min=1, max=255)])
+    subject = StringField('Subject', validators=[DataRequired(), Length(min=1, max=255)])
+    message = TextAreaField('Message', validators=[DataRequired()])
+    submit = SubmitField('Submit')

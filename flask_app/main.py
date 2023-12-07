@@ -19,8 +19,8 @@ from flask import (Flask, Response, flash, jsonify, redirect, render_template,
 from flask_socketio import SocketIO, join_room
 from flask_sqlalchemy import SQLAlchemy
 from forms import (CommentForm, CreateHabitat, HabitForm, LoginForm,
-                   RegisterForm, ProfileForm)
-from flask_mail import Message
+                   RegisterForm, ProfileForm, ContactForm)
+from flask_mail import Mail, Message
 from flask_login import LoginManager, current_user
 
 from forms import SearchForm
@@ -237,9 +237,16 @@ def logout():
     return render_template('home.html')
 
 
-@app.route('/aboutUs')
+@app.route('/aboutUs', methods=['GET', 'POST'])
 def aboutUs():
-    return render_template('aboutUs.html')
+    form = ContactForm()
+
+    if form.validate_on_submit():
+        flash('Thank you for reaching out! We will get back to you soon.', 'success')
+        return render_template('aboutUs.html', form=form, submitted=True)
+
+    return render_template('aboutUs.html', form=form, submitted=False)
+
 
 @app.route('/overview')
 def overview():
@@ -593,9 +600,9 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Replace with your SMTP server ad
 app.config['MAIL_PORT'] = 587  # The default port for TLS
 app.config['MAIL_USE_TLS'] = True  # Use TLS (True for most servers)
 app.config['MAIL_USE_SSL'] = False  # Use SSL (True for some servers, but usually TLS is preferred)
-app.config['MAIL_USERNAME'] = 'habitHero1@gmail.com'  # Replace with your email username
+app.config['MAIL_USERNAME'] = 'habithero1@gmail.com'  # Replace with your email username
 app.config['MAIL_PASSWORD'] = 'habitHero0805'  # Replace with your email password
-app.config['MAIL_DEFAULT_SENDER'] = 'habitHero1@gmail.com'  # Replace with your email address
+app.config['MAIL_DEFAULT_SENDER'] = 'habithero1@gmail.com'  # Replace with your email address
 
 mail = Mail(app)
 import logging
