@@ -240,10 +240,23 @@ def aboutUs():
     form = ContactForm()
 
     if form.validate_on_submit():
+        send_email(form)
+        send_thank_you(form.email.data)
+
         flash('Thank you for reaching out! We will get back to you soon.', 'success')
         return render_template('aboutUs.html', form=form, submitted=True)
 
     return render_template('aboutUs.html', form=form, submitted=False)
+
+def send_email(form):
+    msg = Message('New Contact Form Submission', recipients=['habithero1@gmail.com'])
+    msg.body = f"Name: {form.name.data}\nEmail: {form.email.data}\nSubject: {form.subject.data}\nMessage: {form.message.data}"
+    mail.send(msg)
+
+def send_thank_you(user_email):
+    msg = Message('Thank You for Contacting Us!', recipients=[user_email])
+    msg.body = 'Thank you for reaching out! We appreciate your message and will get back to you soon.'
+    mail.send(msg)
 
 
 @app.route('/overview')
