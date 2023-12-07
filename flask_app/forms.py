@@ -76,13 +76,13 @@ class HabitForm(FlaskForm):
 class CreateHabitat(FlaskForm):
     class Meta:
         csrf = False
-    title = StringField('Habitat Name')
+    title = StringField('Habitat name')
     description = TextAreaField('Description')
-    icon_image = FileField("Habitat Image")
-    habit = SelectField('Select Habit', coerce=int)
-    submit = SubmitField('Create Habitat')
-    is_private = BooleanField('Private Habitat', default=False)
-    fields = ['title', 'description', 'icon_image', 'habit', 'submit', 'is_private']
+    icon_image = FileField("Habitat image")
+    habit = SelectField('Select habit', coerce=int)
+    submit = SubmitField('Create habitat')
+    is_public = BooleanField('Make public', default=False)
+    fields = ['title', 'description', 'icon_image', 'habit', 'submit', 'is_public']
 
 
 class ProfileForm(FlaskForm):

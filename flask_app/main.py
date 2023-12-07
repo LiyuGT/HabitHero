@@ -363,6 +363,7 @@ def open_habitats():
         # Handle form submission for creating a new habitat
         title = request.form['title']
         description = request.form['description']
+        is_public = form.is_public.data
         user_id = session.get('user_id')
         icon_image = request.files['icon_image']
 
@@ -382,7 +383,7 @@ def open_habitats():
 
         # Add code to link habitat with selected habit here?
 
-        habitat = Habitat(title, user_id, description, icon_image)
+        habitat = Habitat(title, user_id, description, icon_image, is_public)
         db.session.add(habitat)
         db.session.commit()
 

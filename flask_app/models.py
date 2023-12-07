@@ -141,28 +141,29 @@ class Habitat(db.Model):
     description = db.Text()
     icon_image = db.Column(db.String(255))
     title = db.Column("title", db.String(200))
-    is_public =  db.Column("is_public", db.boolean, nullable=False, default=False)
+    is_public =  db.Column("is_public", db.Boolean, nullable=False, default=False)
     # members = db.relationship("User", backref="habitat", lazy=True)
     habits = db.relationship("Habit", backref="habitat")
     # streak = db.Column("streak", db.Integer)
     # done = db.Column("done", db.Boolean)
     
-    def __init__(self, title, user_id, description, icon_image):
+    def __init__(self, title, user_id, description, icon_image, is_public):
         self.title = title
         self.description = description
         self.icon_image = icon_image
         self.user_id = user_id
+        self.is_public = is_public
 
-    def markHabitatAsDone(self):
+    # def markHabitatAsDone(self):
 
-        self.done = not self.done
+    #     self.done = not self.done
 
-        if self.done:
-            self.streak += 1
-        else:
-            self.streak -= 1 if self.streak > 0 else 0
+    #     if self.done:
+    #         self.streak += 1
+    #     else:
+    #         self.streak -= 1 if self.streak > 0 else 0
 
-        db.session.commit()
+    #     db.session.commit()
 
 # - User / Project / Tasks -
 # class Task(db.Model):
