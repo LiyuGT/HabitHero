@@ -593,35 +593,46 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Replace with your SMTP server ad
 app.config['MAIL_PORT'] = 587  # The default port for TLS
 app.config['MAIL_USE_TLS'] = True  # Use TLS (True for most servers)
 app.config['MAIL_USE_SSL'] = False  # Use SSL (True for some servers, but usually TLS is preferred)
-app.config['MAIL_USERNAME'] = '****@gmail.com'  # Replace with your email username
-app.config['MAIL_PASSWORD'] = '******'  # Replace with your email password
-app.config['MAIL_DEFAULT_SENDER'] = '****@gmail.com'  # Replace with your email address
+app.config['MAIL_USERNAME'] = 'habitHero1@gmail.com'  # Replace with your email username
+app.config['MAIL_PASSWORD'] = 'habitHero0805'  # Replace with your email password
+app.config['MAIL_DEFAULT_SENDER'] = 'habitHero1@gmail.com'  # Replace with your email address
 
-mail = Mail(app) 
+mail = Mail(app)
+import logging
+
+# Configure the logging module
+logging.basicConfig(filename='app.log', level=logging.ERROR)
+
 @app.route('/habitats/<int:habitat_id>/send_invitations', methods=['POST'])
 def send_invitations(habitat_id):
     if request.method == 'POST':
         email = request.form.get('email')
-
-        # Send the email
         send_invitation_email(email, habitat_id)
-
         flash(f'Invitation sent to {email} successfully!', 'success')
-        return redirect(url_for('open_habitat', habitat_id=habitat_id))
+    else:
+        flash('Invitation not sent!', 'fail')
 
+    return redirect(url_for('open_habitat', habitat_id=habitat_id))
 
 
 def send_invitation_email(email, habitat_id):
     # Create the email message
     subject = 'Invitation to Habit Hero'
     body = f'You have been invited to join Habit Hero! Click the following link to join: {url_for("habitats", _external=True)}'
-    sender = '***@gmail.com'  # Replace with your email
+    sender = 'habitHero1@gmail.com'  # Replace with your email
 
     msg = Message(subject, sender=sender, recipients=[email])
     msg.body = body
 
-    # Send the email
-    mail.send(msg)
+    try:
+        # Send the email
+        mail.send(msg)
+    except Exception as e:
+        # Log the error
+        logging.error(f'Error sending invitation to {email}: {str(e)}')
+        # Flash a user-friendly message
+        flash(f'Error sending invitation. Please try again later.', 'error')
+
 
 
 

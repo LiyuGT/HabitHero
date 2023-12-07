@@ -2,9 +2,20 @@
 
 {% block content %}
 
+
+
 {% for habitat in habitat%}
-    <a href="{{  url_for('open_habitat',habitat_id=habitat.id) }}" style="font-size: 80px; text-decoration: underline;"> {{ habitat.title}} </a>
-    <p> {{ habitat.description}} </p>
+
+    {% if habitat.is_public  %}
+        <a href="{{ url_for('open_habitat', habitat_id=habitat.id) }}" style="font-size: 80px; text-decoration: underline;">{{ habitat.title }}</a>
+        <p>{{ habitat.description }}</p>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+
+
 {% endfor %}
+
+
 
 {% endblock %}
