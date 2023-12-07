@@ -27,6 +27,20 @@
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
+
+    <div class="form-popup" id="myJoin">
+        <form method="POST" action="/habitats" class="form-group form-container" enctype="multipart/form-data">
+            <h1>Create Habitat</h1><br>
+
+            {{ form.habit.label }} {{ form.habit }}
+
+            <button type="submit" class="btn">Join Habitat</button>
+
+            <button type="button" class="btn cancel" onclick="closeJoin()">Close</button>
+        </form>
+    </div>
+
+    
     
     <div class="navbar">
         <a href="{{url_for('home1')}}">Home</a>
@@ -67,7 +81,7 @@
             {% if habitat %}
                 
                 <h1>{{ habitat.title }}</h1>
-                <a id="chatroomLink" > Join Habitat</a>
+                <a id="chatroomLink" onclick="openJoin()"> Join Habitat</a>
                 
                 <a id="chatroomLink" href="{{ url_for('chatroom', habitat_id=habitat.id) }}"> Go to chatroom →</a>
 
@@ -144,6 +158,13 @@
         </div>
     </main>
     <script>
+        function openJoin() {
+            document.getElementById("myJoin").style.display = "block";
+        }
+
+        function closeJoin() {
+            document.getElementById("myJoin").style.display = "none";
+        }
 
         function openForm() {
             document.getElementById("myForm").style.display = "block";

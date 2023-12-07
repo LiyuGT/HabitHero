@@ -601,13 +601,14 @@ def send_invitations(habitat_id):
 
 '''
 from flask_mail import Mail
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Replace with your SMTP server address
-app.config['MAIL_PORT'] = 587  # The default port for TLS
-app.config['MAIL_USE_TLS'] = True  # Use TLS (True for most servers)
-app.config['MAIL_USE_SSL'] = False  # Use SSL (True for some servers, but usually TLS is preferred)
-app.config['MAIL_USERNAME'] = 'habithero1@gmail.com'  # Replace with your email username
-app.config['MAIL_PASSWORD'] = 'habitHero0805'  # Replace with your email password
-app.config['MAIL_DEFAULT_SENDER'] = 'habithero1@gmail.com'  # Replace with your email address
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'  
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True 
+app.config['MAIL_USE_SSL'] = False  
+app.config['MAIL_USERNAME'] = 'habithero1@gmail.com'  
+app.config['MAIL_PASSWORD'] = 'pppl mdcu dapk vxix' 
+app.config['MAIL_DEFAULT_SENDER'] = 'habithero1@gmail.com'  
+app.config['USER_ENABLE_EMAIL'] = True
 
 mail = Mail(app)
 import logging
@@ -630,7 +631,7 @@ def send_invitations(habitat_id):
 def send_invitation_email(email, habitat_id):
     # Create the email message
     subject = 'Invitation to Habit Hero'
-    body = f'You have been invited to join Habit Hero! Click the following link to join: {url_for("habitats", _external=True)}'
+    body = f'You have been invited to join Habit Hero! Click the following link to join: {url_for("login", _external=True)}'
     sender = 'habitHero1@gmail.com'  # Replace with your email
 
     msg = Message(subject, sender=sender, recipients=[email])
