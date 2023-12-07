@@ -5,6 +5,7 @@ from models import User
 from wtforms import (FileField, PasswordField, StringField, SubmitField,
                      TextAreaField, ValidationError, SelectField, BooleanField)
 from wtforms.validators import DataRequired, Email, EqualTo, Length
+from wtforms.validators import DataRequired
 
 
 class RegisterForm(FlaskForm):
@@ -96,3 +97,12 @@ class ProfileForm(FlaskForm):
     last_name = SubmitField(' Last Name ')
     submit = SubmitField('Update Profile')
     fields = ['profile_picture', 'bio', 'email', 'first_name', 'last_name', 'submit']
+
+
+class SearchForm(FlaskForm):
+    title = StringField('Searched Habitats')
+    description = StringField('Searched Habitats')
+    habit = SelectField('Select habit', coerce=int)
+    icon_image = FileField("Habitat image")
+    submit = SubmitField('Search')
+    is_public = BooleanField('Make public', default=False)

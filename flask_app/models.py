@@ -2,7 +2,7 @@
 import datetime
 import uuid
 # from datetime import datetime
-
+from flask_login import UserMixin
 from database import db
 
 habit_habitat_association = db.Table(
@@ -12,7 +12,7 @@ habit_habitat_association = db.Table(
 )
 # ///// MODELS /////
 # - Users -
-class User(db.Model):
+class User(db.Model, UserMixin):
     id = db.Column("id", db.Integer, primary_key=True)
     first_name = db.Column("first_name", db.String(100))
     last_name = db.Column("last_name", db.String(100))
@@ -35,6 +35,9 @@ class User(db.Model):
         self.registered_on = datetime.date.today()
         self.profile_picture = 'profile_default.jpeg'
         self.bio = bio
+
+    def __repr__(self):
+        return f'<User {self.id}>'
 
 
 # - User / Notes -

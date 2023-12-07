@@ -23,6 +23,8 @@ from forms import (CommentForm, CreateHabitat, HabitForm, LoginForm,
 from flask_mail import Message
 from flask_login import LoginManager, current_user
 
+from forms import SearchForm
+
 
 #from models import Task as Task
 #from models import Project as Project
@@ -39,6 +41,11 @@ from werkzeug.utils import secure_filename
 # ///// APP CREATION /////
 app = Flask(__name__)  # create an app
 socketio = SocketIO(app)
+
+
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+
 
 # ///// DATABASE CONFIG /////
 # Configure database connection
@@ -62,6 +69,11 @@ with app.app_context():
 @app.route('/home')
 def home():
     return render_template('home.html')
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
 
 @app.route('/home1')
 def home1():
@@ -91,10 +103,21 @@ def home1():
     user = db.session.query(User).get(session.get('user_id'))
     return render_template('home1.html', user=user, form=form)
 
-@app.route('/search_habits')
-def search_habits():
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
     
-    return render_template('habitats.html')
+
+@app.route('/search', methods=["POST"])
+def search():
+    form = CreateHabitat()
+    habitat_query = Habitat.query
+    habitats = habitat_query.filter_by(title=form.title.data).order_by(Habitat.title).all()
+
+    return render_template("search.html", form=form, habitat=habitats)
+
+
+
 
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
@@ -554,7 +577,7 @@ def get_habitat_details(habitat_id):
         return jsonify(habitat_details)
     else:
         return jsonify({'error': 'Habitat not found'}), 404
-
+'''
 
 @app.route('/habitats/<int:habitat_id>/send_invitations', methods=['POST'])
 def send_invitations(habitat_id):
@@ -565,8 +588,16 @@ def send_invitations(habitat_id):
         return redirect(url_for('open_habitat', habitat_id=habitat_id))
 
 '''
-from flask_mail import Message
+from flask_mail import Mail
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Replace with your SMTP server address
+app.config['MAIL_PORT'] = 587  # The default port for TLS
+app.config['MAIL_USE_TLS'] = True  # Use TLS (True for most servers)
+app.config['MAIL_USE_SSL'] = False  # Use SSL (True for some servers, but usually TLS is preferred)
+app.config['MAIL_USERNAME'] = '****@gmail.com'  # Replace with your email username
+app.config['MAIL_PASSWORD'] = '******'  # Replace with your email password
+app.config['MAIL_DEFAULT_SENDER'] = '****@gmail.com'  # Replace with your email address
 
+mail = Mail(app) 
 @app.route('/habitats/<int:habitat_id>/send_invitations', methods=['POST'])
 def send_invitations(habitat_id):
     if request.method == 'POST':
@@ -583,15 +614,15 @@ def send_invitations(habitat_id):
 def send_invitation_email(email, habitat_id):
     # Create the email message
     subject = 'Invitation to Habit Hero'
-    body = f'You have been invited to join Habit Hero! Click the following link to join: {url_for("habit_hero_website", _external=True)}'
-    sender = 'your-email@example.com'  # Replace with your email
+    body = f'You have been invited to join Habit Hero! Click the following link to join: {url_for("habitats", _external=True)}'
+    sender = '***@gmail.com'  # Replace with your email
 
     msg = Message(subject, sender=sender, recipients=[email])
     msg.body = body
 
     # Send the email
     mail.send(msg)
-'''
+
 
 
 

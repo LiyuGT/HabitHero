@@ -41,17 +41,12 @@
         <div class="sidebar">
             <button class="open-button" onclick="openForm()">Create Habitat</button>
 
-            <!-- Below is in-progress search bar? -->
-            <!-- <form method="GET" action="/search_habits" class="search-form">
-                <input type="text" name="query" placeholder="Search habitatas..." class="search-input">
-                
-                <select name="habits" class="search-dropdown">
-                    {% for habitat in habitats %}
-                        <option value="{{ habitat.id }}">{{ habitat.title }}</option>
-                    {% endfor %}
-                </select>
+            <form method="POST" action="{{url_for('search')}}" class="search-form" >
+                {{form.hidden_tag()}}
+                <input class="search-input" type="search" name="title" placeholder="Search habitats..." name="title">
+
                 <button type="submit" class="search-button">Search</button>
-                </form> -->
+            </form>
 
             {% for h in habitats %}
 
@@ -69,10 +64,11 @@
         </div>
 
         <div class="habitat_view">
-
             {% if habitat %}
                 
                 <h1>{{ habitat.title }}</h1>
+                <a id="chatroomLink" > Join Habitat</a>
+                
                 <a id="chatroomLink" href="{{ url_for('chatroom', habitat_id=habitat.id) }}"> Go to chatroom →</a>
 
                 <!-- Add a button to open the invitation form -->
@@ -204,6 +200,8 @@
         function closeProfilePopup() {
             document.getElementById("profilePopup").style.display = "none";
         }
+
+        
 
     </script>
 </body>
