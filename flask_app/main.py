@@ -111,10 +111,8 @@ def load_user(user_id):
 @app.route('/search', methods=["POST"])
 def search():
     form = CreateHabitat()
-    habitat_query = Habitat.query
-    habitats = habitat_query.filter_by(title=form.title.data).order_by(Habitat.title).all()
 
-    return render_template("search.html", form=form, habitat=habitats)
+    return redirect(url_for('open_habitats', habitatSearch=form.title.data))
 
 
 
@@ -363,6 +361,7 @@ def open_habitat(habitat_id):
 def open_habitats():
     my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
     my_habits = db.session.query(Habit).filter_by(user_id=session['user_id']).all()
+    habitatSearch = request.args.get('habitatSearch')
 
     for h in my_habitats:
         habit_query_result = db.session.query(Habit).filter_by(user_id=session['user_id'], habitat_id=h.id).first()
@@ -424,8 +423,14 @@ def open_habitats():
         return redirect('/habitats')
 
     user = db.session.query(User).get(session.get('user_id'))
+    
+    habitatsList = my_habitats
 
-    return render_template('habitats.html', user=user, form=form, habitats=my_habitats, habitat=selected_habitat, membersHabits = members_habits)
+    if habitatSearch:
+        habitatsList = db.session.query(Habitat).filter(Habitat.title.ilike(f"%{habitatSearch}%"), Habitat.is_public).order_by(Habitat.title).all()
+        
+
+    return render_template('habitats.html', user=user, form=form, habitats=habitatsList, habitat=selected_habitat, membersHabits = members_habits)
 
     
     # my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()

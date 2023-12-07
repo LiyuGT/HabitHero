@@ -4,7 +4,7 @@
 
 
 
-{% for habitat in habitat%}
+{% for habitat in habitat %}
 
     {% if habitat.is_public  %}
         <a href="{{ url_for('open_habitat', habitat_id=habitat.id) }}" style="font-size: 80px; text-decoration: underline;">{{ habitat.title }}</a>
