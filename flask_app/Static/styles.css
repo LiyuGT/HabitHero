@@ -464,7 +464,7 @@ button {
     margin: auto;
 }
 
-#chatroomLink {
+#chatroomLink, #joinButton {
     background-color: var(--purple);
     color: white;
     padding: 7px;

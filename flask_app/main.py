@@ -19,7 +19,7 @@ from flask import (Flask, Response, flash, jsonify, redirect, render_template,
 from flask_socketio import SocketIO, join_room
 from flask_sqlalchemy import SQLAlchemy
 from forms import (CommentForm, CreateHabitat, HabitForm, LoginForm,
-                   RegisterForm, ProfileForm, ContactForm)
+                   RegisterForm, ProfileForm, ContactForm, JoinHabitat, SearchForm)
 from flask_mail import Mail, Message
 from flask_login import LoginManager, current_user
 
@@ -108,11 +108,11 @@ def load_user(user_id):
     return User.query.get(int(user_id))
     
 
-@app.route('/search', methods=["POST"])
-def search():
-    form = CreateHabitat()
+# @app.route('/search', methods=["POST"])
+# def search():
+#     form = SearchForm()
 
-    return redirect(url_for('open_habitats', habitatSearch=form.title.data))
+#     return redirect(url_for('open_habitats', habitatSearch=form.title.data))
 
 
 
@@ -366,15 +366,56 @@ def markAsDone(habit_id):
 
 @app.route('/habitats/<habitat_id>', methods=['GET', 'POST'])
 def open_habitat(habitat_id):
-    print(habitat_id)
+    
+    searchForm = SearchForm(request.form)
+    print("Search form:")
+    print(searchForm.title.data)
+
+    # Redirect to the '/habitats' route with the habitat_id as a query parameter
+    return redirect(url_for('open_habitats', habitat_id=habitat_id))
+
+@app.route('/habitats/<habitat_id>/join', methods=['GET', 'POST'])
+def join_habitat(habitat_id):
+
+    print('In Join Habitat Route')
+
+    joinForm = JoinHabitat()
+    # joinForm.habit.choices = [(habit.id, habit.title) for habit in my_habits]
+
+    selected_habit_id = joinForm.habit.data
+    selected_habit = db.session.query(Habit).get(selected_habit_id)
+
+    print(selected_habit.title)
+
+    # Set the habitat_id for the selected habit
+    selected_habit.habitat_id = habitat_id
+
+    db.session.commit()
+
     # Redirect to the '/habitats' route with the habitat_id as a query parameter
     return redirect(url_for('open_habitats', habitat_id=habitat_id))
 
 @app.route('/habitats', methods=['GET', 'POST'])
 def open_habitats():
-    my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
+    # TODO: Make this go by the users habits?
+
+    # db.session.query(Habit).filter_by(user_id=session['user_id'], habitat_id=h.id)
+    user = db.session.query(User).get(session.get('user_id'))
+
+    my_habitats = (
+        db.session.query(Habitat)
+        .join(Habit, (Habit.habitat_id == Habitat.id) & (Habit.user_id == user.id))
+        .all()
+    )
+
+    # Assuming my_habitats is a list of habitat objects
+    my_habitats_ids = [habitat.id for habitat in my_habitats]
+    print(my_habitats_ids)
+    
+    # my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
+
+
     my_habits = db.session.query(Habit).filter_by(user_id=session['user_id']).all()
-    habitatSearch = request.args.get('habitatSearch')
 
     for h in my_habitats:
         habit_query_result = db.session.query(Habit).filter_by(user_id=session['user_id'], habitat_id=h.id).first()
@@ -382,10 +423,9 @@ def open_habitats():
         if habit_query_result:
             h.users_habit = habit_query_result.title
 
-    form = CreateHabitat()
-    form.habit.choices = [(habit.id, habit.title) for habit in my_habits]
 
     habitat_id = request.args.get('habitat_id')
+    search = request.args.get('search')
 
     selected_habitat = None
     members_habits = None
@@ -400,6 +440,11 @@ def open_habitats():
             user = db.session.query(User).filter_by(id=habit.user_id).first()
             habit.member = user
 
+    form = CreateHabitat()
+    form.habit.choices = [(habit.id, habit.title) for habit in my_habits]
+
+    joinForm = JoinHabitat()
+    joinForm.habit.choices = [(habit.id, habit.title) for habit in my_habits]
 
     if request.method == "POST" and form.validate_on_submit():
         # Handle form submission for creating a new habitat
@@ -434,16 +479,26 @@ def open_habitats():
         db.session.commit()
 
         return redirect('/habitats')
-
-    user = db.session.query(User).get(session.get('user_id'))
     
-    habitatsList = my_habitats
 
-    if habitatSearch:
+
+    
+
+    searchForm = SearchForm(request.form)
+    # searchForm.title.data = searchForm.title.data
+
+    habitatSearch = ""
+
+    if search:
+        habitatSearch = search
+
+    if searchForm.title.data:
+        habitatSearch = searchForm.title.data
         habitatsList = db.session.query(Habitat).filter(Habitat.title.ilike(f"%{habitatSearch}%"), Habitat.is_public).order_by(Habitat.title).all()
-        
+    else:
+        habitatsList = my_habitats
 
-    return render_template('habitats.html', user=user, form=form, habitats=habitatsList, habitat=selected_habitat, membersHabits = members_habits)
+    return render_template('habitats.html', user=user, form=form, searchForm=searchForm, search=habitatSearch, joinForm=joinForm, habitats=habitatsList, my_habitats_ids=my_habitats_ids, habitat=selected_habitat, membersHabits=members_habits)
 
     
     # my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
@@ -584,6 +639,7 @@ def edit_habit(habit_id):
 # - See Habitats -
 @app.route('/habitats')
 def habitats():
+    print("WRONG HABITATS ROUTE")
     return render_template('habitats.html', user_id=session.get('user_id'))
 
 @app.route('/get_habitat_details/<int:habitat_id>')

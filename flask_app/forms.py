@@ -85,6 +85,12 @@ class CreateHabitat(FlaskForm):
     is_public = BooleanField('Make public', default=False)
     fields = ['title', 'description', 'icon_image', 'habit', 'submit', 'is_public']
 
+class JoinHabitat(FlaskForm):
+    class Meta:
+        csrf = False
+    habit = SelectField('Select habit', coerce=int)
+    submit = SubmitField('Join habitat')
+
 
 class ProfileForm(FlaskForm):
     class Meta:
@@ -101,11 +107,11 @@ class ProfileForm(FlaskForm):
 
 class SearchForm(FlaskForm):
     title = StringField('Searched Habitats')
-    description = StringField('Searched Habitats')
-    habit = SelectField('Select habit', coerce=int)
-    icon_image = FileField("Habitat image")
+    # description = StringField('Searched Habitats')
+    # habit = SelectField('Select habit', coerce=int)
+    # icon_image = FileField("Habitat image")
     submit = SubmitField('Search')
-    is_public = BooleanField('Make public', default=False)
+    # is_public = BooleanField('Make public', default=False)
 
 
 class ContactForm(FlaskForm):

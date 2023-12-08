@@ -27,20 +27,6 @@
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
-
-    <div class="form-popup" id="myJoin">
-        <form method="POST" action="/habitats" class="form-group form-container" enctype="multipart/form-data">
-            <h1>Create Habitat</h1><br>
-
-            {{ form.habit.label }} {{ form.habit }}
-
-            <button type="submit" class="btn">Join Habitat</button>
-
-            <button type="button" class="btn cancel" onclick="closeJoin()">Close</button>
-        </form>
-    </div>
-
-    
     
     <div class="navbar">
         <a href="{{url_for('home1')}}">Home</a>
@@ -55,10 +41,10 @@
         <div class="sidebar">
             <button class="open-button" onclick="openForm()">Create Habitat</button>
 
-            <form method="POST" action="{{url_for('search')}}" class="search-form" >
-                {{form.hidden_tag()}}
-                <input class="search-input" type="search" name="title" placeholder="Search habitats..." name="title">
-
+            <form method="POST" action="{{url_for('open_habitats')}}" class="search-form" id="search" >
+                {{ form.hidden_tag() }}
+                <!-- {{ searchForm.title() }} -->
+                <input class="search-input" type="search" name="title" placeholder="Search habitats..." name="title" value="{{ search }}">
                 <button type="submit" class="search-button">Search</button>
             </form>
 
@@ -79,12 +65,27 @@
 
         <div class="habitat_view">
             {% if habitat %}
+
+                <div class="form-popup" id="myJoin">
+                    <form method="POST" action="{{ url_for('join_habitat', habitat_id=habitat.id) }}" class="form-group form-container" enctype="multipart/form-data">
+                        <h1>Add a habit</h1><br>
+            
+                        {{ joinForm.habit.label }} {{ joinForm.habit }}
+            
+                        <button type="submit" class="btn">Join Habitat</button>
+            
+                        <button type="button" class="btn cancel" onclick="closeJoin()">Close</button>
+                    </form>
+                </div>
+        
                 
                 <h1>{{ habitat.title }}</h1>
-                <a id="chatroomLink" onclick="openJoin()"> Join Habitat</a>
                 
+                {% if habitat.id in my_habitats_ids %}
                 <a id="chatroomLink" href="{{ url_for('chatroom', habitat_id=habitat.id) }}"> Go to chatroom →</a>
-
+                {% else %}
+                <a id="joinButton" onclick="openJoin('{{ habitat.id }}')"> Join Habitat</a>
+                {% endif %}
                 <!-- Add a button to open the invitation form -->
                 <button class="open-invitation-form" onclick="openInvitationForm()">Invite Members</button>
 
@@ -158,8 +159,13 @@
         </div>
     </main>
     <script>
-        function openJoin() {
+        function openJoin(id) {
+
+            let myJoin = document.getElementById("myJoin");
             document.getElementById("myJoin").style.display = "block";
+
+            // url = "{{ url_for('join_habitat', habitat_id=habitat.id) }}";
+            // myJoin.action = url;
         }
 
         function closeJoin() {
@@ -222,7 +228,9 @@
             document.getElementById("profilePopup").style.display = "none";
         }
 
-        
+        // document.getElementById("search").addEventListener("change", function() {
+        //     this.searchForm.submit();
+        // });
 
     </script>
 </body>
