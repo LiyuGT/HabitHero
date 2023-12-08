@@ -238,6 +238,7 @@ def logout():
 @app.route('/aboutUs', methods=['GET', 'POST'])
 def aboutUs():
     form = ContactForm()
+    user = db.session.query(User).get(session.get('user_id'))
 
     if form.validate_on_submit():
         send_email(form)
@@ -246,7 +247,7 @@ def aboutUs():
         flash('Thank you for reaching out! We will get back to you soon.', 'success')
         return render_template('aboutUs.html', form=form, submitted=True)
 
-    return render_template('aboutUs.html', form=form, submitted=False)
+    return render_template('aboutUs.html', form=form, submitted=False, user=user)
 
 def send_email(form):
     msg = Message('New Contact Form Submission', recipients=['habithero1@gmail.com'])
