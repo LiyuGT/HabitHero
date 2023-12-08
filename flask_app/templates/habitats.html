@@ -39,15 +39,19 @@
     </div>
     <main class="container_with_sidebar">
         <div class="sidebar">
-            <button class="open-button" onclick="openForm()">Create Habitat</button>
 
-            <form method="POST" action="{{url_for('open_habitats')}}" class="search-form" id="search" >
-                {{ form.hidden_tag() }}
-                <!-- {{ searchForm.title() }} -->
-                <input class="search-input" type="search" name="title" placeholder="Search habitats..." name="title" value="{{ search }}">
-                <button type="submit" class="search-button">Search</button>
-            </form>
-
+            <div id="habitatSearchAdd">
+                <form method="POST" action="{{url_for('open_habitats')}}" class="search-form" id="search" >
+                    {{ form.hidden_tag() }}
+                    <!-- {{ searchForm.title }} -->
+                    <input class="search-input" type="search" name="title" placeholder="Search habitats..." name="title" value="{{ search }}">
+                    <button type="submit" class=""><img src="static/images/search.png"></button>
+                    <div class="btn" onclick="openForm()"><img src="static/images/add.png"></div>
+                </form>
+                
+                
+            </div>
+            
             {% for h in habitats %}
 
             <a class="habitat_item {% if h.id == habitat.id %} selected_habitat {% endif %}" href="{{ url_for('open_habitat', habitat_id=h.id) }}">

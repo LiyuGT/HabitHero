@@ -29,6 +29,7 @@ body {
 main {
     width: 50vw;
     margin: auto;
+    margin-top: 10px;
 }
 
 
@@ -357,9 +358,9 @@ form input[type='file'] {
 
 
 /* Button used to open the habit form */
-button {
+button, .btn {
     padding: 16px 20px; 
-    margin-top: 10px;
+    /* margin-top: 10px; */
 
     background-color: var(--purple);
     border-radius: 10px;
@@ -415,12 +416,14 @@ button {
 
 /* Set a style for the submit/login button */
 .form-container .btn {
+    margin-top: 10px;
     background-color: var(--purple);
     width: 100%;
 }
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {
+
     background-color: lightgray;
 }
 
@@ -788,35 +791,49 @@ button {
   }
 */
 
-.search-form {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px; /* Add some margin for spacing */
-    border-radius: 35px;
-    width: 400px; 
+#habitatSearchAdd {
+
+
+    /* align-items: center;
+    align-content: center; */
+
+    
 }
-.search-input {
-    padding: 5px;
+.search-form {
+    /* padding: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    font-size: 14px; /* Adjust font size as needed */
-    border-radius: 35px;
-    width: 400px; 
+    font-size: 14px;
+    border-radius: 35px; */
+    display: flex;
+    flex-direction: row;
+    width: 100%;  
+    padding: 5px;
+
 }
-.search-button {
-    padding: 5px 10px;
-    margin-left: 5px;
-    background-color: #AE76A6;
-    color: white;
-    border: none;
-    border-radius: 35px;
-    cursor: pointer;
-    font-size: 14px; /* Adjust font size as needed */
+
+.search-form * {
+    padding: 10px;
+    margin: 2px;
 }
-/* Hover effect for the button */
-.search-button:hover {
-    background-color: #ccc;
-    border-radius: 35px;
+
+.search-form button, .search-form .btn {
+    width: min-content;
+    height: min-content;
+    padding: 0%;
+
+}
+
+.search-form img {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+
+    vertical-align: middle;
+}
+
+.search-input {
+    width: 100%;  
 }
 
 .open-invitation-form {
