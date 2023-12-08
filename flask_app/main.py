@@ -173,6 +173,7 @@ def generate_user_id():
 # - User Registration -
 @app.route('/register', methods=['POST', 'GET'])
 def register():
+    habitat_id = request.args.get('habitat_id')
     form = RegisterForm()
 
     if request.method == 'POST' and form.validate_on_submit():
@@ -195,7 +196,11 @@ def register():
         session['user'] = first_name
         session['user_id'] = new_user.id  # access id value from user model of this newly added user
         # show user dashboard view
-        return redirect(url_for('login'))
+
+        if habitat_id:
+            return redirect(url_for('login_habitat', habitat_id=habitat_id))
+        else:
+            redirect(url_for('login'))
 
     # something went wrong - display register view
     return render_template('register.html', form=form)
@@ -204,18 +209,23 @@ def register():
 # - User Login -
 @app.route('/login', methods=['POST', 'GET'])
 def login():
+    habitat_id = request.args.get('habitat_id')
     login_form = LoginForm()
     # validate_on_submit only validates using POST
     if login_form.validate_on_submit():
         # we know user exists. We can use one()
         the_user = db.session.query(User).filter_by(email=request.form['email']).one()
         # user exists check password entered matches stored password
+        print(habitat_id)
         if bcrypt.checkpw(request.form['password'].encode('utf-8'), the_user.password):
             # password match add user info to session
             session['user'] = the_user.first_name
             session['user_id'] = the_user.id
             # render view
-            return redirect(url_for('createhabits'))
+            if habitat_id:
+                return redirect(url_for('open_habitat', habitat_id=habitat_id))
+            else:
+                return redirect(url_for('createhabits'))
 
         # password check failed
         # set error message to alert user
@@ -365,6 +375,8 @@ def markAsDone(habit_id):
     return redirect('/habits')
 
 #----- Habitat Routes ----#
+
+    # Redirect to the '/habitats' route with the habitat_id as a query parameter
 
 @app.route('/habitats/<habitat_id>', methods=['GET', 'POST'])
 def open_habitat(habitat_id):
@@ -708,16 +720,27 @@ def send_invitations(habitat_id):
 def send_invitation_email(email, habitat_id):
    # Create the email message
     user = User.query.filter_by(email=email).first()
+    habitat_name = db.session.query(Habitat).get(habitat_id)
 
     # Create the email message
     subject = 'Invitation to Habit Hero'
 
-    if user is None:  # Email does not exist in the database
-        body = (f'You have been invited to join Habit Hero! Click the following link to register: {url_for("register", _external=True)} \n'
-                f'And the access you invitation here: {url_for("open_habitat", habitat_id=habitat_id, _external=True)}'
-                 )
-    else:  # Email already exists in the database
-        body = f'You have been invited to join Habit Hero! Click the following link to join: {url_for("open_habitat", habitat_id=habitat_id, _external=True)}'
+    if user is None:
+        body = (
+            f'Hello!\n\n'
+            f'You have been invited to join Habit Hero! \n\n'
+            f'Click the following link to register and join: {url_for("register_habitat", habitat_id=habitat_id, _external=True)}\n\n'
+            f'Thank you!'
+
+        )
+    else: 
+        body = (
+            f'Hello!\n\n' 
+            f'{user.first_name}' f' ' f'{ user.last_name }' f' '
+            f'has invited you to join {habitat_name.title} in Habit Hero! '
+            f'Click the following link to join: {url_for("login_habitat", habitat_id=habitat_id, _external=True)}\n'
+            f'Thank you!\n'
+        )
 
     sender = 'habitHero1@gmail.com'  # Replace with your email
 
@@ -737,6 +760,15 @@ def send_invitation_email(email, habitat_id):
 
 
 
+@app.route('/login/<habitat_id>', methods=['GET', 'POST'])
+def login_habitat(habitat_id):
+    print(habitat_id)
+    return redirect(url_for('login', habitat_id=habitat_id))
+
+@app.route('/register/<habitat_id>', methods=['GET', 'POST'])
+def register_habitat(habitat_id):
+    print(habitat_id)
+    return redirect(url_for('register', habitat_id=habitat_id))
 
 
 
