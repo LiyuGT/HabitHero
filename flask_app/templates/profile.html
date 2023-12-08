@@ -29,7 +29,7 @@
             </div>
             
             <h1>{{ user.first_name }} {{ user.last_name }}</h1>
-            <p class="habitScore">You have {{ user.score }} gems<span class="tooltip">?</span></p>
+            <p class="habitScore">You have {{ user.score }} gems<span class="tooltip"><img src="static/images/question-mark.png"></span></p> 
             <!-- Edit form and bio display -->
             <div id="editFormContainer" style="display: none;">
                 <form method="POST" action="/profile" enctype="multipart/form-data">

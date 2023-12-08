@@ -937,11 +937,28 @@ input[type='file'], input[type='checkbox'] {
 
 }
 
+.habitScore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .tooltip {
     position: relative;
     display: inline-block;
     cursor: pointer;
+    vertical-align: middle;
+  }
+
+  .tooltip img {
+    width: 10px;
+    height: 10px;
+    margin: 0;
+    padding: 1px;
+    border-radius: 100%;
+    vertical-align: middle;
+    background-color: #A3C3D9;
   }
   
   .tooltip::after {
@@ -962,19 +979,19 @@ input[type='file'], input[type='checkbox'] {
   }
   
   .tooltip:hover::before {
-    content: "Here's how your score is calculated: +1 gem per day checked off per habit. +5 gems for maintaining a week long streak. +10 gems for maintaining a two week long streak. You recieve more bonus gems the longer you maintain your streaks!";
+    content: "+1 gem for every habit you've marked as done";
     position: absolute;
-    top: 50%;
+    /* top: 50%; */
     left: 100%;
     margin-left: 10px;
     display: block;
-    background-color: #555;
-    color: #fff;
+    background-color: #a3c3d9;
+    color: white;
+    font-weight: bold;
     padding: 10px; 
     border-radius: 4px;
     white-space: normal;
     word-wrap: break-word;
     z-index: 1;
-    width: 200px;
-    height: 150px;
+    width: 100px;
   }
