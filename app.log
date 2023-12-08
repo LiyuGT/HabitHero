@@ -4636,3 +4636,5 @@ INFO:werkzeug:127.0.0.1 - - [08/Dec/2023 15:50:29] "[36mGET /static/images/prof
 INFO:werkzeug:127.0.0.1 - - [08/Dec/2023 15:50:29] "[36mGET /static/images/add.png HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [08/Dec/2023 15:50:29] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [08/Dec/2023 15:50:29] "[36mGET /static/images/search.png HTTP/1.1[0m" 304 -
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 797-222-536
