@@ -264,6 +264,16 @@ form input[type='file'] {
     border-style: none;
 }
 
+#thank-you-message {
+    text-align: center;
+    background-color: #A3C3D9;
+    color: white;
+    padding: 3px;
+    font-size: small;
+    margin: 7px;
+    border-radius: 20px;
+}
+
 /* nav bar css code */
 
 .navbar {
