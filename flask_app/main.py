@@ -18,6 +18,7 @@ from flask import (Flask, Response, flash, jsonify, redirect, render_template,
                    request, session, url_for)
 from flask_socketio import SocketIO, join_room
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import or_
 from forms import (CommentForm, CreateHabitat, HabitForm, LoginForm,
                    RegisterForm, ProfileForm, ContactForm, JoinHabitat, SearchForm)
 from flask_mail import Mail, Message
@@ -403,6 +404,11 @@ def open_habitats():
     # db.session.query(Habit).filter_by(user_id=session['user_id'], habitat_id=h.id)
     user = db.session.query(User).get(session.get('user_id'))
 
+
+    # filter(or_(User.name == 'ed', User.name == 'wendy'))
+    my_habits = db.session.query(Habit).filter_by(user_id=user.id).all()
+    
+
     my_habitats = (
         db.session.query(Habitat)
         .join(Habit, (Habit.habitat_id == Habitat.id) & (Habit.user_id == user.id))
@@ -412,11 +418,8 @@ def open_habitats():
     # Assuming my_habitats is a list of habitat objects
     my_habitats_ids = [habitat.id for habitat in my_habitats]
     print(my_habitats_ids)
-    
-    # my_habitats = db.session.query(Habitat).filter_by(user_id=session.get('user_id')).all()
 
-
-    my_habits = db.session.query(Habit).filter_by(user_id=session['user_id']).all()
+    my_habitats = db.session.query(Habitat).filter(or_(Habitat.id.in_(my_habitats_ids), Habitat.user_id == user.id))
 
     for h in my_habitats:
         habit_query_result = db.session.query(Habit).filter_by(user_id=session['user_id'], habitat_id=h.id).first()
@@ -438,8 +441,8 @@ def open_habitats():
         members_habits = db.session.query(Habit).filter_by(habitat_id=habitat_id).all()
 
         for habit in members_habits:
-            user = db.session.query(User).filter_by(id=habit.user_id).first()
-            habit.member = user
+            habitUser = db.session.query(User).filter_by(id=habit.user_id).first()
+            habit.member = habitUser
 
     form = CreateHabitat()
     form.habit.choices = [(habit.id, habit.title) for habit in my_habits]
@@ -480,9 +483,6 @@ def open_habitats():
         db.session.commit()
 
         return redirect('/habitats')
-    
-
-
     
 
     searchForm = SearchForm(request.form)
