@@ -670,51 +670,72 @@ def send_invitations(habitat_id):
         return redirect(url_for('open_habitat', habitat_id=habitat_id))
 
 '''
+
 from flask_mail import Mail
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'  
+app.config['MAIL_SERVER'] = 'smtp.gmail.com' 
 app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True 
-app.config['MAIL_USE_SSL'] = False  
-app.config['MAIL_USERNAME'] = 'habithero1@gmail.com'  
-app.config['MAIL_PASSWORD'] = 'pppl mdcu dapk vxix' 
-app.config['MAIL_DEFAULT_SENDER'] = 'habithero1@gmail.com'  
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False 
+app.config['MAIL_USERNAME'] = 'habithero1@gmail.com' 
+app.config['MAIL_PASSWORD'] = 'pppl mdcu dapk vxix'
+app.config['MAIL_DEFAULT_SENDER'] = 'habithero1@gmail.com' 
 app.config['USER_ENABLE_EMAIL'] = True
+
 
 mail = Mail(app)
 import logging
 
+
 # Configure the logging module
 logging.basicConfig(filename='app.log', level=logging.ERROR)
 
+
 @app.route('/habitats/<int:habitat_id>/send_invitations', methods=['POST'])
 def send_invitations(habitat_id):
-    if request.method == 'POST':
-        email = request.form.get('email')
-        send_invitation_email(email, habitat_id)
-        flash(f'Invitation sent to {email} successfully!', 'success')
-    else:
-        flash('Invitation not sent!', 'fail')
+   if request.method == 'POST':
+       email = request.form.get('email')
+       send_invitation_email(email, habitat_id)
+       flash(f'Invitation sent to {email} successfully!', 'success')
+   else:
+       flash('Invitation not sent!', 'fail')
 
-    return redirect(url_for('open_habitat', habitat_id=habitat_id))
+
+   return redirect(url_for('open_habitat', habitat_id=habitat_id))
+
+
 
 
 def send_invitation_email(email, habitat_id):
+   # Create the email message
+    user = User.query.filter_by(email=email).first()
+
     # Create the email message
     subject = 'Invitation to Habit Hero'
-    body = f'You have been invited to join Habit Hero! Click the following link to join: {url_for("login", _external=True)}'
+
+    if user is None:  # Email does not exist in the database
+        body = (f'You have been invited to join Habit Hero! Click the following link to register: {url_for("register", _external=True)} \n'
+                f'And the access you invitation here: {url_for("open_habitat", habitat_id=habitat_id, _external=True)}'
+                 )
+    else:  # Email already exists in the database
+        body = f'You have been invited to join Habit Hero! Click the following link to join: {url_for("open_habitat", habitat_id=habitat_id, _external=True)}'
+
     sender = 'habitHero1@gmail.com'  # Replace with your email
 
     msg = Message(subject, sender=sender, recipients=[email])
     msg.body = body
 
+
     try:
-        # Send the email
-        mail.send(msg)
+       # Send the email
+       mail.send(msg)
     except Exception as e:
-        # Log the error
-        logging.error(f'Error sending invitation to {email}: {str(e)}')
-        # Flash a user-friendly message
-        flash(f'Error sending invitation. Please try again later.', 'error')
+       # Log the error
+       logging.error(f'Error sending invitation to {email}: {str(e)}')
+       # Flash a user-friendly message
+       flash(f'Error sending invitation. Please try again later.', 'error')
+
+
+
 
 
 
