@@ -911,3 +911,43 @@ input[type='file'], input[type='checkbox'] {
 }
 
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .tooltip::after {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: 5px;
+    display: none;
+    background-color: #555;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  
+  .tooltip:hover::after {
+    display: block;
+  }
+  
+  .tooltip:hover::before {
+    content: "Here's how your score is calculated: +1 gem per day checked off per habit. +5 gems for maintaining a week long streak. +10 gems for maintaining a two week long streak. You recieve more bonus gems the longer you maintain your streaks!";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: 10px;
+    display: block;
+    background-color: #555;
+    color: #fff;
+    padding: 10px; 
+    border-radius: 4px;
+    white-space: normal;
+    word-wrap: break-word;
+    z-index: 1;
+    width: 200px;
+    height: 150px;
+  }

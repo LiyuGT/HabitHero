@@ -1467,3 +1467,1113 @@ INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 15:17:50] "GET /login HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 15:17:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 15:17:50] "[33mGET /static/forms.css HTTP/1.1[0m" 404 -
 INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 15:17:50] "[33mGET /static/homestyle.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:05] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:05] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:05] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:05] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:07] "GET /home1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:07] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:18] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:18] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:18] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:18] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:19] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:19] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:22] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:22] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:22] "[33mGET /static/forms.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:22] "[33mGET /static/homestyle.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:28] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:28] "[33mGET /static/forms.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:28] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:28] "[33mGET /static/homestyle.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:31] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:31] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:31] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:31] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:31] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:31] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:33] "GET /habitats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:33] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:33] "[33mGET /static/images/user_uploads/63aa7178-84b0-11ee-bdda-04d9f51ef542_plantimg.jpg HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:33] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:36] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:36] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:36] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:37] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:20:37] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:21:36] "GET /home HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:21:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:21:38] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:21:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:21:48] "[32mPOST /register HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:21:48] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:21:48] "[33mGET /static/forms.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:21:48] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:21:48] "[33mGET /static/homestyle.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:08] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:08] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:08] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:08] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:10] "GET /habitats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:10] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:14] "[32mPOST /search HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:14] "GET /habitats?habitatSearch=book HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:14] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:20] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:20] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:22:20] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:35] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:35] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:39] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:39] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:39] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:39] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:39] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:39] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:39] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:40] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:40] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:40] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:40] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:40] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:40] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:40] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:42] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:42] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:42] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:46] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:46] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:35:46] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:01] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:02] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:02] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:02] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:02] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:02] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:02] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:02] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:02] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:03] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:03] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:38:03] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:27] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:27] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:27] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:27] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:27] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:28] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:29] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:30] "GET /habitats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:30] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:31] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:31] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:31] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:31] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:32] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:32] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:32] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:32] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:32] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[32mPOST /habits/20/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:37] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:39] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:39] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:39] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:39] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:45] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:45] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:45] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:45] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:45] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:45] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:46] "[32mPOST /habits/20/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:46] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:46] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:46] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:46] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:46] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:46] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:46] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:46] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:47] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:47] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:47] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:48] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:48] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:48] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:48] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:48] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:48] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:48] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:48] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:53] "[32mPOST /habits/20/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:53] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:53] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:53] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:53] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:53] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:53] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:53] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:56] "[32mPOST /habits/20/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:56] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:56] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:57] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:57] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:57] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:57] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:57] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:57] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:57] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:58] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:59] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:59] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:59] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:59] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:44:59] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:01] "[32mPOST /habits/19/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:01] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:01] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:01] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:02] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:02] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:02] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:02] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:03] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:03] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:10] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:12] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:12] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:12] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:45:12] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:39] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:39] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:39] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:39] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:40] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:40] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:40] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:40] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:40] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:44] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:44] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:44] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:44] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:44] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:44] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:44] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:44] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:44] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:45] "[32mPOST /habits/20/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:45] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:45] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:45] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:45] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:45] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:45] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:45] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:46] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:46] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:46] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:48] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:48] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:48] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:48] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:48] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:47:48] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:02] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:02] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:02] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:02] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:03] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:03] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:03] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:03] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:03] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:07] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:07] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:07] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:07] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:07] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:07] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:07] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:07] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:08] "[32mPOST /habits/21/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:08] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:08] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:08] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:08] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:08] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:08] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:08] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:09] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:09] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:09] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:09] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:10] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:10] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:10] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:10] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:10] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:13] "[32mPOST /habits/21/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:13] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:13] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:13] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:13] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:13] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:13] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:13] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:13] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:13] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:15] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:15] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:15] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:15] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:15] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:15] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:18] "[32mPOST /habits/20/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:18] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:18] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:18] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:18] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:18] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:18] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:18] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:19] "[32mPOST /habits/19/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:19] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:19] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:19] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:19] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:20] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:20] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:20] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:21] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:21] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:21] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:24] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:24] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:24] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:24] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:24] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:24] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:24] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:25] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:25] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:25] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:25] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:25] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:25] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:25] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:26] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:26] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:26] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 21:50:26] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:56] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:56] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:56] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:56] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:56] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:56] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:58] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:58] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:58] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:59] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:59] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:59] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:59] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:59] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:03:59] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:02] "[32mPOST /habits/19/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:02] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:02] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:02] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:02] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:03] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:03] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:03] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:04] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:04] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:05] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:05] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:05] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:05] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:05] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:05] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:05] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:06] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:06] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:06] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:06] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:06] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:06] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:06] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:06] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:07] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:07] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:07] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:09] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:09] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:09] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:09] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:09] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:09] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:11] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:11] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:11] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:11] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:11] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:11] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:11] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:11] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:11] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:13] "[32mPOST /habits/20/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:13] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:13] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:13] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:13] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:13] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:13] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:21] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:21] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:21] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:21] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:22] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:22] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:22] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:22] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:22] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:22] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:24] "[32mPOST /habits/20/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:24] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:24] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:24] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:24] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:24] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:24] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:24] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:26] "[32mPOST /habits/19/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:26] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:26] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:26] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:26] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:28] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:28] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:28] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:28] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:28] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:28] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:28] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:29] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:29] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:29] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:29] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:30] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:30] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:30] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:30] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:30] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:31] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:31] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:31] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:31] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:31] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:31] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:31] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:31] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:32] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:32] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:04:32] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:04] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:04] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:04] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:04] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:04] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:07] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:07] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:07] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:07] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:07] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:07] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:07] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:07] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:08] "[32mPOST /habits/20/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:08] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:08] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:08] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:08] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:08] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:08] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:08] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:09] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:09] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:09] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:09] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:10] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:10] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:10] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:10] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:10] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:13] "[32mPOST /habits/20/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:13] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:13] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:13] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:13] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:13] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:13] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:14] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:14] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:14] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:17] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:17] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:17] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:17] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:13:17] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:51] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:51] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:51] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:51] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:51] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:51] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:53] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:53] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "[32mPOST /habits/20/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:54] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:55] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:55] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:55] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:56] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:56] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:56] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:56] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:56] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:56] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:59] "[32mPOST /habits/20/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:59] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:59] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:59] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:59] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:59] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:59] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:59] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:59] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:59] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:59] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:14:59] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:01] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:01] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:01] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:01] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:01] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:05] "[32mPOST /habits/19/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:05] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:05] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:05] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:05] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:05] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:05] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:05] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:05] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:07] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:07] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:47] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:47] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:47] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:47] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:47] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:47] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:48] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:48] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:48] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:48] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:48] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:48] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:48] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:48] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:49] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:49] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:49] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:49] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:50] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:50] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:50] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:50] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:50] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:53] "[32mPOST /habits/19/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:53] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:53] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:53] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:53] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:54] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:54] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:54] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:55] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:15:55] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:36] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:36] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:38] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:38] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:38] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:38] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:38] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:38] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:39] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:39] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:39] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:39] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:39] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:39] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:39] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:39] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:40] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:40] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:40] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:41] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:41] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:41] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:41] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:41] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:41] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:44] "[32mPOST /habits/19/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:44] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:44] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:44] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:44] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:44] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:44] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:44] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:44] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:45] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:45] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:17:45] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:14] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:14] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:16] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:16] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:16] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:16] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:16] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:16] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:16] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:17] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:17] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:17] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:17] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:17] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:17] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:17] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:18] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:18] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:18] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:18] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:19] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:19] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:19] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:19] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:19] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:19] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:22] "[32mPOST /habits/19/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:22] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:22] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:22] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:22] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:23] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:23] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:23] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:23] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:24] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:24] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:20:24] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:46] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:46] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:49] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:49] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:49] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:49] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:49] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:49] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:49] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:50] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:50] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:50] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:50] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:50] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:50] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:50] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:51] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:51] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:51] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:51] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:52] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:52] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:52] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:52] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:52] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:52] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:54] "[32mPOST /habits/19/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:54] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:54] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:54] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:55] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:55] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:22:55] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:28] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:28] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:28] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:30] "[32mPOST /habits HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:30] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:30] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:30] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:30] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:30] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:32] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:32] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:32] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:32] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:32] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:32] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:32] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:33] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:33] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:33] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:33] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:33] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:34] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:34] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:34] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:34] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:34] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:35] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:35] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:35] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:35] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:35] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:35] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:35] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:36] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:36] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:36] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:37] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:37] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:37] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:37] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:37] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:37] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:44] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:44] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:44] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:44] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:46] "POST /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:46] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:46] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:50] "GET /habitats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:50] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:53] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:53] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:53] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:53] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:53] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:23:53] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:27:20] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:27:20] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:27:20] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:27:20] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:28:13] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:28:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:28:13] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:28:13] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:29:53] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:29:53] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:29:53] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:29:53] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:36:08] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:36:08] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:36:08] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:36:08] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:36:50] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:36:50] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:36:50] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:36:50] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:37:11] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:37:11] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:37:11] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:37:11] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:37:57] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:37:57] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:37:57] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:37:57] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:38:38] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:38:38] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:38:38] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:38:38] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:38:57] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:38:57] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:38:57] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:38:57] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:39:10] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:39:10] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:39:10] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:39:10] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:39:19] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:39:19] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:39:19] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:39:19] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:39:30] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:39:30] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:39:30] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:39:30] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:40:58] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:40:58] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:40:58] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:40:58] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:41:28] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:41:28] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:41:28] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:41:28] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:42:47] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:42:47] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:42:47] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:42:47] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:44:18] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:44:18] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:44:18] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:44:18] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:44:30] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:44:30] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:44:30] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:44:30] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:44:36] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:44:36] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:44:36] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:44:36] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:45:22] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:45:22] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:45:22] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:45:22] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:45:47] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:45:47] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:45:47] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:45:47] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:45:59] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:45:59] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:45:59] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:45:59] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:46:19] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:46:19] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:46:19] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:46:19] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:46:37] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:46:37] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:46:37] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:46:37] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:47:03] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:47:03] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:47:03] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:47:03] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:47:48] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:47:48] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:47:48] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:47:48] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:48:16] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:48:16] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:48:16] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:48:16] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:48:56] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:48:56] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:48:56] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:48:56] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:49:28] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:49:28] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:49:28] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:49:28] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "[36mGET /static/images/unchecked.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "[36mGET /static/images/flame_grayscale.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "[32mPOST /habits/19/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:00] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:01] "GET /habitats HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:01] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:02] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:02] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:02] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:02] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:05] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:05] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:05] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:05] "[36mGET /static/images/checkmark.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:05] "[36mGET /static/images/flame_colored.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:05] "[36mGET /static/images/remove.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:08] "[32mPOST /habits/19/delete HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:08] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:08] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:08] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:08] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:09] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:09] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:09] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:09] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:10] "GET /habits HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:10] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:40] "GET /profile HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:40] "[36mGET /static/images/profile_uploads/profile_default.jpeg HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:40] "[36mGET /static/images/camera.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Dec/2023 22:50:40] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nicole\\Documents\\GitHub\\HabitHero\\flask_app\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 140-335-713

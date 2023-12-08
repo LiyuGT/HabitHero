@@ -36,6 +36,18 @@ class User(db.Model, UserMixin):
         self.profile_picture = 'profile_default.jpeg'
         self.bio = bio
 
+    def update_score(self):
+        # Query the user's habits and calculate the total streak count
+        habits = Habit.query.filter_by(user_id=self.id).all()
+        total_streak = sum(habit.streak for habit in habits)
+
+        # Update the user's score
+        self.score = total_streak
+
+        # Commit changes to the user
+        db.session.commit()
+
+
     def __repr__(self):
         return f'<User {self.id}>'
 
@@ -72,6 +84,12 @@ class Comment(db.Model):
         self.user_id = user_id
 
 # - User / Projects -
+
+def calculate_total_streak(user_id):
+    habits = Habit.query.filter_by(user_id=user_id).all()
+    total_streak = sum(habit.streak for habit in habits)
+    return total_streak
+
 class Habit(db.Model):
     __tablename__ = "habits"
 
@@ -95,10 +113,15 @@ class Habit(db.Model):
         self.title = title
         self.description = description
         self.created = created
-        
+
     def delete_habit(self):
+
+        user = User.query.get(self.user_id)
+
         db.session.delete(self)
         db.session.commit()
+
+        user.update_score()
 
     def markAsDone(self):
 
@@ -108,7 +131,7 @@ class Habit(db.Model):
             self.done = True
             self.streak += 1
             self.saveLastDone = self.latestDone
-            self.latestDone = datetime.date.today()
+            self.latestDone = datetime.date.today() 
         elif self.done:
             # Unmark the habit and adjust the streak
             self.done = False
@@ -116,6 +139,10 @@ class Habit(db.Model):
             self.streak = max(0, self.streak - 1)
         db.session.commit()
 
+        user = User.query.get(self.user_id)
+        user.update_score()
+
+        db.session.commit()
     # def markAsDone(self):
     #     today = date.today()
 
